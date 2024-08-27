@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head id="header">
+  <script>
+    fetch('partials/header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header').innerHTML = data;
+        });
+  </script>
+</head>
+<body>
+  <header id="menu">
+    <script>
+      fetch('partials/menu.html')
+          .then(response => response.text())
+          .then(data => {
+              document.getElementById('menu').innerHTML = data;
+          });
+    </script>
+  </header>
+    <main>
+        <div id="content" class="container">
+          <div class="col-md-12">
+            <h1>Choose a post to read:</h1>
+            <div id="blog-links">
+                <script>
+                    fetch('posts/post-list.html')
+                        .then(response => response.text())
+                        .then(data => {
+                            document.getElementById('blog-links').innerHTML = data;
+                        });
+                </script>
+            </div>
+          </div>
+        </div>
+    </main>
+    <footer id="footer" class="footer">
+      <script>
+        fetch('partials/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+      </script>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
