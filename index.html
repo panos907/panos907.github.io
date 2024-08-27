@@ -1,22 +1,32 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="index.js"></script>
-  <title>panos907 world</title>
+<head id="header">
+  <script>
+    fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header').innerHTML = data;
+        });
+  </script>
+</head>
 <body>
-  <nav>
-    <ul>
-        <li><a href="index" class="link text-2xl font-bold dark:text-white">Home</a></li>
-        <li><a href="post1" class="link text-2xl font-bold dark:text-white">Post 1</a></li>
-    </ul>
-  </nav>
-  <div class="md:container md:mx-auto max-w-md bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl bg-white dark:bg-slate-800">
-    <div class="md:flex">
-      <h1 class="text-2xl font-bold dark:text-white">Hello World</h1>
-    </div>
-  </div>
+    <header>
+        <nav>
+          <ul>
+              <li><a href="index" class="link text-2xl font-bold dark:text-white">Home</a></li>
+              <li><a href="post1" class="link text-2xl font-bold dark:text-white">Post 1</a></li>
+          </ul>
+        </nav>
+      </header>
+    <main>
+        <div id="content" class="md:container md:mx-auto max-w-md bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl bg-white dark:bg-slate-800">
+          <div class="md:flex">
+            <h1 class="text-2xl font-bold dark:text-white">Hello World</h1>
+          </div>
+        </div>
+    </main>
+    <footer>
+      <p>&copy; 2023 My Website</p>
+    </footer>
 </body>
 </html>
