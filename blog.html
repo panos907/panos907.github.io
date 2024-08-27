@@ -25,7 +25,7 @@
             <h1>Choose a post to read:</h1>
             <div id="blog-links">
                 <script>
-                    fetch('posts/post-list.html')
+                    fetch('post-list.html')
                         .then(response => response.text())
                         .then(data => {
                             document.getElementById('blog-links').innerHTML = data;
