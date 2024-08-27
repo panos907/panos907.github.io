@@ -10,14 +10,15 @@
   </script>
 </head>
 <body>
-    <header>
-        <nav>
-          <ul>
-              <li><a href="index" class="link text-2xl font-bold dark:text-white">Home</a></li>
-              <li><a href="post1" class="link text-2xl font-bold dark:text-white">Post 1</a></li>
-          </ul>
-        </nav>
-      </header>
+  <header id="menu">
+    <script>
+      fetch('menu.html')
+          .then(response => response.text())
+          .then(data => {
+              document.getElementById('menu').innerHTML = data;
+          });
+    </script>
+  </header>
     <main>
         <div id="content" class="md:container md:mx-auto max-w-md bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl bg-white dark:bg-slate-800">
           <div class="md:flex">
@@ -25,8 +26,14 @@
           </div>
         </div>
     </main>
-    <footer>
-      <p>&copy; 2023 My Website</p>
+    <footer id="footer">
+      <script>
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+      </script>
     </footer>
 </body>
 </html>
