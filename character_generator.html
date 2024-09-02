@@ -88,8 +88,22 @@
     }
     
     @media print {
-        .small-font {
-            font-size:0.8em;
+        body {
+            margin: 0.1em; 
+            padding: 0;
+        }
+
+        p,
+        h1,
+        h2,
+        ul {
+            font-size: 0.7em; 
+        }
+
+        .col-md-*, 
+        section,
+        footer {
+            width: 100%; 
         }
     }
     

@@ -481,7 +481,6 @@ function generateEquipment() {
     for (let i = 0; i < equipmentNumber; i++) {
         const equipmentItem = document.createElement("li");
         equipmentItem.textContent = tempEquipment[i];
-        equipmentItem.classList.add("small-font");
 
         equipmentList.appendChild(equipmentItem);
     }
@@ -523,7 +522,6 @@ function generateRandomAbilities() {
         const finalAbilityValue = abilitiesRollValues[randomNumber];
 
         const abilityParagraph = document.createElement("p");
-        abilityParagraph.classList.add("small-font");
         abilityParagraph.innerHTML = '<strong><em>'+abilityNames[i]+'</em></strong>: '+finalAbilityValue+'  ';
 
         abilityDiv.appendChild(abilityParagraph);
@@ -544,7 +542,6 @@ function generateClassDescription()
     const descriptionParagraph = document.createElement("p");
     descriptionParagraph.textContent = classDescriptions[characterClass];
     descriptionParagraph.classList.add("col-md-12");
-    descriptionParagraph.classList.add("small-font");
 
     infoDiv.appendChild(descriptionParagraph);
 }
@@ -560,7 +557,6 @@ function generateRandomPower() {
     const randomIndex = Math.floor(Math.random() * powerCount);
 
     const powerParagraph = document.createElement("p");
-    powerParagraph.classList.add("small-font");
     powerParagraph.textContent = classPowersObj[randomIndex];
 
     powersDiv.appendChild(powerParagraph);
