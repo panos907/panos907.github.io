@@ -1,14 +1,12 @@
 <html lang="en" data-bs-theme="dark">
     <head id="header">
         <script>
-          fetch('partials/header.html')
+          fetch('partials/character_generator_header.html')
               .then(response => response.text())
               .then(data => {
                   document.getElementById('header').innerHTML = data;
               });
         </script>
-        <script src="generator.js"></script>
-        <title id="title">Ronin Generator</title>
       </head>
     <body class="generator-root container-fluid">
         <noscript>
