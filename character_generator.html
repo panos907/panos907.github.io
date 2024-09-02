@@ -23,30 +23,31 @@
                 <p>I'm sorry, Samurai-sama, but you need to enable Javascript to run this app.</p>
             </div>
         </noscript>
-        <div>
-            <div class="text-center col-md-12">
+        <main>
+            <section class="text-center col-md-12">
                 <h1 class="display-6"><em>A character generator for</em></h1>
                 <h2 class="display-4 fw-bold"><em>RONIN</em></h2>
                 <button onclick="generateRandomCharacter()" class="generator-button btn btn-danger fw-bold rounded-2 m-2 d-print-none">Click to commit Seppukku</button>
-            </div>
+            </section>
             <hr>
-            <div class="col-12 font-monospace">
+            <section class="col-12 font-monospace">
                 <p id="name" class="col-md-12"><strong><em>Name: </em></strong></p>
                 <p id="class" class="col-md-12"><strong><em>Class: </em></strong></p>
                 <p id="hp" class="col-md-6"><strong><em>HP: </em></strong></p>
                 <p id="virtues" class="col-md-6"><strong><em>Virtues: </em></strong></p>
                 <p id="honour" class="col-md-6"><strong><em>Honour: </em></strong></p>
                 <p id="tenets" class="col-md-6"><strong><em>Tenets: </em></strong></p>
-            </div>
+            </section>
             <hr>
-            <div id="traits" class="col-md-6 font-monospace"></div>
-            <div id="classinfo" class="col-md-6 font-monospace"></div>
-            <div id="abilities" class="col-md-6 font-monospace"></div>
-            <div id="equipment" class="col-md-6 font-monospace"></div>
-        </div>
-        <div class="text-center col-md-12">
-            <a href="javascript:void(0);" onclick="window.print()" class="btn btn-primary fw-bold rounded-2 m-2 d-print-none">Print This One</a>
-        </div>
+            <section id="traits" class="col-md-6 font-monospace"></section>
+            <section id="classinfo" class="col-md-6 font-monospace"></section>
+            <section id="abilities" class="col-md-6 font-monospace"></section>
+            <section id="equipment" class="col-md-6 font-monospace"></section>
+            <section class="text-center col-md-12">
+                <a href="javascript:void(0);" onclick="window.print()" class="btn btn-primary fw-bold rounded-2 m-2 d-print-none">Print This One</a>
+            </section>
+        </main>
+
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     </body>
