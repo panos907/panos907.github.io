@@ -8,7 +8,7 @@
         <script src="generator.js"></script>
         <title id="title">Ronin Generator</title>
     </head>
-    <body class="container-fluid">
+    <body>
         <header id="menu">
             <script>
               fetch('partials/menu.html')
@@ -18,34 +18,36 @@
                   });
             </script>
         </header>
-        <!-- <noscript>
+        <noscript>
             <div class="bg-danger text-white">
                 <p>I'm sorry, Samurai-sama, but you need to enable Javascript to run this app.</p>
             </div>
-        </noscript> -->
+        </noscript>
         <main>
-            <section class="text-center col-md-12">
-                <h1 class="display-6"><em>A character generator for</em></h1>
-                <h2 class="display-4 fw-bold"><em>RONIN</em></h2>
-                <button onclick="generateRandomCharacter()" class="generator-button btn btn-danger fw-bold rounded-2 m-2 d-print-none">Click to commit Seppukku</button>
-            </section>
-            <hr>
-            <section class="col-12 font-monospace">
-                <p id="name" class="col-md-12"><strong><em>Name: </em></strong></p>
-                <p id="class" class="col-md-12"><strong><em>Class: </em></strong></p>
-                <p id="hp" class="col-md-6"><strong><em>HP: </em></strong></p>
-                <p id="virtues" class="col-md-6"><strong><em>Virtues: </em></strong></p>
-                <p id="honour" class="col-md-6"><strong><em>Honour: </em></strong></p>
-                <p id="tenets" class="col-md-6"><strong><em>Tenets: </em></strong></p>
-            </section>
-            <hr>
-            <section id="traits" class="col-md-6 font-monospace"></section>
-            <section id="classinfo" class="col-md-6 font-monospace"></section>
-            <section id="abilities" class="col-md-6 font-monospace"></section>
-            <section id="equipment" class="col-md-6 font-monospace"></section>
-            <section class="text-center col-md-12">
-                <a href="javascript:void(0);" onclick="window.print()" class="btn btn-primary fw-bold rounded-2 m-2 d-print-none">Print This One</a>
-            </section>
+            <div class="container-fluid">
+                <section class="text-center col-md-12">
+                    <h1 class="display-6"><em>A character generator for</em></h1>
+                    <h2 class="display-4 fw-bold"><em>RONIN</em></h2>
+                    <button onclick="generateRandomCharacter()" class="generator-button btn btn-danger fw-bold rounded-2 m-2 d-print-none">Click to commit Seppukku</button>
+                </section>
+                <hr>
+                <section class="col-12 font-monospace">
+                    <p id="name" class="col-md-12"><strong><em>Name: </em></strong></p>
+                    <p id="class" class="col-md-12"><strong><em>Class: </em></strong></p>
+                    <p id="hp" class="col-md-6"><strong><em>HP: </em></strong></p>
+                    <p id="virtues" class="col-md-6"><strong><em>Virtues: </em></strong></p>
+                    <p id="honour" class="col-md-6"><strong><em>Honour: </em></strong></p>
+                    <p id="tenets" class="col-md-6"><strong><em>Tenets: </em></strong></p>
+                </section>
+                <hr>
+                <section id="traits" class="col-md-6 font-monospace"></section>
+                <section id="classinfo" class="col-md-6 font-monospace"></section>
+                <section id="abilities" class="col-md-6 font-monospace"></section>
+                <section id="equipment" class="col-md-6 font-monospace"></section>
+                <section class="text-center col-md-12">
+                    <a href="javascript:void(0);" onclick="window.print()" class="btn btn-primary fw-bold rounded-2 m-2 d-print-none">Print This One</a>
+                </section>
+            </div>
         </main>
 
 
