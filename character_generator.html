@@ -51,8 +51,8 @@
                     <section id="equipment" class="col-md-6 font-monospace"></section>
                 </div>
                 <hr>
-                <section class="text-center col-md-12 text-white">
-                    <a href="javascript:void(0);" onclick="window.print()" class="btn btn-primary fw-bold rounded-2 m-2 d-print-none">Print This One</a>
+                <section class="text-center col-md-12 text-white d-print-none">
+                    <a href="javascript:void(0);" onclick="window.print()" class="btn btn-primary fw-bold rounded-2 m-2">Print This One</a>
                 </section>
             </div>
         </main>
@@ -86,9 +86,12 @@
     .generator-button {
         background-color: red;
     }
-
-    .small-font {
-        font-size:1em;
+    
+    @media print {
+        .small-font {
+            font-size:0.8em;
+        }
     }
+    
 
 </style>
