@@ -16,6 +16,8 @@ let classHP = {
     "Drunken Monk":8,
     "Bakuto":10,
     "Yamabushi":8,
+    "Wild Dancer":8,
+    "Sword Saint":8,
 };
 
 let classVirtues = {
@@ -27,6 +29,8 @@ let classVirtues = {
     "Drunken Monk":4,
     "Bakuto":4,
     "Yamabushi":4,
+    "Wild Dancer":2,
+    "Sword Saind":2,
 };
 
 let classHonour = {
@@ -38,17 +42,21 @@ let classHonour = {
     "Drunken Monk":-1,
     "Bakuto":1,
     "Yamabushi":1,
+    "Wild Dancer":-1,
+    "Sword Saint":1,
 };
 
 let classTenets = {
     "Forgotten Ronin":"The Ronin's Creed",
     "Erudite Samurai":"Bushido",
     "Corrupted Shinobi":"The Unseen Virtues",
-    "Reckless Sumo":"The Sumo’s Oath",
+    "Reckless Sumo":"The Sumo's Oath",
     "Onmyoji":"The Rules of the Divine",
     "Drunken Monk":"Noble Truths",
     "Bakuto":"The Gambler's Way",
     "Yamabushi":"The Yamabushi's Path",
+    "Wild Dancer":"The Dancer's Code",
+    "Sword Saint":"The Sword Saint's Discipline",
 };
 
 let classAbilities = {
@@ -61,6 +69,8 @@ let classAbilities = {
         "Drunken Monk":2,
         "Bakuto":1,
         "Yamabushi":1,
+        "Wild Dancer":-1,
+        "Sword Saint":2,
     },
     Spirit: {
         "Forgotten Ronin":-2,
@@ -71,6 +81,8 @@ let classAbilities = {
         "Drunken Monk":2,
         "Bakuto":1,
         "Yamabushi":2,
+        "Wild Dancer":2,
+        "Sword Saint":-1,
     },
     Vigour: {
         "Forgotten Ronin":2,
@@ -81,6 +93,8 @@ let classAbilities = {
         "Drunken Monk":1,
         "Bakuto":1,
         "Yamabushi":-1,
+        "Wild Dancer":2,
+        "Sword Saint":2,
     },
     Resilience: {
         "Forgotten Ronin":2,
@@ -91,6 +105,8 @@ let classAbilities = {
         "Drunken Monk":-2,
         "Bakuto":1,
         "Yamabushi":1,
+        "Wild Dancer":-2,
+        "Sword Saint":1,
     },
 };
 
@@ -103,6 +119,21 @@ let classTraits = {
     "Drunken Monk":['aloof', 'tranquil'],
     "Bakuto":['cunning', 'stupid'],
     "Yamabushi":['pretty', 'dumb'],
+    "Wild Dancer":['flowy', 'sleazy'],
+    "Sword Saint":['crafty', 'hardy'],
+};
+
+let classDescriptions = {
+    "Forgotten Ronin":"The Forgotten Ronin, a man without a master, he roams the land with his sword at his side and his honour as his guide. He's a samurai of the road, a warrior of the wilds, seeking fortune and adventure wherever they may be found. His skills are sharp, his heart is ashes, but he's a man on the outside looking in. He's not bound by the rules of society, nor is he burdened by its obligations. He's a lone wolf, a rebel, a force of nature. And when trouble comes to town, he's the one they call on to set things right.",
+    "Erudite Samurai":"The Erudite Samurai is an inquisitive one, with a thirst for knowledge that rivals their love for battle. They're the kind of warrior who can discuss poetry as deftly as they can swing a sword.They know that true Mastery of the Blade requires a deep understanding of the world around them. They use their intellect to gain the upper hand in battles of wit and diplomacy. A master of tactics and culture. In a world where brawn often reigns supreme, the erudite samurai is a rare and valuable gem, a warrior who values knowledge and wisdom as highly as strength and skill.",
+    "Corrupted Shinobi":"The Corrupted Shinobi, a scoundrel of the highest order, has forsaken all traditional honour. Instead, they use their stealth and guile to weave a web of deceit, assassinating their prey from the shadows. No lord or clan can control this wily fiend, for their only true master is their own greed. Their blades are sharp, their wits sharper, and their hearts as black as the night they stalk. They are the shadow that creeps up behind you, the serpent that slithers beneath your feet. Cross them at your own peril, for they are the Corrupted Shinobi, and their loyalty is to only themselves.",
+    "Reckless Sumo":"The Reckless Sumo, well, he's no prince charming, but a boulder among pebbles, stubborn and solid, carved out of raw muscle and grit. They say size is a hindrance, but not for these guys, it's their badge of honour, a testament to their might that ain't shaking for no one. They're schooled in that old sumo wrestling game, trading sword and shield for a chest full of thunder and palms that can uproot trees. They make their stand on the frontline, immovable, unshakeable, like a lighthouse in the tempest. These titans, they don't bank on the quick dance of the sword but the slow, painful endurance of the storm. The Sumo class is for those tough nuts who believe in standing firm, outmuscling the odds, and letting the world know they're not going down without a hell of a fight.",
+    "Onmyoji":"The Onmyoji, a conduit of the spiritual world who uses their powers to bend the very fabric of reality to their will. They are feared and shunned with their talk of dead spirits and otherworldly beings. They must be careful not to be consumed by their own greed and desires, for they know that there are spirits out there that would love nothing more than to drag them down into the abyss.They may work for the powerful, using their otherworldly knowledge to gain favour and influence. Or they may be outcasts, living in the shadows and using their powers to make a quick coin. They know the secrets of the dead and can communicate with the spirits that linger in this world. ",
+    "Drunken Monk":"The Drunken Monk, swaying and stumbling like a drunkard yet wielding the power of a raging storm. They are a master of Zen Buddhism and have honed their skills in the art of drunken fighting to a deadly level. Don't be fooled by their appearance, for they move with an otherworldly grace that belies their drunken state. These wandering monks often find themselves on a quest for enlightenment or may lend their services as bodyguards and enforcers to those who can afford them. With their combination of martial arts and spiritual insight, the Drunken Monk is a true master of the way of the warrior.",
+    "Bakuto":"The Bakuto, a crafty sort with a loaded dice and a silver tongue. They'll charm you with their words and bleed you dry with their cards. A master of deception, the Bakuto knows how to get what they want, be it gold or power, without getting their hands dirty. They dance with danger, walking the razor's edge between life and death, making deals and playing both sides. They are the underworld's puppet masters, pulling the strings of the criminal world with their slick moves and cold heart. The Bakuto's loyalty lies with themselves and their allies, but they may lend their talents to those who can pay the price. Watch your step, for if the Bakuto is playing, the game is rigged, and the house always wins.",
+    "Yamabushi":"The Yamabushi aren’t your run-of-the-mill warriors. No sir, they're a solitary bunch, cut from a different cloth, steeped in the quiet whispers of mountain trails and fog-shrouded peaks. They know the dance of Shugendō - a spiritual tango drawing its steps from Taoism, Shinto, Buddhism, and the raw poetry of the earth itself.They pull their power from the heart of the world, and there is nothing more potent than that. Healers, exorcists, drinkers of the divine, they weave their lives with threads of the ethereal, mixing the mystic with the martial like some potent brew. Now, the Yamabushi, they’re not your swordswinging, horse-riding types, no. They're your high-altitude monks, your mystics with mud-caked boots and stars in their eyes.",
+    "Wild Dancer":"The Wild Dancer, that's a character who's raw and reckless, a grim ballet of steel and gunpowder, twisting through the madness of battle like a half-crazed poet on a drunken payday. There's an art to their carnage, a rhythm to their mayhem. They're a heady mix of samurai discipline and wild, gunslinging abandon, turning every bloody skirmish into a theatrical spectacle.They're a swirling dervish of katana slashes and matchlock pistol blasts, dancing across the battlefield like it's the stage of some grand, grotesque opera. They wade through chaos with the finesse of a prima ballerina and the raw power of a rampaging bull. It's a dance of death, set to the rhythm of clashing steel and booming gunshots.",
+    "Sword Saint":"The Sword Saint - Not just any fencer, but the epitome of duelling mastery. With a blade that dances elegantly and strikes with deadly precision, their every move is a masterclass. Their footwork is fluid, their accuracy unmatched. A duelling legend, with a legacy of foes bested and a spirit that remains unyielding. In the dance of steel, theyre always a step ahead.",
 };
 
 let abilitiesRollValues = {
@@ -328,7 +359,11 @@ function generateRandomTraits() {
     const traitParagraph = document.createElement("p");
     traitParagraph.textContent = tempClassTraits;
 
+    const descriptionParagraph = document.createElement("p");
+    descriptionParagraph.textContent = classDescriptions[characterClass];
+
     traitsDiv.appendChild(nameParagraph);
     traitsDiv.appendChild(traitParagraph);
+    traitsDiv.appendChild(descriptionParagraph);
 }
 
