@@ -202,6 +202,7 @@ function generateRandomCharacter()
     this.generateTenets();
     this.generateRandomHP();
     this.generateRandomVirtues();
+    this.generateClassDescription();
     this.generateRandomTraits();
     // this.generateRandomClassInfo();
     // this.generateRandomAEquipment();
@@ -339,12 +340,14 @@ function generateRandomAbilities() {
     return finalAbilities;
 }
 
-function generateRandomTraits() {
-    const traitsDiv = document.getElementById("traits");
-    traitsDiv.innerHTML = "";
+function generateClassDescription()
+{
+    const infoDiv = document.getElementById("classinfo");
+    infoDiv.innerHTML = "";
 
-    const randomTraitIndex = Math.floor(Math.random() * classTraits[characterClass].length);
-    const tempClassTraits = classTraits[characterClass][randomTraitIndex];
+    const descriptionParagraph = document.createElement("p");
+    descriptionParagraph.textContent = classDescriptions[characterClass];
+    descriptionParagraph.classList.add("col-md-12");
 
     const nameParagraph = document.createElement("p");
     nameParagraph.textContent = "You are: " + characterName;
@@ -356,15 +359,20 @@ function generateRandomTraits() {
     // Apply the random color as the background
     nameParagraph.style.backgroundColor = randomColor;
 
+    traitsDiv.appendChild(nameParagraph);
+    infoDiv.appendChild(descriptionParagraph);
+}
+
+function generateRandomTraits() {
+    const traitsDiv = document.getElementById("powers");
+    traitsDiv.innerHTML = "";
+
+    const randomTraitIndex = Math.floor(Math.random() * classTraits[characterClass].length);
+    const tempClassTraits = classTraits[characterClass][randomTraitIndex];
+
     const traitParagraph = document.createElement("p");
     traitParagraph.textContent = tempClassTraits;
 
-    const descriptionParagraph = document.createElement("p");
-    descriptionParagraph.textContent = classDescriptions[characterClass];
-    descriptionParagraph.classList.add("col-md-12");
-
-    traitsDiv.appendChild(nameParagraph);
     traitsDiv.appendChild(traitParagraph);
-    traitsDiv.appendChild(descriptionParagraph);
 }
 
