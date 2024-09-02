@@ -143,6 +143,21 @@ function rollDice(numDice, numOfSides) {
     return results;
 }
 
+function generateRandomColorFromBasicColors() {
+    const basicColors = [
+      "#FF0000", // Red
+      "#006400 ", // Dark Green
+      "#000080", // Dark Blue
+      "#BDB76B ", // Dark Yellow
+      "#800080 " // Purple
+    ];
+  
+    let randomColor;
+    randomColor = basicColors[Math.floor(Math.random() * basicColors.length)];
+
+    return randomColor;
+  }
+
 function generateRandomCharacter()
 {
     this.generateRandomName();
@@ -206,7 +221,7 @@ function generateRandomName()
     const name = names[randomNameIndex]+ " " + surnames[randomSurnameIndex] + ", " + characterNickName+"  ";
 
     const nameDiv = document.getElementById("name");
-    nameDiv.textContent = "Name: " + name+"  ";
+    nameDiv.textContent = "Name " + name+"  ";
 
     const titleDiv = document.getElementById("title");
     titleDiv.textContent = "Ronin - " + characterName;
@@ -220,7 +235,7 @@ function generateRandomClass()
     const className = classes[randomClassIndex];
 
     const classDiv = document.getElementById("class");
-    classDiv.textContent = "Class: " + className+"  ";
+    classDiv.textContent = "Class " + className+"  ";
 
     characterClass = className;
 }
@@ -238,7 +253,7 @@ function generateRandomHP()
     if (randomNumberToReturn <= 0)
         randomNumberToReturn = 1;
 
-    hpDiv.textContent = "HP: "+randomNumberToReturn+"/"+randomNumberToReturn;
+    hpDiv.textContent = "HP "+randomNumberToReturn+"/"+randomNumberToReturn;
 }
 
 function generateRandomVirtues()
@@ -247,31 +262,25 @@ function generateRandomVirtues()
     virtuesDiv.innerHTML = "";
 
     const randomNumber = Math.floor(Math.random() * classVirtues[characterClass]) + 1; // Generate a random number between 1 and 100
-    virtuesDiv.textContent = "Virtues: "+randomNumber+"  ";
+    virtuesDiv.textContent = "Virtues "+randomNumber+"  ";
 }
 
-function generateRandomTraits() {
-    const traitsDiv = document.getElementById("traits");
-    traitsDiv.innerHTML = "";
+function generateHonour()
+{
+    const honourDiv = document.getElementById("honour");
+    honourDiv.innerHTML = "";
 
-    const randomTraitIndex = Math.floor(Math.random() * classTraits[characterClass].length);
-    const tempClassTraits = classTraits[characterClass][randomTraitIndex];
+    const honorNumber = classHonour[characterClass];
+    honourDiv.textContent = "Honour "+honorNumber+"  ";
+}
 
-    const nameParagraph = document.createElement("p");
-    nameParagraph.textContent = "You are: " + characterName;
-    nameParagraph.classList.add("fw-bold");
-    nameParagraph.classList.add("col-md-6");
+function generateTenets()
+{
+    const tenetsDiv = document.getElementById("tenets");
+    tenetsDiv.innerHTML = "";
 
-    // Generate a random RGB color
-    const randomColor = this.generateRandomColorFromBasicColors();
-    // Apply the random color as the background
-    nameParagraph.style.backgroundColor = randomColor;
-
-    const traitParagraph = document.createElement("p");
-    traitParagraph.textContent = tempClassTraits;
-
-    traitsDiv.appendChild(nameParagraph);
-    traitsDiv.appendChild(traitParagraph);
+    const tenetsNumber = classTenets[characterClass];
+    tenetsDiv.textContent = "Tenets "+tenetsNumber+"  ";
 }
 
 function generateRandomAbilities() {
@@ -302,36 +311,27 @@ function generateRandomAbilities() {
     return finalAbilities;
 }
 
-function generateHonour()
-{
-    const honourDiv = document.getElementById("honour");
-    honourDiv.innerHTML = "";
+function generateRandomTraits() {
+    const traitsDiv = document.getElementById("traits");
+    traitsDiv.innerHTML = "";
 
-    const honorNumber = classHonour[characterClass];
-    honourDiv.textContent = "Honour: "+honorNumber+"  ";
+    const randomTraitIndex = Math.floor(Math.random() * classTraits[characterClass].length);
+    const tempClassTraits = classTraits[characterClass][randomTraitIndex];
+
+    const nameParagraph = document.createElement("p");
+    nameParagraph.textContent = "You are: " + characterName;
+    nameParagraph.classList.add("fw-bold");
+    nameParagraph.classList.add("col-md-6");
+
+    // Generate a random RGB color
+    const randomColor = this.generateRandomColorFromBasicColors();
+    // Apply the random color as the background
+    nameParagraph.style.backgroundColor = randomColor;
+
+    const traitParagraph = document.createElement("p");
+    traitParagraph.textContent = tempClassTraits;
+
+    traitsDiv.appendChild(nameParagraph);
+    traitsDiv.appendChild(traitParagraph);
 }
-
-function generateTenets()
-{
-    const tenetsDiv = document.getElementById("tenets");
-    tenetsDiv.innerHTML = "";
-
-    const tenetsNumber = classTenets[characterClass];
-    tenetsDiv.textContent = "Tenets: "+tenetsNumber+"  ";
-}
-
-function generateRandomColorFromBasicColors() {
-    const basicColors = [
-      "#FF0000", // Red
-      "#006400 ", // Dark Green
-      "#000080", // Dark Blue
-      "#BDB76B ", // Dark Yellow
-      "#800080 " // Purple
-    ];
-  
-    let randomColor;
-    randomColor = basicColors[Math.floor(Math.random() * basicColors.length)];
-
-    return randomColor;
-  }
 
