@@ -218,10 +218,10 @@ function generateRandomName()
     characterNickName = nicknames[randomNickNameIndex];
     characterName = names[randomNameIndex]+ " " + surnames[randomSurnameIndex];
 
-    const name = names[randomNameIndex]+ " " + surnames[randomSurnameIndex] + ", " + characterNickName+"  ";
+    const name = names[randomNameIndex]+ " " + surnames[randomSurnameIndex] + ', ' + characterNickName+'  ';
 
     const nameDiv = document.getElementById("name");
-    nameDiv.textContent = "Name " + name+"  ";
+    nameDiv.innerHTML = '<strong><em>Name:</em></strong> ' + name+'  ';
 
     const titleDiv = document.getElementById("title");
     titleDiv.textContent = "Ronin - " + characterName;
@@ -235,7 +235,7 @@ function generateRandomClass()
     const className = classes[randomClassIndex];
 
     const classDiv = document.getElementById("class");
-    classDiv.textContent = "Class " + className+"  ";
+    classDiv.innerHTML = '<strong><em>Class:</em></strong> ' + className+'  ';
 
     characterClass = className;
 }
@@ -253,7 +253,7 @@ function generateRandomHP()
     if (randomNumberToReturn <= 0)
         randomNumberToReturn = 1;
 
-    hpDiv.textContent = "HP "+randomNumberToReturn+"/"+randomNumberToReturn;
+    hpDiv.innerHTML  = '<strong><em>HP:</em></strong> '+randomNumberToReturn+"/"+randomNumberToReturn;
 }
 
 function generateRandomVirtues()
@@ -262,7 +262,7 @@ function generateRandomVirtues()
     virtuesDiv.innerHTML = "";
 
     const randomNumber = Math.floor(Math.random() * classVirtues[characterClass]) + 1; // Generate a random number between 1 and 100
-    virtuesDiv.textContent = "Virtues "+randomNumber+"  ";
+    virtuesDiv.innerHTML  = '<strong><em>Virtues:</em></strong> '+randomNumber+'  ';
 }
 
 function generateHonour()
@@ -271,7 +271,7 @@ function generateHonour()
     honourDiv.innerHTML = "";
 
     const honorNumber = classHonour[characterClass];
-    honourDiv.textContent = "Honour "+honorNumber+"  ";
+    honourDiv.innerHTML = '<strong><em>Honour:</em></strong> '+honorNumber+'  ';
 }
 
 function generateTenets()
@@ -280,7 +280,7 @@ function generateTenets()
     tenetsDiv.innerHTML = "";
 
     const tenetsNumber = classTenets[characterClass];
-    tenetsDiv.textContent = "Tenets "+tenetsNumber+"  ";
+    tenetsDiv.innerHTML = '<strong><em>Tenets:</em></strong> '+tenetsNumber+'  ';
 }
 
 function generateRandomAbilities() {
@@ -302,7 +302,7 @@ function generateRandomAbilities() {
         const finalAbilityValue = abilitiesRollValues[randomNumber];
 
         const abilityParagraph = document.createElement("p");
-        abilityParagraph.textContent = abilityNames[i]+": "+finalAbilityValue+"  ";
+        abilityParagraph.innerHTML = '<strong><em>'+abilityNames[i]+'</em></strong>: '+finalAbilityValue+'  ';
 
         abilityDiv.appendChild(abilityParagraph);
         finalAbilities.push(finalAbilityValue);
