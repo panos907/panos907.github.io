@@ -1,0 +1,82 @@
+<html lang="en" data-bs-theme="dark">
+    <head id="header">
+        <script>
+          fetch('partials/header.html')
+              .then(response => response.text())
+              .then(data => {
+                  document.getElementById('header').innerHTML = data;
+              });
+        </script>
+        <script src="generator.js"></script>
+        <title id="title">Ronin Generator</title>
+      </head>
+    <body class="generator-root container-fluid">
+        <noscript>
+            <div class="bg-danger text-white">
+                <p>I'm sorry, Samurai-sama, but you need to enable Javascript to run this app.</p>
+            </div>
+        </noscript>
+        <div>
+            <div class="text-center col-12">
+                <h1 class="display-6"><em>A character generator for</em></h1>
+                <h2 class="display-4 fw-bold"><em>RONIN</em></h2>
+                <button onclick="generateRandomCharacter()" class="generator-button btn btn-danger fw-bold rounded-2 m-2 d-print-none">Click to commit Seppukku</button>
+            </div>
+            <hr>
+            <div class="col-12 font-monospace">
+                <p id="name">Name: </p>
+                <p id="class">Class: </p>
+                <p id="hp">HP: </p>
+                <p id="virtues">Virtues: </p>
+                <p id="honour">Honour: </p>
+                <p id="tenets">Tenets: </p>
+            </div>
+            <hr>
+            <div id="traits" class="col-md-6 font-monospace"></div>
+            <div id="classinfo" class="col-md-6 font-monospace"></div>
+            <div id="abilities" class="col-md-6 font-monospace"></div>
+            <div id="equipment" class="col-md-6 font-monospace"></div>
+        </div>  
+        <a href="javascript:void(0);" onclick="window.print()" class="btn btn-primary fw-bold rounded-2 m-2 d-print-none">Print This One</a>
+    
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    </body>
+
+    <footer class="footer text-light py-3">
+        <div class="container text-center">
+          <p>RONIN is © of Slightly Reckless Games. App made by Panagiotis Chatzigeorgiou (panos907)</p>
+        </div>
+    </footer>
+
+</html>
+
+<style>
+
+    p {
+        font-family: Consolas, monospace;
+        color: white;
+    }
+
+    h1 {
+        font-family: Consolas, monospace;
+        color: white;
+    }
+
+    h2 {
+        font-family: Consolas, monospace;
+        color: white;
+    }
+
+    .generator-button {
+        background-color: red;
+        color: white;
+    }
+
+    .generator-root {
+        background-color: black;
+        padding-left:0.5em;
+        padding-right:0.5em;
+        margin-left:0.5em;
+    }
+
+</style>
