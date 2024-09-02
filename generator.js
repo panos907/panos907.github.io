@@ -415,7 +415,6 @@ function generateEquipment() {
     equipmentDiv.innerHTML = "";
 
     const tempEquipment = classEquipment[characterClass];
-    console.log(tempEquipment);
 
     for (let i = 0; i < tempEquipment.length; i++) {
         const traitParagraph = document.createElement("p");
