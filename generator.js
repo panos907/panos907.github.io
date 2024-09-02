@@ -10,39 +10,52 @@ let characterResilience = -10;
 let classHP = {
     "Forgotten Ronin":8,
     "Erudite Samurai":8,
-    "Corrupted Shinobi":8,
-    "Reckless Sumo":12,
-    "Onmyoji":8,
     "Drunken Monk":8,
+    "Corrupted Shinobi":8,
+    "Onmyoji":8,
     "Bakuto":10,
     "Yamabushi":8,
     "Wild Dancer":8,
+    "Reckless Sumo":12,
     "Sword Saint":8,
 };
 
 let classVirtues = {
     "Forgotten Ronin":2,
     "Erudite Samurai":3,
-    "Corrupted Shinobi":2,
-    "Reckless Sumo":3,
-    "Onmyoji":4,
     "Drunken Monk":4,
+    "Corrupted Shinobi":2,
+    "Onmyoji":4,
     "Bakuto":4,
     "Yamabushi":4,
     "Wild Dancer":2,
+    "Reckless Sumo":3,
     "Sword Saind":2,
 };
 
 let classHonour = {
     "Forgotten Ronin":-1,
     "Erudite Samurai":2,
-    "Corrupted Shinobi":-2,
-    "Reckless Sumo":1,
-    "Onmyoji":0,
     "Drunken Monk":-1,
+    "Corrupted Shinobi":-2,
+    "Onmyoji":0,
     "Bakuto":1,
     "Yamabushi":1,
+    "Reckless Sumo":1,
     "Wild Dancer":-1,
+    "Sword Saint":1,
+};
+
+let classMoney = {
+    "Forgotten Ronin":1,
+    "Erudite Samurai":3,
+    "Drunken Monk":1,
+    "Corrupted Shinobi":2,
+    "Onmyoji":1,
+    "Bakuto":3,
+    "Yamabushi":1,
+    "Wild Dancer":1,
+    "Reckless Sumo":1,
     "Sword Saint":1,
 };
 
@@ -112,10 +125,10 @@ let classAbilities = {
 
 let classTraits = {
     "Forgotten Ronin":['drunkard', 'sober'],
+    "Erudite Samurai":['drunkard', 'sober'],
     "Corrupted Shinobi":['stealthy', 'clumsy'],
     "Reckless Sumo":['fat', 'slim'],
     "Onmyoji":['wise', 'fool'],
-    "Erudite Samurai":['drunkard', 'sober'],
     "Drunken Monk":['aloof', 'tranquil'],
     "Bakuto":['cunning', 'stupid'],
     "Yamabushi":['pretty', 'dumb'],
@@ -131,10 +144,91 @@ let classDescriptions = {
     "Onmyoji":"The Onmyoji, a conduit of the spiritual world who uses their powers to bend the very fabric of reality to their will. They are feared and shunned with their talk of dead spirits and otherworldly beings. They must be careful not to be consumed by their own greed and desires, for they know that there are spirits out there that would love nothing more than to drag them down into the abyss.They may work for the powerful, using their otherworldly knowledge to gain favour and influence. Or they may be outcasts, living in the shadows and using their powers to make a quick coin. They know the secrets of the dead and can communicate with the spirits that linger in this world. ",
     "Drunken Monk":"The Drunken Monk, swaying and stumbling like a drunkard yet wielding the power of a raging storm. They are a master of Zen Buddhism and have honed their skills in the art of drunken fighting to a deadly level. Don't be fooled by their appearance, for they move with an otherworldly grace that belies their drunken state. These wandering monks often find themselves on a quest for enlightenment or may lend their services as bodyguards and enforcers to those who can afford them. With their combination of martial arts and spiritual insight, the Drunken Monk is a true master of the way of the warrior.",
     "Bakuto":"The Bakuto, a crafty sort with a loaded dice and a silver tongue. They'll charm you with their words and bleed you dry with their cards. A master of deception, the Bakuto knows how to get what they want, be it gold or power, without getting their hands dirty. They dance with danger, walking the razor's edge between life and death, making deals and playing both sides. They are the underworld's puppet masters, pulling the strings of the criminal world with their slick moves and cold heart. The Bakuto's loyalty lies with themselves and their allies, but they may lend their talents to those who can pay the price. Watch your step, for if the Bakuto is playing, the game is rigged, and the house always wins.",
-    "Yamabushi":"The Yamabushi aren’t your run-of-the-mill warriors. No sir, they're a solitary bunch, cut from a different cloth, steeped in the quiet whispers of mountain trails and fog-shrouded peaks. They know the dance of Shugendō - a spiritual tango drawing its steps from Taoism, Shinto, Buddhism, and the raw poetry of the earth itself.They pull their power from the heart of the world, and there is nothing more potent than that. Healers, exorcists, drinkers of the divine, they weave their lives with threads of the ethereal, mixing the mystic with the martial like some potent brew. Now, the Yamabushi, they’re not your swordswinging, horse-riding types, no. They're your high-altitude monks, your mystics with mud-caked boots and stars in their eyes.",
+    "Yamabushi":"The Yamabushi aren\'t your run-of-the-mill warriors. No sir, they're a solitary bunch, cut from a different cloth, steeped in the quiet whispers of mountain trails and fog-shrouded peaks. They know the dance of Shugendō - a spiritual tango drawing its steps from Taoism, Shinto, Buddhism, and the raw poetry of the earth itself.They pull their power from the heart of the world, and there is nothing more potent than that. Healers, exorcists, drinkers of the divine, they weave their lives with threads of the ethereal, mixing the mystic with the martial like some potent brew. Now, the Yamabushi, they\'re not your swordswinging, horse-riding types, no. They're your high-altitude monks, your mystics with mud-caked boots and stars in their eyes.",
     "Wild Dancer":"The Wild Dancer, that's a character who's raw and reckless, a grim ballet of steel and gunpowder, twisting through the madness of battle like a half-crazed poet on a drunken payday. There's an art to their carnage, a rhythm to their mayhem. They're a heady mix of samurai discipline and wild, gunslinging abandon, turning every bloody skirmish into a theatrical spectacle.They're a swirling dervish of katana slashes and matchlock pistol blasts, dancing across the battlefield like it's the stage of some grand, grotesque opera. They wade through chaos with the finesse of a prima ballerina and the raw power of a rampaging bull. It's a dance of death, set to the rhythm of clashing steel and booming gunshots.",
     "Sword Saint":"The Sword Saint - Not just any fencer, but the epitome of duelling mastery. With a blade that dances elegantly and strikes with deadly precision, their every move is a masterclass. Their footwork is fluid, their accuracy unmatched. A duelling legend, with a legacy of foes bested and a spirit that remains unyielding. In the dance of steel, theyre always a step ahead.",
 };
+
+let classPowers = {
+    "Forgotten Ronin": {
+        0: 'Ronin\'s Resolve. The Forgotten Ronin can draw upon their inner strength and resolve in times of great need. Once per day, they may roll d6 and add the result to any one roll they make.' ,
+        1: 'Sword Master. A master of the blade, wielding their sword with deadly precision. They may add their Vigor modifier to damage rolls made with melee weapons. ',
+        2: 'Masterless. If the Forgotten Rōnin\'s honour score is below 10 they may Parry at DR12.', 
+        3: 'Bushi\'s Blade. When both the Rōnin and an enemy are wielding a Katana or Wakizashi the attack and defence DR is lowered by 2.',
+        4: 'Protector. The Forgotten Ronin is fiercely protective of their allies and will go to great lengths to defend them. Once per combat, they may protect an ally, adding +2 to their defence against all attacks until the end of the Ronin\'s next turn. ',
+        5: 'Haunted Blade. A cursed blade that whispers to them in moments of stress. Once per combat, the Ronin can choose to make a sacrifice to the blade, granting it power for a single strike. The sacrifice can be anything from losing d4 HP to discarding an important item. The next time the Ronin attacks with the blade, they roll twice and take the higher roll, the strike deals an extra d8 damage. However, after the strike, the blade becomes uncontrollable and attacks a random target, including the Rōnin or their allies, until the end of the Ronin\'s next turn. '
+    },
+    "Erudite Samurai": {
+        0: 'Scholarly Training. The Erudite Samurai has received extensive training in the arts of literature, philosophy, and the sciences. If in honourable standing (above 10 Honour) they may add +4 to a damage roll once per day.',
+        1: '',
+        2: '', 
+        3: '',
+        4: '',
+        5: ''
+    },
+    "Drunken Monk": {
+        0: '',
+        1: '',
+        2: '', 
+        3: '',
+        4: '',
+        5: ''
+    },
+}
+
+let classEquipment = {
+    "Forgotten Ronin": {
+        0: 'A worn but serviceable katana (d8 damage)' ,
+        1: 'A set of traveling clothes',
+        2: 'A letter of introduction (can be used to gain an audience with a local lord or official)',
+        3: 'A straw hat', 
+    },
+    "Erudite Samurai": {
+        0: 'A fine Katana (d10 damage)',
+        1: 'A Wakizashi (d6 damage)',
+        2: 'A set of sturdy armour (tier 2)', 
+        3: 'A collection of books and papers', 
+    },
+    "Drunken Monk": {
+        0: 'A set of monk\'s robes and sandals',
+        1: 'A gourd of sake',
+        2: 'A set of brass knuckles (d4 damage)', 
+    },
+    "Corrupted Shinobi": {
+        0: 'A set of dark, unremarkable clothing',
+        1: 'A pair of matched kusarigama (d6 damage, melee + ranged)',
+        2: '10 Shuriken (d4 Damage)', 
+        3: 'A small vial of poison (d6 uses, d4 damage for d4 rounds)', 
+    },
+    "Onmyoji": {
+        0: 'A set of robes and talismans',
+        1: 'A random Unseen Text and Shintai Text',
+        2: 'A Kiseru, a metal smoking pipe used as a makeshift weapon (d4 damage)',
+    },
+    "Bakuto": {
+        0: 'A set of stylish, flamboyant clothing',
+        1: 'A tanto (d4 damage)',
+        2: 'A set of loaded dice and marked cards.',
+    },
+    "Yamabushi": {
+        0: 'Robes and sash adorned with pom-poms',
+        1: 'A bo staff (d6 damage)',
+        2: 'A random Unseen Text.',
+    },
+    "Wild Dancer": {
+        0: 'A flashy, decorative kimono',
+        1: 'A Katana (d8 damage)',
+        2: 'A Tanegashima with Spirit+5 Bullets (d8 damage)',
+    },
+    "Reckless Sumo": {
+        0: 'Traditional Sumo clothing',
+        1: 'Hand Chalk (d8 damage)',
+    },
+    "Sword Saint": {
+        0: 'A set of worn armour (tier 3)',
+        1: 'Odachi (d10 damage)',
+    },
+}
 
 let abilitiesRollValues = {
     1: -3,
@@ -204,6 +298,7 @@ function generateRandomCharacter()
     this.generateRandomVirtues();
     this.generateClassDescription();
     this.generateRandomTraits();
+    this.generateEquipment();
     // this.generateRandomClassInfo();
     // this.generateRandomAEquipment();
 }
@@ -313,6 +408,21 @@ function generateTenets()
 
     const tenetsNumber = classTenets[characterClass];
     tenetsDiv.innerHTML = '<strong><em>Tenets:</em></strong> '+tenetsNumber+'  ';
+}
+
+function generateEquipment() {
+    const equipmentDiv = document.getElementById("equipment");
+    equipmentDiv.innerHTML = "";
+
+    const tempEquipment = classEquipment[characterClass];
+    console.log(tempEquipment);
+
+    for (let i = 0; i < tempEquipment.length; i++) {
+        const traitParagraph = document.createElement("p");
+        traitParagraph.textContent = tempEquipment[i];
+
+        equipmentDiv.appendChild(traitParagraph);
+    }
 }
 
 function generateRandomAbilities() {
