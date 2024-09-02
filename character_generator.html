@@ -9,7 +9,7 @@
         <script src="generator.js"></script>
         <title id="title">Ronin Generator</title>
     </head>
-    <body>
+    <body onload="generateRandomCharacter()">
         <header id="menu" class="d-print-none">
             <script>
               fetch('partials/menu.html')
@@ -86,7 +86,7 @@
     .generator-button {
         background-color: red;
     }
-    
+
     @media print {
         body {
             margin: 0.1em; 
