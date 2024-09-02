@@ -344,6 +344,7 @@ function generateRandomCharacter()
 {
     this.generateRandomName();
     this.generateRandomClass();
+    this.generateClassDescription();
     var abilities = this.generateRandomAbilities();
     characterSwiftness = abilities[0];
     characterSpirit = abilities[1];
@@ -353,7 +354,6 @@ function generateRandomCharacter()
     this.generateRandomPower();
     this.generateHonour();
     this.generateTenets();
-    this.generateClassDescription();
     this.generateEquipment();
     this.generateRandomVirtues();
     // this.generateRandomClassInfo();
@@ -470,15 +470,8 @@ function generateTenets()
 function generateEquipment() {
     const equipmentDiv = document.getElementById("equipment");
     equipmentDiv.innerHTML = "";
-
-    const titleParagraph = document.createElement("p");
-    titleParagraph.textContent = "Equipment";
-    titleParagraph.classList.add("fw-bold");
-    titleParagraph.classList.add("col-md-12");
-    // Apply the random color we generated as the background
-    titleParagraph.style.backgroundColor = randomColor;
-
-    equipmentDiv.appendChild(titleParagraph);
+    
+    equipmentDiv.appendChild(this.generateColoredTitle('Equipment'));
 
     const tempEquipment = classEquipment[characterClass];
     const equipmentNumber = Object.keys(tempEquipment).length;
@@ -488,6 +481,7 @@ function generateEquipment() {
     for (let i = 0; i < equipmentNumber; i++) {
         const equipmentItem = document.createElement("li");
         equipmentItem.textContent = tempEquipment[i];
+        equipmentItem.classList.add("small-font");
 
         equipmentList.appendChild(equipmentItem);
     }
@@ -515,6 +509,8 @@ function generateRandomAbilities() {
     const abilityDiv = document.getElementById("abilities");
     abilityDiv.innerHTML = "";
 
+    abilityDiv.appendChild(this.generateColoredTitle('Abilities'));
+
     const finalAbilities = [];
     const abilityNames = ['Swiftness', 'Spirit', 'Vigour', 'Resilience'];
 
@@ -527,6 +523,7 @@ function generateRandomAbilities() {
         const finalAbilityValue = abilitiesRollValues[randomNumber];
 
         const abilityParagraph = document.createElement("p");
+        abilityParagraph.classList.add("small-font");
         abilityParagraph.innerHTML = '<strong><em>'+abilityNames[i]+'</em></strong>: '+finalAbilityValue+'  ';
 
         abilityDiv.appendChild(abilityParagraph);
@@ -540,22 +537,14 @@ function generateClassDescription()
 {
     const infoDiv = document.getElementById("classinfo");
     infoDiv.innerHTML = "";
-
-    const nameParagraph = document.createElement("p");
-    nameParagraph.textContent = "You are: " + characterName;
-    nameParagraph.classList.add("fw-bold");
-    nameParagraph.classList.add("col-md-12");
-
-    // Generate a random RGB color
     randomColor = this.generateRandomColorFromBasicColors();
-    // Apply the random color as the background
-    nameParagraph.style.backgroundColor = randomColor;
 
-    infoDiv.appendChild(nameParagraph);
+    infoDiv.appendChild(this.generateColoredTitle("You are: " + characterName));
 
     const descriptionParagraph = document.createElement("p");
     descriptionParagraph.textContent = classDescriptions[characterClass];
     descriptionParagraph.classList.add("col-md-12");
+    descriptionParagraph.classList.add("small-font");
 
     infoDiv.appendChild(descriptionParagraph);
 }
@@ -564,13 +553,27 @@ function generateRandomPower() {
     const powersDiv = document.getElementById("powers");
     powersDiv.innerHTML = "";
 
+    powersDiv.appendChild(this.generateColoredTitle("Powers"));
+
     const classPowersObj = classPowers[characterClass];
     const powerCount = Object.keys(classPowersObj).length;
     const randomIndex = Math.floor(Math.random() * powerCount);
 
     const powerParagraph = document.createElement("p");
+    powerParagraph.classList.add("small-font");
     powerParagraph.textContent = classPowersObj[randomIndex];
 
     powersDiv.appendChild(powerParagraph);
 }
 
+function generateColoredTitle(title)
+{
+    const titleParagraph = document.createElement("p");
+    titleParagraph.textContent = title;
+    titleParagraph.classList.add("fw-bold");
+    titleParagraph.classList.add("col-md-12");
+    // Apply the random color we generated as the background
+    titleParagraph.style.backgroundColor = randomColor;
+
+    return titleParagraph;
+}
