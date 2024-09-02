@@ -568,6 +568,8 @@ function generateColoredTitle(title)
     titleParagraph.textContent = title;
     titleParagraph.classList.add("fw-bold");
     titleParagraph.classList.add("col-md-12");
+    titleParagraph.classList.add("rounded-2");
+    titleParagraph.classList.add("p-1");
     // Apply the random color we generated as the background
     titleParagraph.style.backgroundColor = randomColor;
 
