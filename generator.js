@@ -359,13 +359,13 @@ function generateClassDescription()
     // Apply the random color as the background
     nameParagraph.style.backgroundColor = randomColor;
 
-    traitsDiv.appendChild(nameParagraph);
+    infoDiv.appendChild(nameParagraph);
     infoDiv.appendChild(descriptionParagraph);
 }
 
 function generateRandomTraits() {
-    const traitsDiv = document.getElementById("powers");
-    traitsDiv.innerHTML = "";
+    const powersDiv = document.getElementById("powers");
+    powersDiv.innerHTML = "";
 
     const randomTraitIndex = Math.floor(Math.random() * classTraits[characterClass].length);
     const tempClassTraits = classTraits[characterClass][randomTraitIndex];
@@ -373,6 +373,6 @@ function generateRandomTraits() {
     const traitParagraph = document.createElement("p");
     traitParagraph.textContent = tempClassTraits;
 
-    traitsDiv.appendChild(traitParagraph);
+    powersDiv.appendChild(traitParagraph);
 }
 
