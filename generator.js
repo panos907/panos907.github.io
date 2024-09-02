@@ -327,11 +327,11 @@ function rollDice(numDice, numOfSides) {
 
 function generateRandomColorFromBasicColors() {
     const basicColors = [
-      "#FF0000", // Red
+      "#8B0000", // Dark Red
       "#006400 ", // Dark Green
       "#000080", // Dark Blue
       "#BDB76B ", // Dark Yellow
-      "#800080 " // Purple
+      "#800080 " // Dark Purple
     ];
   
     let randomColor;
