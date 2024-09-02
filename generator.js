@@ -6,6 +6,7 @@ let characterVigour = -10;
 let characterSpirit = -10;
 let characterSwiftness = -10;
 let characterResilience = -10;
+let randomColor;
 
 let classHP = {
     "Forgotten Ronin":8,
@@ -414,14 +415,28 @@ function generateEquipment() {
     const equipmentDiv = document.getElementById("equipment");
     equipmentDiv.innerHTML = "";
 
-    const tempEquipment = classEquipment[characterClass];
+    const titleParagraph = document.createElement("p");
+    titleParagraph.textContent = "Equipment";
+    titleParagraph.classList.add("fw-bold");
+    titleParagraph.classList.add("col-md-12");
+    // Apply the random color we generated as the background
+    titleParagraph.style.backgroundColor = randomColor;
 
-    for (let i = 0; i < tempEquipment.length; i++) {
-        const traitParagraph = document.createElement("p");
+    equipmentDiv.appendChild(titleParagraph);
+
+    const tempEquipment = classEquipment[characterClass];
+    const equipmentNumber = Object.keys(tempEquipment).length;
+
+    const equipmentList = document.createElement("ul");
+
+    for (let i = 0; i < equipmentNumber; i++) {
+        const traitParagraph = document.createElement("li");
         traitParagraph.textContent = tempEquipment[i];
 
-        equipmentDiv.appendChild(traitParagraph);
+        equipmentList.appendChild(traitParagraph);
     }
+
+    equipmentDiv.appendChild(equipmentList);
 }
 
 function generateRandomAbilities() {
@@ -454,21 +469,22 @@ function generateClassDescription()
     const infoDiv = document.getElementById("classinfo");
     infoDiv.innerHTML = "";
 
-    const descriptionParagraph = document.createElement("p");
-    descriptionParagraph.textContent = classDescriptions[characterClass];
-    descriptionParagraph.classList.add("col-md-12");
-
     const nameParagraph = document.createElement("p");
     nameParagraph.textContent = "You are: " + characterName;
     nameParagraph.classList.add("fw-bold");
-    nameParagraph.classList.add("col-md-6");
+    nameParagraph.classList.add("col-md-12");
 
     // Generate a random RGB color
-    const randomColor = this.generateRandomColorFromBasicColors();
+    randomColor = this.generateRandomColorFromBasicColors();
     // Apply the random color as the background
     nameParagraph.style.backgroundColor = randomColor;
 
     infoDiv.appendChild(nameParagraph);
+
+    const descriptionParagraph = document.createElement("p");
+    descriptionParagraph.textContent = classDescriptions[characterClass];
+    descriptionParagraph.classList.add("col-md-12");
+
     infoDiv.appendChild(descriptionParagraph);
 }
 
