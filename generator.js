@@ -361,6 +361,7 @@ function generateRandomTraits() {
 
     const descriptionParagraph = document.createElement("p");
     descriptionParagraph.textContent = classDescriptions[characterClass];
+    descriptionParagraph.classList.add("col-md-6");
 
     traitsDiv.appendChild(nameParagraph);
     traitsDiv.appendChild(traitParagraph);
