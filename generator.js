@@ -31,7 +31,7 @@ let classVirtues = {
     "Yamabushi":4,
     "Wild Dancer":2,
     "Reckless Sumo":3,
-    "Sword Saind":2,
+    "Sword Saint":2,
 };
 
 let classHonour = {
@@ -161,19 +161,75 @@ let classPowers = {
     },
     "Erudite Samurai": {
         0: 'Scholarly Training. The Erudite Samurai has received extensive training in the arts of literature, philosophy, and the sciences. If in honourable standing (above 10 Honour) they may add +4 to a damage roll once per day.',
-        1: '',
-        2: '', 
-        3: '',
-        4: '',
-        5: ''
+        1: 'Philosophy of War. A deep understanding of the nature of conflict allows them to predict their enemies\' movements and plan accordingly. Once per combat, the Erudite Samurai can predict the next move of their opponent and gain a +2 bonus to their attack roll against that opponent. This ability can only be used if they have had at least one round to observe their opponent\'s fighting style.',
+        2: 'Tactical Genius. A master of strategy and tactics. They may use their honour score if in honourable standing (Honour 10 or above) to gain an advantage in combat, reducing the DR of a parry to DR12.', 
+        3: 'Precise Strike. Trained to strike with precision, finding the weaknesses in their opponents\' defences. Once per combat encounter, they may add a bonus to their attack roll equal to their Vigor modifier',
+        4: 'Intimidating Presence. Knowledge and training make them a formidable opponent. Once per day, they can intimidate their enemies, lowering the DR of their next attack by 4',
+        5: 'Zen Focus. Once per day, they can enter a state of zen-like focus, granting them a +1 bonus to all ability rolls for a duration of 10 minutes.'
     },
     "Drunken Monk": {
-        0: '',
-        1: '',
-        2: '', 
-        3: '',
-        4: '',
-        5: ''
+        0: 'Drunken Fist. The Drunken Monk fights with an unpredictable, fluid style that confounds opponents. They may add their Spirit modifier when making unarmed attacks.',
+        1: 'Five Finger Death Punch. Once per session, choose to strike an opponent with a precision unarmed attack that targets pressure points, dealing an additional 6d4 on a success and stunning the target',
+        2: 'Roadhouse. Make a brutal attack against an opponent\'s throat potentially killing them outright. Before making an attack, Test Spirit DR14. The attack requires the monk to make a successful attack and may only be used on a surprised opponent.', 
+        3: 'Flame Fist. Knuckles imbued with mystical fire, dealing 1d4 additional fire damage and potentially setting targets on fire. The Monk may only use this ability a limited number of times per day (Spirit +1).',
+        4: 'Sake Style. When the Drunken Monk is under the effects of alcohol, they gain a temporary +2 bonus to their melee attacks and defence.',
+        5: 'Drunken Master. Turn any item into a weapon, increasing the damage from a d4 to d6. Additionally, they have a +1 bonus to initiative rolls while drunk.'
+    },
+    "Corrupted Shinobi": {
+        0: 'Corrupted Techniques. Various forbidden techniques that allow manipulation of shadows and infliction of horrific curses. Once per day, they can choose one of the following effects: create a pool of darkness to hide in or curse an enemy to take ongoing damage (d4 per round).',
+        1: 'Poison Master. An expert in crafting and applying deadly poisons. They can create one dose of poison during a short rest. Poisons created this way deal an additional d4 damage.',
+        2: 'Smoke Screen. Once per day, the shinobi can create a dense cloud of smoke that provides cover and obscures vision. The smoke lasts for d6 rounds.', 
+        3: 'Betrayer\'s Blade. The Corrupted Shinobi carries a blade that is infused with dark magic and has the ability to absorb the life force of their enemies. Once per day, they can use this ability to deal an additional d8 damage and heal themselves for the same amount.',
+        4: 'Shadow Step. Teleport a short distance by stepping into the shadows. They can use this ability to teleport to a nearby shadowy area. The Shinobi may only use this ability a limited number of times per day (Swiftness +1).',
+        5: 'Dark Illusion. Once per combat, they can create an illusory double of themselves, causing enemies to attack the wrong target. When the Shinobi is hit, roll a d6; on an even number the enemy hits the Shinobi, on an odd number it hits the illusion causing it to disappear.'
+    },
+    "Onmyoji": {
+        0: 'Divining Rod. A rod carved from a sacred tree that vibrates and hums when danger is near. When in use, the rod will point in the direction of any nearby threats. Once per day, the Onmyoji can ask the rod a yes or no question and receive a clear answer.',
+        1: 'Ofuda Talisman. A sheet of paper inscribed with protective symbols that can be used to ward off evil spirits or curses. The talisman can be used once per day to protect against a single supernatural attack or effect. Test Spirit DR12 to activate the talisman and negate the effect.',
+        2: 'Spirit Beacon. Once per day, the Onmyoji can use their spirit energy to create a glowing beacon that draws enemies towards it. Test Spirit DR12. On a success, all enemies in the area are drawn to the beacon, distracting them from attacking the Onmyoji. On a fail, the beacon attracts all enemies to the Onmyoji. The beacon lasts for d6 rounds.', 
+        3: 'Shadow Binding. Attempt to bind an enemy to its shadow, rendering them immobile. To use this ability, Test Spirit DR12. On a success, the enemy is unable to move until the end of the Onmyoji\'s next turn. The Onmyoji may only use this ability a limited number of times per day (Spirit +1).',
+        4: 'Text of Exorcism. A text containing powerful incantations and symbols that can be used to banish evil spirits or demons. Once per day, the Onmyoji must Test Spirit DR14 to activate the text, which can banish a single spirit or demon (cannot be used in Yomi).',
+        5: 'Mirror of Reflection. A handheld mirror inscribed with runes that can be used to reflect hostile spells or attacks. Once per day, Test Spirit DR12 to use the mirror, reflecting any spell or attack directed at them. This deals the attack\’s damage back to the attacker.'
+    },
+    "Bakuto": {
+        0: 'Gambling Luck. Bakuto can sense when a game is rigged, or someone is cheating. They get +2 to Spirit tests when gambling or playing games of chance. They can also re-roll any one roll, once per day.',
+        1: 'Sucker Punch. Take a swing before they know what hit ‘em. Deal double damage with their first strike in a round.',
+        2: 'Dirty Tricks. Pull a fast one to gain the advantage. Once per combat, add +2 to any attack or defence roll by using deception, trickery or surprise.', 
+        3: 'Sleight of Hand. The art of pickpocketing, intimidation, and thievery. They get +4 to Spirit tests when attempting these actions.',
+        4: 'Double Strike. A master of dual wielding. Make two melee attacks in a single turn, but each attack suffers a -2 penalty to the attack roll.',
+        5: 'Feint. Choose to forgo their attack on their turn and instead Test Spirit DR10. If successful, the Bakuto gains a +4 to their next attack also dealing +4 damage.'
+    },
+    "Yamabushi": {
+        0: 'Mountain\'s Resolve. Once per day, draw upon the spiritual energy of the mountains to gain a +4 bonus to a roll.',
+        1: '. Spiritual Martial Arts. They are trained in a unique form of martial arts that channels spiritual energy. Once per combat, they may add their Spirit modifier to an attack or defence roll.',
+        2: 'Mountain\'s Fury. Once per combat, channel the wrath of the mountains into a powerful strike, dealing an additional d6 damage.', 
+        3: 'Ascetic\'s Wisdom. Your years of solitude have given the Yamabushi deep insight. Once per day, they may reroll a failed Spirit test.',
+        4: 'Divine Guidance. Call upon the spirits for guidance and protection. Once per day, the Yamabushi can perform a ritual to seek divine guidance, granting them a temporary bonus of +2 to one ability of their choice for the next hour.',
+        5: 'Mystic\'s Shield. Once per day, they may use their spiritual energy to shield themself from harm, reducing the damage of an incoming attack to zero.'
+    },
+    "Wild Dancer": {
+        0: 'Untamed Ferocity. Once per combat encounter, they may enter a state of untamed ferocity for a number of rounds equal to their Vigor modifier (minimum 1). While in this state, they gain a +1 bonus to both attack and defence rolls, and their matchlock pistol deals an additional d4 damage. However, they lose their ability to Parry during this time, as their focus is solely on aggressive combat.',
+        1: 'Two-Weapon Fighting. Skilled at fighting with a weapon in each hand. Once per day, attack twice in a round with both gun and katana.',
+        2: 'Dancing Defence. Use graceful movements to dodge attacks. Once per day, dodge an attack that would have hit.', 
+        3: 'Shooting Star. Once per combat, perform a flashy attack with the pistol that distracts and confuses the enemy, reducing the DR to attack that enemy by 4 for the next round.',
+        4: 'Sword Dance. Once per day, unleash a flurry of sword strikes, dealing an extra 2d6 of damage.',
+        5: 'Wild Spirit. The Wild Dancer’s unpredictable nature makes it hard for enemies to anticipate their actions. Once per combat, they may reroll a failed attack or defence roll.'
+    },
+    "Reckless Sumo": {
+        0: 'Iron Body. A Sumo’s body is like a fortress. Once per day, they may shrug off an attack that would have damaged them.',
+        1: 'Sumo Slam. Uses superior strength and mass to deliver a powerful slam attack. Once per combat, they may add twice their Vigor modifier to a melee attack roll.',
+        2: 'Mountain\'s Grasp. Roll 2d6+Vigor. If the result is higher than the target\'s morale, they are grappled, rendering them unable to attack or move until the start of the Sumo’s next turn. The effect ends early if the Sumo is moved or rendered unconscious.', 
+        3: 'Ring Out. Once per combat, they may push an enemy out of the immediate combat zone, stopping them from melee attacks for a round.',
+        4: 'Chanko Power. The Reckless Sumo’s diet of chanko nabe gives them incredible strength. Once per day, they can tap into this power to get a +6 on any Vigor test.',
+        5: 'Belly Bump. The Sumo can use their considerable girth to bump an opponent, potentially knocking them off balance. In the next round, attacks against this enemy are made at +4.'
+    },
+    "Sword Saint": {
+        0: 'Artful Execution. A true master of their chosen weapon, the Sword Saint is capable of performing strikes of unparalleled precision. Once per combat, they can execute a perfect strike, ignoring their opponent\'s armour or natural defences.',
+        1: 'Unyielding Focus. In the heat of battle, the Sword Saint’s focus never wavers. Once per combat, they can enter a state of heightened concentration, reducing all incoming damage by half for one round.',
+        2: 'Blade\'s Spirit. Once per session, they can pour their spirit into a single, devastating strike, adding their Honour score to the damage roll.', 
+        3: 'Ancestral Weapon. The Sword Saint’s weapon is old, passed down through generations. Once per day, the Sword Saint can call upon the spirits of their ancestors to guide their blade, granting them a reroll on any one attack roll.',
+        4: 'Harmonic Duel. When engaged in combat with a single opponent, the Sword Saint finds a rhythm in the clash of steel. Once per duel, they can predict their opponent\'s next move, gaining advantage on their next attack, defence, or riposte roll.',
+        5: 'Unyielding Discipline. Years of strict discipline make them a formidable opponent. Once per day, they can intimidate their enemies, lowering the DR of their next attack by -4.'
     },
 }
 
@@ -293,13 +349,13 @@ function generateRandomCharacter()
     characterSpirit = abilities[1];
     characterVigour = abilities[2];
     characterResilience = abilities[3];
+    this.generateRandomHP();
+    this.generateRandomPower();
     this.generateHonour();
     this.generateTenets();
-    this.generateRandomHP();
-    this.generateRandomVirtues();
     this.generateClassDescription();
-    this.generateRandomTraits();
     this.generateEquipment();
+    this.generateRandomVirtues();
     // this.generateRandomClassInfo();
     // this.generateRandomAEquipment();
 }
@@ -430,13 +486,29 @@ function generateEquipment() {
     const equipmentList = document.createElement("ul");
 
     for (let i = 0; i < equipmentNumber; i++) {
-        const traitParagraph = document.createElement("li");
-        traitParagraph.textContent = tempEquipment[i];
+        const equipmentItem = document.createElement("li");
+        equipmentItem.textContent = tempEquipment[i];
 
-        equipmentList.appendChild(traitParagraph);
+        equipmentList.appendChild(equipmentItem);
     }
 
+    const moneyItem = document.createElement("li");
+    moneyItem.textContent = this.generateRandomMoney() +' Ryo';
+    equipmentList.appendChild(moneyItem);
+
     equipmentDiv.appendChild(equipmentList);
+}
+
+function generateRandomMoney() {
+    let diceRolls = this.rollDice(classMoney[characterClass], 6);
+    if (classMoney[characterClass] > 1) {
+        const diceSum = diceRolls.reduce((acc, val) => acc + val, 0) * 10;
+        return diceSum;
+    }
+    else {
+        return diceRolls * 10;
+    }
+
 }
 
 function generateRandomAbilities() {
@@ -488,16 +560,17 @@ function generateClassDescription()
     infoDiv.appendChild(descriptionParagraph);
 }
 
-function generateRandomTraits() {
+function generateRandomPower() {
     const powersDiv = document.getElementById("powers");
     powersDiv.innerHTML = "";
 
-    const randomTraitIndex = Math.floor(Math.random() * classTraits[characterClass].length);
-    const tempClassTraits = classTraits[characterClass][randomTraitIndex];
+    const classPowersObj = classPowers[characterClass];
+    const powerCount = Object.keys(classPowersObj).length;
+    const randomIndex = Math.floor(Math.random() * powerCount);
 
-    const traitParagraph = document.createElement("p");
-    traitParagraph.textContent = tempClassTraits;
+    const powerParagraph = document.createElement("p");
+    powerParagraph.textContent = classPowersObj[randomIndex];
 
-    powersDiv.appendChild(traitParagraph);
+    powersDiv.appendChild(powerParagraph);
 }
 
