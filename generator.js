@@ -294,9 +294,6 @@ function generateRandomAbilities() {
         let diceRolls = this.rollDice(3, 6);
         var abilityName = abilityNames[i];
 
-        diceRolls.sort();
-        diceRolls.shift(); // Remove the smallest number
-
         const diceSum = diceRolls.reduce((acc, val) => acc + val, 0);
         const randomNumber = diceSum + classAbilities[abilityName][characterClass];
         const finalAbilityValue = abilitiesRollValues[randomNumber];
