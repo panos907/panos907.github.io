@@ -546,7 +546,10 @@ function generateHonour()
     const honourDiv = document.getElementById("honour");
     honourDiv.innerHTML = "";
 
-    const honorNumber = classHonour[characterClass];
+    var diceRolls = this.rollDice(3, 6);
+    const diceSum = diceRolls.reduce((acc, val) => acc + val, 0);
+
+    const honorNumber = diceSum + classHonour[characterClass];
     honourDiv.innerHTML = '<strong><em>Honour:</em></strong> '+honorNumber+'  ';
 }
 
