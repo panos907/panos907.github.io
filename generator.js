@@ -311,49 +311,95 @@ let abilitiesRollValues = {
 };
 
 let characterBackgrounds = {
-    1: "You were bad",
-    2: "You were bad",
-    3: "You were bad",
-    4: "You were bad",
-    5: "You were bad",
-    6: "You were bad",
-    7: "You were bad",
-    8: "You were bad",
-    9: "You were bad",
-    10: "You were bad",
-    11: "You were bad",
-    12: "You were bad",
-    13: "You were bad",
-    14: "You were bad",
-    15: "You were bad",
-    16: "You were bad",
-    17: "You were bad",
-    18: "You were bad",
-    19: "You were bad",
-    20: "You were bad",
+    1: "Fled from a powerful and dangerous clan, constantly on the run.",
+    2: "Have a powerful enemy who wants you dead at all costs.",
+    3: "Possess a rare and valuable artifact that is coveted by many.",
+    4: "Are under a terrible curse that cannot be lifted.",
+    5: "Once betrayed a close friend and has been wracked with guilt ever since.",
+    6: "Are plagued by haunting visions of a dark future. ",
+    7: "Have a shadowy past that is slowly catching up with you.",
+    8: "Are haunted by a vengeful spirit that will not rest until it gets what it wants.",
+    9: "Are the only survivor of a massacre that you cannot forget.",
+    10: "Have a powerful addiction that is slowly destroying you.",
+    11: "Have angered a powerful spirit that is now out for revenge. ",
+    12: "Are followed by a strange, unexplainable phenomenon that brings chaos and destruction wherever you go.",
+    13: "Are hunted by a terrifying monster that you cannot defeat.",
+    14: "Are haunted by a dark secret that, if revealed, could destroy everything you hold dear.",
+    15: "Have made a powerful enemy of a powerful hidden clan.",
+    16: "Have made a deal with a malevolent entity that is slowly taking over your mind and body.",
+    17: "Are cursed with the ability to see the worst in people and cannot help but voice your thoughts.",
+    18: "Are plagued by unexplainable nightmares that are slowly driving you insane. ",
+    19: "Are cursed with an insatiable hunger that can never be sated. ",
+    20: "Have been marked by a dark force that will stop at nothing to claim your soul.",
 };
 
-let characterFlaws = {
-    1: "You ARE bad",
-    2: "You ARE bad",
-    3: "You ARE bad",
-    4: "You ARE bad",
-    5: "You ARE bad",
-    6: "You ARE bad",
-    7: "You ARE bad",
-    8: "You ARE bad",
-    9: "You ARE bad",
-    10: "You ARE bad",
-    11: "You ARE bad",
-    12: "You ARE bad",
-    13: "You ARE bad",
-    14: "You ARE bad",
-    15: "You ARE bad",
-    16: "You ARE bad",
-    17: "You ARE bad",
-    18: "You ARE bad",
-    19: "You ARE bad",
-    20: "You ARE bad",
+let characterAfflictions = {
+    1: "Paranoid",
+    2: "Sadistic",
+    3: "Narcissistic",
+    4: "Compulsive liar",
+    5: "Self-destructive",
+    6: "Envious",
+    7: "Antisocial",
+    8: "Addicted",
+    9: " Short-tempered",
+    10: "Greedy",
+    11: "Pessimistic",
+    12: "Manipulative",
+    13: "Careless",
+    14: "Aggressive",
+    15: "Insecure",
+    16: "Hedonistic",
+    17: "Fanatical",
+    18: "Hypocritical",
+    19: "Unreliable",
+    20: "Delusional",
+};
+
+let characterBadHabits = {
+    1: "Compulsively hoard any small trinkets you come across, often to the detriment of your party",
+    2: "Crippling fear of enclosed spaces or the dark.",
+    3: "An urge to speak your mind, even if it means making enemies or getting into trouble.",
+    4: "Addicted to a particular substance and go to great lengths to get your fix.",
+    5: "Habit of stealing things, even when it's not beneficial.",
+    6: "Anger management issues. Tend to lash out violently. ",
+    7: "Chronic insomnia.",
+    8: "Paranoia. You make up conspiracy theories, even when they have no basis in reality.",
+    9: "A terrible memory, often forget important details or information.",
+    10: "Persistent procrastinator.",
+    11: "Obsessed with counting and arranging objects.",
+    12: "You mumble to yourself, even in public.",
+    13: "Always losing important items.",
+    14: "Weapons and tools must be kept CLEAN. ",
+    15: "Telling overly long and irrelevant tales in conversation.",
+    16: "Collect ears and whisper secrets into them. ",
+    17: "Constantly fidgeting. Can’t sit still.",
+    18: "Loud, nervous sneezing.",
+    19: "Hate being touched.",
+    20: "Stealing food from everyone and hoarding it.",
+};
+
+let characterBrokenBodies = {
+    1: "Staring with a glazed expression.",
+    2: "Covered in scars or wounds, some of which are infected.",
+    3: "Missing a limb, using a makeshift prosthesis.",
+    4: "Emaciated and frail, with sunken eyes and greyish skin.",
+    5: "Severe burns on face and hands, using a mask to hide them.",
+    6: "Deaf in one ear, struggling to hear from the other. ",
+    7: "Rotted teeth or missing teeth, speaking with a lisp.",
+    8: "Crippled, walking with a limp or hunchbacked.",
+    9: "Covered in boils or blisters, constantly scratching.",
+    10: "Persistent cough or wheezing.",
+    11: "Covered in insect bites.",
+    12: "A missing or scarred tongue. ",
+    13: "Shaking hands or twitching from nervous system damage.",
+    14: "Severely obese or suffering from malnutrition, always hungry.",
+    15: "Missing fingers or toes. ",
+    16: "Broken nose, breathing heavily and snoring loudly.",
+    17: "Permanently scowling or smiling, making social interaction difficult.",
+    18: "Chronic skin conditions, leaving skin flaky or weeping.",
+    19: "Recently blinded or suffering from vision problems.",
+    20: "Cracked and discoloured nails, with signs of fungal infection.",
 };
 
 function rollDice(numDice, numOfSides) {
@@ -585,14 +631,18 @@ function generateClassDescriptionBackgroundAndFlaws()
 
     infoDiv.appendChild(this.generateColoredTitle("You are: " + characterName));
 
-    let diceRoll = this.rollDice(1, 20);
-    var backstory = characterBackgrounds[diceRoll];
+    var diceRoll = this.rollDice(1, 20);
+    var disfigurements = characterBrokenBodies[diceRoll];
+    diceRoll = this.rollDice(1, 20);
+    var disfigurements2 = characterBrokenBodies[diceRoll];
 
-    const backstoryParagraph = document.createElement("p");
-    backstoryParagraph.textContent = backstory;
-    backstoryParagraph.classList.add("col-md-12");
+    disfigurements = disfigurements + ' '+disfigurements2;
 
-    infoDiv.appendChild(backstoryParagraph);
+    const mutationsParagraph = document.createElement("p");
+    mutationsParagraph.textContent = "Optional Disfigurements: "+disfigurements;
+    mutationsParagraph.classList.add("col-md-12");
+
+    infoDiv.appendChild(mutationsParagraph);
 
     const descriptionParagraph = document.createElement("p");
     descriptionParagraph.textContent = classDescriptions[characterClass];
@@ -601,13 +651,22 @@ function generateClassDescriptionBackgroundAndFlaws()
     infoDiv.appendChild(descriptionParagraph);
 
     diceRoll = this.rollDice(1, 20);
-    var flaw = characterFlaws[diceRoll];
+    var flaw = characterAfflictions[diceRoll];
 
     const flawParagraph = document.createElement("p");
-    flawParagraph.textContent = flaw;
+    flawParagraph.textContent = "Optional Flaw: "+flaw;
     flawParagraph.classList.add("col-md-12");
 
     infoDiv.appendChild(flawParagraph);
+
+    diceRoll = this.rollDice(1, 20);
+    var backstory = characterBackgrounds[diceRoll];
+
+    const backstoryParagraph = document.createElement("p");
+    backstoryParagraph.textContent = "Optional Backstory: "+backstory;
+    backstoryParagraph.classList.add("col-md-12");
+
+    infoDiv.appendChild(backstoryParagraph);
 }
 
 function generateRandomPower() {
