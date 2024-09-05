@@ -633,16 +633,21 @@ function generateClassDescriptionBackgroundAndFlaws()
 
     var diceRoll = this.rollDice(1, 20);
     var disfigurements = characterBrokenBodies[diceRoll];
-    diceRoll = this.rollDice(1, 20);
-    var disfigurements2 = characterBrokenBodies[diceRoll];
-
-    disfigurements = disfigurements + ' '+disfigurements2;
 
     const mutationsParagraph = document.createElement("p");
-    mutationsParagraph.textContent = "Optional Disfigurements: "+disfigurements;
+    mutationsParagraph.textContent = "Optional Disfigurement: "+disfigurements;
     mutationsParagraph.classList.add("col-md-12");
 
     infoDiv.appendChild(mutationsParagraph);
+
+    diceRoll = this.rollDice(1, 20);
+    var bad_habit = characterBadHabits[diceRoll];
+
+    const badHabitsParagraph = document.createElement("p");
+    badHabitsParagraph.textContent = "Optional Bad Habit: "+bad_habit;
+    badHabitsParagraph.classList.add("col-md-12");
+    
+    infoDiv.appendChild(badHabitsParagraph);
 
     const descriptionParagraph = document.createElement("p");
     descriptionParagraph.textContent = classDescriptions[characterClass];
