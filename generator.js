@@ -310,6 +310,52 @@ let abilitiesRollValues = {
     20: 3,
 };
 
+let characterBackgrounds = {
+    1: "You were bad",
+    2: "You were bad",
+    3: "You were bad",
+    4: "You were bad",
+    5: "You were bad",
+    6: "You were bad",
+    7: "You were bad",
+    8: "You were bad",
+    9: "You were bad",
+    10: "You were bad",
+    11: "You were bad",
+    12: "You were bad",
+    13: "You were bad",
+    14: "You were bad",
+    15: "You were bad",
+    16: "You were bad",
+    17: "You were bad",
+    18: "You were bad",
+    19: "You were bad",
+    20: "You were bad",
+};
+
+let characterFlaws = {
+    1: "You ARE bad",
+    2: "You ARE bad",
+    3: "You ARE bad",
+    4: "You ARE bad",
+    5: "You ARE bad",
+    6: "You ARE bad",
+    7: "You ARE bad",
+    8: "You ARE bad",
+    9: "You ARE bad",
+    10: "You ARE bad",
+    11: "You ARE bad",
+    12: "You ARE bad",
+    13: "You ARE bad",
+    14: "You ARE bad",
+    15: "You ARE bad",
+    16: "You ARE bad",
+    17: "You ARE bad",
+    18: "You ARE bad",
+    19: "You ARE bad",
+    20: "You ARE bad",
+};
+
 function rollDice(numDice, numOfSides) {
     let results = [];
 
@@ -344,7 +390,7 @@ function generateRandomCharacter()
 {
     this.generateRandomName();
     this.generateRandomClass();
-    this.generateClassDescription();
+    this.generateClassDescriptionBackgroundAndFlaws();
     var abilities = this.generateRandomAbilities();
     characterSwiftness = abilities[0];
     characterSpirit = abilities[1];
@@ -531,7 +577,7 @@ function generateRandomAbilities() {
     return finalAbilities;
 }
 
-function generateClassDescription()
+function generateClassDescriptionBackgroundAndFlaws()
 {
     const infoDiv = document.getElementById("classinfo");
     infoDiv.innerHTML = "";
@@ -539,11 +585,29 @@ function generateClassDescription()
 
     infoDiv.appendChild(this.generateColoredTitle("You are: " + characterName));
 
+    let diceRoll = this.rollDice(1, 20);
+    var backstory = characterBackgrounds[diceRoll];
+
+    const backstoryParagraph = document.createElement("p");
+    backstoryParagraph.textContent = backstory;
+    backstoryParagraph.classList.add("col-md-12");
+
+    infoDiv.appendChild(backstoryParagraph);
+
     const descriptionParagraph = document.createElement("p");
     descriptionParagraph.textContent = classDescriptions[characterClass];
     descriptionParagraph.classList.add("col-md-12");
 
     infoDiv.appendChild(descriptionParagraph);
+
+    diceRoll = this.rollDice(1, 20);
+    var flaw = characterFlaws[diceRoll];
+
+    const flawParagraph = document.createElement("p");
+    flawParagraph.textContent = flaw;
+    flawParagraph.classList.add("col-md-12");
+
+    infoDiv.appendChild(flawParagraph);
 }
 
 function generateRandomPower() {
