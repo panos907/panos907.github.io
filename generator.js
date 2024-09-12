@@ -402,14 +402,6 @@ let characterBrokenBodies = {
     20: "Cracked and discoloured nails, with signs of fungal infection.",
 };
 
-
-let characterArmors = {
-    1: "No armor, leaving you vulnerable to all attacks. Good luck...",
-    2: "Tier 1, light armor, reduces damage by d2",
-    3: "Tier 2 , medium armor, reduces damage by d4, +2DR to Swiftness checks (including Defense rolls)",
-    4: "Tier 3, heavy armor, reduces damage by d6, +4DR to Swiftness checks, not including Defense rolls. +2DR to Defense rolls.",
-};
-
 function rollDice(numDice, numOfSides) {
     let results = [];
 
@@ -586,14 +578,6 @@ function generateEquipment() {
         equipmentItem.textContent = tempEquipment[i];
 
         equipmentList.appendChild(equipmentItem);
-    }
-
-    var randomNumberRolled = this.rollDice(1, 4);
-
-    if (randomNumberRolled > 1) {
-        const armorItem = document.createElement("li");
-        armorItem.textContent = characterArmors[randomNumberRolled];
-        equipmentList.appendChild(armorItem);
     }
 
     const moneyItem = document.createElement("li");
