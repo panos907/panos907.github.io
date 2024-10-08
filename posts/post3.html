@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head id="header">
+  <script>
+    fetch('../partials/header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header').innerHTML = data;
+        });
+  </script>
+</head>
+<body>
+  <header id="menu">
+    <script>
+      fetch('../partials/posts_menu.html')
+          .then(response => response.text())
+          .then(data => {
+              document.getElementById('menu').innerHTML = data;
+          });
+    </script>
+  </header>
+    <main>
+        <div id="content" class="container">
+          <article class="col-md-12">
+            <h2 class="m-2">Routine, stress and coping</h2>
+            <p class="m-2">
+              I have often been told i need to avoid routine, and need to avoid getting stressed as much as i do. The former is relatively easy (or not) and the latter is rather hard (or perhaps not). Curious how many things aren't what we perceived at first glance, isn't it?
+              Allo me to elaborate...
+            </p>
+            <p class="m-2">
+              As far as routine is concerned, i do have one, like everybody does. I have a job, i have Aikido training i attend, i have my weekly Vampire The Masquarade game i play. Yet, apart from these, everything else is pretty much in the air, up for grabs by any friend (or otherwise) that might request my attention kindly.
+              But of course, there is also the "everyday" routine, what most people fail to consider because it's been so deeply ingrained in their brains it is now automatic. Cooking, brushing teeth, showering, changing clothes, commuting to work, all these are also part of it, taking up a (significant sometimes) chunk of time on their own right.
+              Not to mention, that a lot of us (myself included) might even struggle with some parts of that at times, for different reasons. Yet another thing many people are painfully oblivious towards. And when it happens to them, they panic as if their whole world has been turned upside down. Not knowing that a shifted routine can be much more easily restored than a damaged body or a scarred soul.
+            </p>
+            <p class="m-2">
+              Stress, on the other hand. Is a tricky one. Many people that have it don't notice, and many people that notice it can't/don't know how to deal with it (what we call coping).
+            </p>
+          </article>
+        </div>
+    </main>
+    <footer id="footer"  class="text-center text-lg-start m-2">
+      <script>
+        fetch('../partials/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+      </script>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+</body>
+</html>
