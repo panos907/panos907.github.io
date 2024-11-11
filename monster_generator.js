@@ -46,7 +46,7 @@ let monsterImmunities = {
     "Bandit":"None",
 };
 
-let classAbilities = {
+let monsterAbilities = {
     Strength: {
         "Skeleton":3,
         "Ghoul":-1,
@@ -97,14 +97,14 @@ let classAbilities = {
     },
 };
 
-let classDescriptions = {
+let monsterDescriptions = {
     "Skeleton":"Skeletons are undead creatures born of accursed sorcery, roaming with an eternal and generally mindless thirst for vengeance. Lacking flesh, this undead monstrosity is a macabre assembly of bones, held together with cursed magic. It's empty eye sockets glow with malevolent energy, eflecting the purpose of it's creator. Skeletons wield spectral weapons with surprising precision and are often cloaked in tattered remnants of armor, evidence of what they wore in life. Animated by dark Magic, the skeleton is an unholy guardian tirelessly patroling the crypts and cursed domains it watches over.",
     "Ghoul":"Ghouls are people who have been cursed to crave the flesh of other people. THe curse typically comes about as a result of cannibalism, though there are otehr possible causes as well. Ghouls can originate from any of the intelligent races, such as humans, elves, dwarves, kagari, and so forth. The appearance of a ghoul changes to include sharp teeth for the tearing of flesh, a gaunt appearance, long claws, and a feral gleam in their eyes. They also lose their hair. The insatiable hunger for the flesh of the living haunts their every moment.",
     "Zombie":"The Zombie, a scoundrel of the highest order, has forsaken all traditional honour. Instead, they use their stealth and guile to weave a web of deceit, assassinating their prey from the shadows. No lord or clan can control this wily fiend, for their only true master is their own greed. Their blades are sharp, their wits sharper, and their hearts as black as the night they stalk. They are the shadow that creeps up behind you, the serpent that slithers beneath your feet. Cross them at your own peril, for they are the Zombie, and their loyalty is to only themselves.",
     "Bandit":"Bandits are as common as they are varied.",
 };
 
-let classPowers = {
+let monsterPowers = {
     "Skeleton":'Strength in Numbers. The Skeleton can draw upon their inner strength and resolve in times of great need. Once per day, they may roll d6 and add the result to any one roll they make.',
     "Ghoul":'Paralyzing Bite. If the Ghoul successfully hits a creature with a Bite attack, the target must succeed on a TN 10 fortitude check, or become paralyzed until they succeed.',
     "Zombie":'Tough. When the zombie would normally die, it can instead attempt a TN 5 Fortitude check. On a success it remains at 1 health point instead. (With each success the TN increases by a factor of 5)',
@@ -314,7 +314,7 @@ function generateRandomAbilities() {
     for (let i = 0; i < 8; i++) {
         let abilityName = abilityNames[i];
 
-        const finalAbilityValue = classAbilities[abilityName][monsterType];
+        const finalAbilityValue = monsterAbilities[abilityName][monsterType];
 
         const abilityParagraph = document.createElement("p");
         abilityParagraph.innerHTML = '<strong><em>'+abilityNames[i]+'</em></strong>: '+finalAbilityValue+'  ';
@@ -335,7 +335,7 @@ function generateMonsterInfo()
     infoDiv.appendChild(this.generateColoredTitle("Monster Type: " + monsterType));
 
     const descriptionParagraph = document.createElement("p");
-    descriptionParagraph.textContent = classDescriptions[monsterType];
+    descriptionParagraph.textContent = monsterDescriptions[monsterType];
     descriptionParagraph.classList.add("col-md-12");
 
     infoDiv.appendChild(descriptionParagraph);
@@ -347,7 +347,7 @@ function generatePowers() {
 
     powersDiv.appendChild(this.generateColoredTitle("Powers"));
 
-    const classPowersObj = classPowers[monsterType];
+    const classPowersObj = monsterPowers[monsterType];
 
     const powerParagraph = document.createElement("p");
     powerParagraph.textContent = classPowersObj;
