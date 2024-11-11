@@ -31,22 +31,22 @@ let classAbilities = {
         "Ghoul":-1,
         "Zombie":1,
     },
-    Vitality: {
+    Inspection: {
         "Skeleton":2,
         "Ghoul":-1,
         "Zombie":1,
     },
-    Vitality: {
+    Senses: {
         "Skeleton":2,
         "Ghoul":-1,
         "Zombie":1,
     },
-    Vitality: {
+    Presence: {
         "Skeleton":2,
         "Ghoul":-1,
         "Zombie":1,
     },
-    Vitality: {
+    Reason: {
         "Skeleton":2,
         "Ghoul":-1,
         "Zombie":1,
