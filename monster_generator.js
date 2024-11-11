@@ -227,12 +227,12 @@ function generateRandomMonster()
     this.generateMonsterType();
     this.generateMonsterInfo();
     this.generateResistancesWeaknessesAndImmunities();
-    var abilities = this.generateRandomAbilities();
+    let abilities = this.generateRandomAbilities();
     monsterStrength = abilities[0];
     monsterAgility = abilities[1];
     monsterDexterity = abilities[2];
     monsterVitality = abilities[3];
-    monsterInspection = abilities[4];
+    monsterMindpower = abilities[4];
     monsterSenses = abilities[5];
     monsterPresence = abilities[6];
     monsterReason = abilities[7];
@@ -258,7 +258,7 @@ function generateHP()
     const hpDiv = document.getElementById("hp");
     hpDiv.innerHTML = "";
 
-    var hpToReturn = monsterHP[monsterType];
+    let hpToReturn = monsterHP[monsterType];
 
     if (monsterLevel > 1) {
         for (let i = 1; i < monsterLevel; i++) {
@@ -275,7 +275,7 @@ function generateArmor()
     const armorDiv = document.getElementById("armor");
     armorDiv.innerHTML = "";
 
-    var armorToReturn = monsterArmor[monsterType];
+    let armorToReturn = monsterArmor[monsterType];
 
     if (monsterLevel > 1) {
         armorToReturn = armorToReturn + monsterArmorBonus[monsterType] * monsterLevel;
@@ -289,21 +289,21 @@ function generateResistancesWeaknessesAndImmunities()
     const resistanceDiv = document.getElementById("resistance");
     resistanceDiv.innerHTML = "";
 
-    var resistance = monsterResistances[monsterType];
+    let resistance = monsterResistances[monsterType];
 
     resistanceDiv.innerHTML  = '<strong><em>Resistance:</em></strong> '+resistance;
 
     const weaknessDiv = document.getElementById("weakness");
     weaknessDiv.innerHTML = "";
 
-    var weakness = monsterWeaknesses[monsterType];
+    let weakness = monsterWeaknesses[monsterType];
 
     weaknessDiv.innerHTML  = '<strong><em>Weakness:</em></strong> '+weakness;
 
     const immunityDiv = document.getElementById("immunity");
     immunityDiv.innerHTML = "";
 
-    var immunity = monsterImmunities[monsterType];
+    let immunity = monsterImmunities[monsterType];
 
     immunityDiv.innerHTML  = '<strong><em>Immunity:</em></strong> '+immunity;
 }
@@ -313,7 +313,7 @@ function generateSpeed()
     const speedDiv = document.getElementById("speed");
     speedDiv.innerHTML = "";
 
-    var speedToReturn = monsterSpeed[monsterType];
+    let speedToReturn = monsterSpeed[monsterType];
 
     speedDiv.innerHTML  = '<strong><em>Speed:</em></strong> '+speedToReturn;
 }
@@ -334,7 +334,7 @@ function generateRandomAbilities() {
     ];
 
     for (let i = 0; i < 8; i++) {
-        var abilityName = abilityNames[i];
+        let abilityName = abilityNames[i];
 
         const finalAbilityValue = classAbilities[abilityName][monsterType];
 
