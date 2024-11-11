@@ -333,7 +333,7 @@ function generateRandomAbilities() {
     const abilityDiv = document.getElementById("abilities");
     const showElementInput = document.getElementById('option2');
     const honorChoiceRadios = document.querySelectorAll('input[name="honorChoice"]');
-    var honor_bonus = 0;
+    var level_bonus = 0;
     abilityDiv.innerHTML = "";
 
     abilityDiv.appendChild(this.generateColoredTitle('Abilities'));
@@ -341,7 +341,7 @@ function generateRandomAbilities() {
     if (showElementInput.checked) {
         honorChoiceRadios.forEach(radio => {
             if (radio.value == 'honorable' && radio.checked) {
-                honor_bonus = 1;     
+                level_bonus = 1;     
             }
         });
     }
@@ -354,10 +354,10 @@ function generateRandomAbilities() {
         var abilityName = abilityNames[i];
 
         const diceSum = diceRolls.reduce((acc, val) => acc + val, 0);
-        const randomNumber = diceSum + classAbilities[abilityName][characterName] + honor_bonus;
+        const randomNumber = diceSum + classAbilities[abilityName][characterName] + level_bonus;
         const finalAbilityValue = abilitiesRollValues[randomNumber];
 
-        console.log(honor_bonus);
+        console.log(level_bonus);
 
         const abilityParagraph = document.createElement("p");
         abilityParagraph.innerHTML = '<strong><em>'+abilityNames[i]+'</em></strong>: '+finalAbilityValue+'  ';
