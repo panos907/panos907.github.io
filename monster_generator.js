@@ -57,7 +57,7 @@ let monsterAbilities = {
         "Skeleton":-2,
         "Ghoul":-1,
         "Zombie":-1,
-        "Bandit":2,
+        "Bandit":-1,
     },
     Agility: {
         "Skeleton":3,
@@ -69,31 +69,31 @@ let monsterAbilities = {
         "Skeleton":2,
         "Ghoul":-1,
         "Zombie":3,
-        "Bandit":2,
+        "Bandit":1,
     },
     Mindpower: {
         "Skeleton":-1,
         "Ghoul":-1,
         "Zombie":-2,
-        "Bandit":2,
+        "Bandit":-2,
     },
     Senses: {
         "Skeleton":-1,
         "Ghoul":-1,
         "Zombie":-2,
-        "Bandit":2,
+        "Bandit":-1,
     },
     Presence: {
         "Skeleton":0,
         "Ghoul":-1,
         "Zombie":0,
-        "Bandit":2,
+        "Bandit":-2,
     },
     Reason: {
         "Skeleton":-2,
         "Ghoul":-1,
         "Zombie":-4,
-        "Bandit":2,
+        "Bandit":1,
     },
 };
 
