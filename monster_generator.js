@@ -149,7 +149,21 @@ let monsterArmorBonus = {
     "Bandit": 3,
 };
 
-let monsterCombat = {
+let monsterDefense = {
+    "Skeleton": 3,
+    "Ghoul": 3,
+    "Zombie": 3,
+    "Bandit": 3,
+};
+
+let monsterDefenseModifier = {
+    "Skeleton": 3,
+    "Ghoul": 3,
+    "Zombie": 3,
+    "Bandit": 3,
+};
+
+let monsterCombatModifier = {
     "Skeleton": 3,
     "Ghoul": 3,
     "Zombie": 3,
@@ -375,12 +389,26 @@ function generateCombatInfo() {
 
     combatDiv.appendChild(this.generateColoredTitle("Combat/Skills"));
 
-    const monsterCombatValues = monsterCombat[monsterType];
+    const monsterDefense = monsterDefense[monsterType];
 
-    const combatParagraph = document.createElement("p");
-    combatParagraph.textContent = monsterCombatValues;
+    const defenseParagraph = document.createElement("p");
+    defenseParagraph.textContent = '<strong><em>Defense: </em></strong>: '+monsterDefense;
 
     combatDiv.appendChild(combatParagraph);
+
+    const monsterDefenseModifier = monsterDefenseModifier[monsterType];
+
+    const defenseModifierParagraph = document.createElement("p");
+    defenseModifierParagraph.textContent = '<strong><em>Defense Modifier: </em></strong>: '+monsterDefenseModifier;
+
+    combatDiv.appendChild(defenseModifierParagraph);
+
+    const combatModifier = monsterCombatModifier[monsterType];
+
+    const combatModifierParagraph = document.createElement("p");
+    combatModifierParagraph.textContent = '<strong><em>Combat Modifier: </em></strong>: '+combatModifier;
+
+    combatDiv.appendChild(combatModifierParagraph);
 
     const monsterSkillValue = monsterSkills[monsterType];
 
