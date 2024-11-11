@@ -174,9 +174,6 @@ function generateMonsterType()
 {
     const name = monsterType;
 
-    console.log(name)
-    console.log(monsterType)
-
     const nameDiv = document.getElementById("type");
     nameDiv.innerHTML = '<strong><em>Monster Type:</em></strong> ' + name+'  ';
 
@@ -192,12 +189,12 @@ function generateHP()
     var hpToReturn = monsterHP[monsterType];
 
     if (levelBonus > 0) {
-        // console.log(Object.keys(monsterHPBonus[monsterType]))
-        // console.log(Object.keys(monsterHPBonus[monsterType]).length)
-        // for (let i = 1; i < levelBonus; i++) {
-        //     let diceRoll = this.rollDice(1, Object.keys(monsterHPBonus[monsterType]).length);
-        //     hpToReturn = hpToReturn + monsterHPBonus[monsterType][diceRoll];
-        // }
+        console.log(Object.keys(monsterHPBonus[monsterType]))
+        console.log(Object.keys(monsterHPBonus[monsterType]).length)
+        for (let i = 1; i < levelBonus; i++) {
+            let diceRoll = this.rollDice(1, Object.keys(monsterHPBonus[monsterType]).length);
+            hpToReturn = hpToReturn + monsterHPBonus[monsterType][diceRoll];
+        }
     }
 
     hpDiv.innerHTML  = '<strong><em>Health Points:</em></strong> '+hpToReturn;
