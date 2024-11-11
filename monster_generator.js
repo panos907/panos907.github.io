@@ -149,6 +149,20 @@ let monsterArmorBonus = {
     "Bandit": 3,
 };
 
+let monsterCombat = {
+    "Skeleton": 3,
+    "Ghoul": 3,
+    "Zombie": 3,
+    "Bandit": 3,
+};
+
+let monsterSkills = {
+    "Skeleton": 3,
+    "Ghoul": 3,
+    "Zombie": 3,
+    "Bandit": 3,
+};
+
 function rollDice(numDice, numOfSides) {
     let results = [];
 
