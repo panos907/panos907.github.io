@@ -400,7 +400,7 @@ function generateCombatInfo() {
 
     combatDiv.appendChild(defenseModifierParagraph);
 
-    const monsterDefenseValue = monsterDefense[monsterType];
+    let monsterDefenseValue = monsterDefense[monsterType];
 
     monsterDefenseValue = monsterDefense[monsterType] + monsterDefenseModifierValue + monsterAbilities['Agility'][monsterType];
 
@@ -409,7 +409,7 @@ function generateCombatInfo() {
 
     combatDiv.appendChild(defenseParagraph);
 
-    const combatModifierValue = monsterCombatModifier[monsterType];
+    let combatModifierValue = monsterCombatModifier[monsterType];
 
     if (monsterLevel > 1) {
         combatModifierValue = combatModifierValue + monsterLevel;
@@ -420,7 +420,7 @@ function generateCombatInfo() {
 
     combatDiv.appendChild(combatModifierParagraph);
 
-    const monsterSkillValue = monsterSkills[monsterType];
+    let monsterSkillValue = monsterSkills[monsterType];
 
     const skillsParagraph = document.createElement("p");
     skillsParagraph.textContent = 'Skills: '+monsterSkillValue;
