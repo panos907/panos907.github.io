@@ -187,6 +187,8 @@ function generateRandomMonster()
     monsterPresence = abilities[6];
     monsterReason = abilities[7];
     this.generateHP();
+    this.generateArmor();
+    this.generateSpeed();
     this.generatePowers();
 }
 
