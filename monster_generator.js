@@ -28,21 +28,21 @@ let monsterSpeed = {
 let monsterWeaknesses = {
     "Skeleton":"Holy, Bashing",
     "Ghoul":"Holy",
-    "Zombie":"Holy",
+    "Zombie":"Holy, Cutting",
     "Bandit":"None",
 };
 
 let monsterResistances = {
     "Skeleton":"Cutting, Impaling, Piercing",
     "Ghoul":"None",
-    "Zombie":"None",
+    "Zombie":"Bashing",
     "Bandit":"None",
 };
 
 let monsterImmunities = {
     "Skeleton":"Poison",
     "Ghoul":"None",
-    "Zombie":"None",
+    "Zombie":"Poison",
     "Bandit":"None",
 };
 
