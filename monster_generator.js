@@ -2,7 +2,7 @@
 let monsterType = '';
 let randomColor;
 
-let monsterLevel = 0;
+let monsterLevel = 1;
 
 let monsterHP = {
     "Skeleton":12,
