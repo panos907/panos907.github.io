@@ -434,12 +434,12 @@ function generateCombatInfo() {
 
     combatDiv.appendChild(combatModifierParagraph);
 
-    let monsterSkillValue = monsterSkills[monsterType];
+    // let monsterSkillValue = monsterSkills[monsterType];
 
-    const skillsParagraph = document.createElement("p");
-    skillsParagraph.textContent = 'Skills: '+monsterSkillValue;
+    // const skillsParagraph = document.createElement("p");
+    // skillsParagraph.textContent = 'Skills: '+monsterSkillValue;
 
-    combatDiv.appendChild(skillsParagraph);
+    // combatDiv.appendChild(skillsParagraph);
 }
 
 function generateColoredTitle(title)
