@@ -51,6 +51,8 @@
                             { value: 'Zombie' }
                         ];
 
+                        options.sort( (a, b) => a.value.localeCompare(b.value, 'en', {'sensitivity': 'base'}));
+
                         options.forEach(option => {
                             const newOption = document.createElement('option');
                             newOption.value = option.value;
