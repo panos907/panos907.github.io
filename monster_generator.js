@@ -430,7 +430,7 @@ function generateCombatInfo() {
     }
 
     const combatModifierParagraph = document.createElement("p");
-    combatModifierParagraph.textContent = 'Combat Modifier: '+ CombatModifierValue;
+    combatModifierParagraph.textContent = 'Combat Modifier: '+ combatModifierValue;
 
     combatDiv.appendChild(combatModifierParagraph);
 
