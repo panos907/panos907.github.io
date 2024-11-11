@@ -406,7 +406,7 @@ function generateCombatInfo() {
     let monsterDefenseModifierValue = monsterDefenseModifier[monsterType];
 
     if (monsterLevel > 1) {
-        monsterDefenseModifierValue = monsterDefenseModifierValue + monsterLevel;
+        monsterDefenseModifierValue = monsterDefenseModifierValue + monsterLevel -1;
     }
 
     const defenseModifierParagraph = document.createElement("p");
@@ -426,7 +426,7 @@ function generateCombatInfo() {
     let combatModifierValue = monsterCombatModifier[monsterType];
 
     if (monsterLevel > 1) {
-        combatModifierValue = combatModifierValue + monsterLevel;
+        combatModifierValue = combatModifierValue + monsterLevel -1;
     }
 
     const combatModifierParagraph = document.createElement("p");
