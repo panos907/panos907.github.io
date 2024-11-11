@@ -127,18 +127,13 @@ let monsterHPBonus = {
         5:6,
     },
     "Ghoul": {
-        1:2,
-        2:3,
-        3:4,
-        4:5,
-        5:6,
+        1:4,
+        2:5,
+        3:6,
     },
     "Zombie": {
-        1:2,
-        2:3,
-        3:4,
-        4:5,
-        5:6,
+        1:1,
+        2:2,
     },
     "Bandit": {
         1:2,
@@ -151,8 +146,8 @@ let monsterHPBonus = {
 
 let monsterArmorBonus = {
     "Skeleton": 3,
-    "Ghoul": 3,
-    "Zombie": 3,
+    "Ghoul": 2,
+    "Zombie": 1,
     "Bandit": 3,
 };
 
