@@ -111,6 +111,13 @@ let monsterPowers = {
     "Bandit":'Tactical Prowess. The Bandit gains a Major Advantage when flanking instead of a simple one.'
 }
 
+let monsterActions = {
+    "Skeleton":'Strength in Numbers. The Skeleton can draw upon their inner strength and resolve in times of great need. Once per day, they may roll d6 and add the result to any one roll they make.',
+    "Ghoul":'Paralyzing Bite. If the Ghoul successfully hits a creature with a Bite attack, the target must succeed on a TN 10 fortitude check, or become paralyzed until they succeed.',
+    "Zombie":'Bite: Melee Attack + Combat Modifier, Reach 1 square, 1 target. Damage: 1D8 + Combat modifier. Slam. Melee Attack: +3, Reach 1 square, 1 target. Damage: 1D4 + Combat Modifier',
+    "Bandit":'Tactical Prowess. The Bandit gains a Major Advantage when flanking instead of a simple one.'
+}
+
 let monsterHPBonus = {
     "Skeleton": {
         1:2,
@@ -379,6 +386,13 @@ function generatePowers() {
 
     const powerParagraph = document.createElement("p");
     powerParagraph.textContent = classPowersObj;
+
+    powersDiv.appendChild(powerParagraph);
+
+    const monsterActionsObj = monsterActions[monsterType];
+
+    const actionsParagraph = document.createElement("p");
+    actionsParagraph.textContent = monsterActionsObj;
 
     powersDiv.appendChild(powerParagraph);
 }
