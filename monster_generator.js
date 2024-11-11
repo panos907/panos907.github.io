@@ -186,9 +186,9 @@ function generateRandomMonster()
     if (monsterTypeInput.value != null) {
         monsterType = monsterTypeInput.value;     
     }
-
+    
     if (levelSelectInput.value != null) {
-        monsterLevel = levelSelectInput.value;     
+        monsterLevel = Math.round(levelSelectInput.value);     
     }
     else {
         monsterLevel = 1;   
@@ -199,8 +199,6 @@ function generateRandomMonster()
 
     if (monsterLevel < 1)
         monsterLevel = 1;
-
-    console.log(monsterLevel)
 
     this.generateMonsterType();
     this.generateMonsterInfo();
