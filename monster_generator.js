@@ -394,7 +394,7 @@ function generatePowers() {
     const actionsParagraph = document.createElement("p");
     actionsParagraph.textContent = monsterActionsObj;
 
-    powersDiv.appendChild(powerParagraph);
+    powersDiv.appendChild(actionsParagraph);
 }
 
 function generateCombatInfo() {
