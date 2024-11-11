@@ -10,6 +10,12 @@ let monsterHP = {
     "Zombie":8,
 };
 
+let monsterSpeed = {
+    "Skeleton":5,
+    "Ghoul":4,
+    "Zombie":3,
+};
+
 let classAbilities = {
     Strength: {
         "Skeleton":2,
@@ -198,16 +204,14 @@ function generateHP()
     hpDiv.innerHTML  = '<strong><em>Health Points:</em></strong> '+hpToReturn;
 }
 
-function generateRandomMoney() {
-    let diceRolls = this.rollDice(classMoney[monsterType], 6);
-    if (classMoney[monsterType] > 1) {
-        const diceSum = diceRolls.reduce((acc, val) => acc + val, 0) * 10;
-        return diceSum;
-    }
-    else {
-        return diceRolls * 10;
-    }
+function generateSpeed()
+{
+    const speedDiv = document.getElementById("speed");
+    speedDiv.innerHTML = "";
 
+    var speedToReturn = monsterSpeed[monsterType];
+
+    hpDiv.innerHTML  = '<strong><em>Speed:</em></strong> '+speedToReturn;
 }
 
 function generateRandomAbilities() {
