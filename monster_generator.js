@@ -283,6 +283,30 @@ function generateArmor()
     armorDiv.innerHTML  = '<strong><em>Armor Points:</em></strong> '+armorToReturn;
 }
 
+function generateResistancesWeaknessesAndImmunities()
+{
+    const resistanceDiv = document.getElementById("resistance");
+    resistanceDiv.innerHTML = "";
+
+    var resistance = monsterResistances[monsterType];
+
+    resistanceDiv.innerHTML  = '<strong><em>Resistance:</em></strong> '+resistance;
+
+    const weaknessDiv = document.getElementById("weakness");
+    weaknessDiv.innerHTML = "";
+
+    var weakness = monsterWeaknesses[monsterType];
+
+    weaknessDiv.innerHTML  = '<strong><em>Weakness:</em></strong> '+weakness;
+
+    const immunityDiv = document.getElementById("immunity");
+    immunityDiv.innerHTML = "";
+
+    var immunity = monsterImmunities[monsterType];
+
+    immunityDiv.innerHTML  = '<strong><em>Immunity:</em></strong> '+immunity;
+}
+
 function generateSpeed()
 {
     const speedDiv = document.getElementById("speed");
