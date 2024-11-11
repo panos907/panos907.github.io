@@ -113,8 +113,8 @@ let monsterPowers = {
 
 let monsterActions = {
     "Skeleton":'Scratch: Melee Attack: + Combat modifier, Reach 1 square, 1 target. Damage: 1D6 +(STR) + Combat Modifier',
-    "Ghoul":'Bite: Melee Attack: +Combat Modifier, Reach 1 square, 1 target. Damage: 1D10 + Combat Modifier Claw: Melee Attack: +Combat Modifier, Reach 1 square, 1 target. Damage: 2D4 + Combat Modifier',
-    "Zombie":'Bite: Melee Attack + Combat Modifier, Reach 1 square, 1 target. Damage: 1D8 + Combat Modifier. Slam. Melee Attack: +Combat Modifier, Reach 1 square, 1 target. Damage: 1D4 + Combat Modifier',
+    "Ghoul":'Bite: Melee Attack: + Combat Modifier, Reach 1 square, 1 target. Damage: 1D10 + Combat Modifier Claw: Melee Attack: + Combat Modifier, Reach 1 square, 1 target. Damage: 2D4 + Combat Modifier',
+    "Zombie":'Bite: Melee Attack + Combat Modifier, Reach 1 square, 1 target. Damage: 1D8 + Combat Modifier. Slam. Melee Attack: + Combat Modifier, Reach 1 square, 1 target. Damage: 1D4 + Combat Modifier',
     "Bandit":'BroadSword: Melee Attack + Combat Modifier, Reach 1 square, 1 target. Damage 1D8 + Combat Modifier.'
 }
 
@@ -430,7 +430,7 @@ function generateCombatInfo() {
     }
 
     const combatModifierParagraph = document.createElement("p");
-    combatModifierParagraph.textContent = 'Combat Modifier: '+combatModifierValue;
+    combatModifierParagraph.textContent = 'Combat Modifier: '+ CombatModifierValue;
 
     combatDiv.appendChild(combatModifierParagraph);
 
