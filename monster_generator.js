@@ -198,16 +198,12 @@ function generateRandomHP()
 
     if (levelBonus > 0) {
         for (let i = 1; i < levelBonus; i++) {
-            let diceRoll = this.rollDice(1, monsterHPBonus[monsterType].length);
-            console.log(levelBonus);
-            console.log(diceRoll);
-            console.log(monsterHPBonus[monsterType])
-            console.log(monsterHPBonus[monsterType][diceRoll])
+            let diceRoll = this.rollDice(1, Object.keys(monsterHPBonus[monsterType]).length);
             hpToReturn = hpToReturn + monsterHPBonus[monsterType][diceRoll];
         }
     }
 
-    hpDiv.innerHTML  = '<strong><em>Health Points:</em></strong> '+hpToReturn+"/"+hpToReturn;
+    hpDiv.innerHTML  = '<strong><em>Health Points:</em></strong> '+hpToReturn;
 }
 
 function generateRandomMoney() {
