@@ -27,8 +27,8 @@ let monsterSpeed = {
 
 let monsterWeaknesses = {
     "Skeleton":"Holy, Bashing",
-    "Ghoul":4,
-    "Zombie":3,
+    "Ghoul":"Holy",
+    "Zombie":"Holy",
     "Bandit":"None",
 };
 
@@ -110,29 +110,6 @@ let classPowers = {
     "Zombie":'Tough. When the zombie would normally die, it can instead attempt a TN 5 Fortitude check. On a success it remains at 1 health point instead. (With each success the TN increases by a factor of 5)',
     "Bandit":'Tactical Prowess. The Bandit gains a Major Advantage when flanking instead of a simple one.'
 }
-
-let monsterBackgrounds = {
-    1: "Fled from a powerful and dangerous clan, constantly on the run.",
-    2: "Have a powerful enemy who wants you dead at all costs.",
-    3: "Possess a rare and valuable artifact that is coveted by many.",
-    4: "Are under a terrible curse that cannot be lifted.",
-    5: "Once betrayed a close friend and has been wracked with guilt ever since.",
-    6: "Are plagued by haunting visions of a dark future. ",
-    7: "Have a shadowy past that is slowly catching up with you.",
-    8: "Are haunted by a vengeful spirit that will not rest until it gets what it wants.",
-    9: "Are the only survivor of a massacre that you cannot forget.",
-    10: "Have a powerful addiction that is slowly destroying you.",
-    11: "Have angered a powerful spirit that is now out for revenge. ",
-    12: "Are followed by a strange, unexplainable phenomenon that brings chaos and destruction wherever you go.",
-    13: "Are hunted by a terrifying monster that you cannot defeat.",
-    14: "Are haunted by a dark secret that, if revealed, could destroy everything you hold dear.",
-    15: "Have made a powerful enemy of a powerful hidden clan.",
-    16: "Have made a deal with a malevolent entity that is slowly taking over your mind and body.",
-    17: "Are cursed with the ability to see the worst in people and cannot help but voice your thoughts.",
-    18: "Are plagued by unexplainable nightmares that are slowly driving you insane. ",
-    19: "Are cursed with an insatiable hunger that can never be sated. ",
-    20: "Have been marked by a dark force that will stop at nothing to claim your soul.",
-};
 
 let monsterHPBonus = {
     "Skeleton": {
