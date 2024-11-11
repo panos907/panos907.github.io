@@ -244,7 +244,6 @@ function generateRandomColorFromBasicColors() {
 function generateRandomMonster()
 {
     this.generateRandomName();
-    this.generateRandomClass();
     this.generateClassDescriptionBackgroundAndFlaws();
     var abilities = this.generateRandomAbilities();
     characterSwiftness = abilities[0];
@@ -307,19 +306,6 @@ function generateRandomName()
 
     const titleDiv = document.getElementById("title");
     titleDiv.textContent = "Ronin - " + characterName;
-}
-
-function generateRandomClass()
-{
-    const classes = Object.keys(monsterHP);
-
-    const randomClassIndex = Math.floor(Math.random() * classes.length);
-    const className = classes[randomClassIndex];
-
-    const classDiv = document.getElementById("class");
-    classDiv.innerHTML = '<strong><em>Class:</em></strong> ' + className+'  ';
-
-    characterClass = className;
 }
 
 function generateRandomHP()
