@@ -166,7 +166,7 @@ function generateRandomMonster()
     monsterSenses = abilities[5];
     monsterPresence = abilities[6];
     monsterReason = abilities[7];
-    this.generateRandomHP();
+    this.generateHP();
     this.generateRandomPower();
 }
 
@@ -181,7 +181,7 @@ function generateMonsterType()
     titleDiv.textContent = "WODiscordia - " + monsterType;
 }
 
-function generateRandomHP()
+function generateHP()
 {
     const hpDiv = document.getElementById("hp");
     hpDiv.innerHTML = "";
