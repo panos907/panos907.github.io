@@ -389,7 +389,7 @@ function generateCombatInfo() {
 
     combatDiv.appendChild(this.generateColoredTitle("Combat/Skills"));
 
-    const monsterDefenseModifierValue = monsterDefenseModifier[monsterType];
+    let monsterDefenseModifierValue = monsterDefenseModifier[monsterType];
 
     if (monsterLevel > 1) {
         monsterDefenseModifierValue = monsterDefenseModifierValue + monsterLevel;
