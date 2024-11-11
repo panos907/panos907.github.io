@@ -34,6 +34,32 @@
                 <hr>
                 <section class="col-12 font-monospace">
                     <div class="form-group d-print-none">
+                        <label for="monster-selector">Monster Type: </label>
+                        <select id="monster-selector">
+                            <option value="">Please select an option</option>
+                        </select>
+                    </div>
+
+                    <script>
+                        // Populate monster select with elements
+                        const selectElement = document.getElementById('monster-selector');
+
+                        const options = [
+                            { value: 'skeleton', text: 'Skeleton' },
+                            { value: 'ghoul', text: 'Ghoul' },
+                            { value: 'zombie', text: 'Zombie' }
+                        ];
+
+                        options.forEach(option => {
+                            const newOption = document.createElement('option');
+                            newOption.value = option.value;
+                            newOption.text = option.text;
+                            selectElement.appendChild(newOption);
+                        });
+                    </script>
+
+                    <br>
+                    <div class="form-group d-print-none">
                         <label for="level-selector">Monster level: </label>
                         <input id="level-selector" type="number" name="quantity" min="1" max="20" value="1">
                     </div>

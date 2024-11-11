@@ -121,9 +121,14 @@ function generateRandomColorFromBasicColors() {
 function generateRandomMonster()
 {
     const levelSelectInput = document.getElementById('level-selector');
+    const monsterTypeInput = document.getElementById('monster-selector');
 
     if (levelSelectInput.value > 1) {
         levelBonus = levelSelectInput.value;     
+    }
+
+    if (monsterTypeInput.value != null) {
+        monsterType = monsterTypeInput.value;     
     }
 
     this.generateRandomName();
@@ -205,7 +210,7 @@ function generateRandomAbilities() {
     for (let i = 0; i < 8; i++) {
         var abilityName = abilityNames[i];
 
-        const finalAbilityValue = classAbilities[abilityName][monsterType] + level_bonus;
+        const finalAbilityValue = classAbilities[abilityName][monsterType] + levelBonus;
 
         const abilityParagraph = document.createElement("p");
         abilityParagraph.innerHTML = '<strong><em>'+abilityNames[i]+'</em></strong>: '+finalAbilityValue+'  ';
