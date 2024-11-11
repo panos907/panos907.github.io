@@ -73,7 +73,7 @@ let classDescriptions = {
 
 let classPowers = {
     "Skeleton":'Strength in Numbers. The Skeleton can draw upon their inner strength and resolve in times of great need. Once per day, they may roll d6 and add the result to any one roll they make.',
-    "Ghoul":'Scholarly Training. The Ghoul has received extensive training in the arts of literature, philosophy, and the sciences.',
+    "Ghoul":'Paralyzing Bite. If the Ghoul successfully hits a creature with a Bite attack, the target must succeed on a TN 10 fortitude check, or become paralyzed until they succeed.',
     "Zombie":'Tough. When the zombie would normally die, it can instead attempt a TN 5 Fortitude check. On a success it remains at 1 health point instead. (With each success the TN increases by a factor of 5)'
 }
 
