@@ -1,17 +1,13 @@
 
-let characterName = '';
+let monsterType = '';
 let randomColor;
 
+let levelBonus = 0;
+
 let monsterHP = {
-    "Skeleton":8,
+    "Skeleton":12,
     "Ghoul":8,
     "Zombie":8,
-};
-
-let classTenets = {
-    "Skeleton":"The Ronin's Creed",
-    "Ghoul":"Bushido",
-    "Corrupted Shinobi":"The Unseen Virtues",
 };
 
 let classAbilities = {
@@ -243,6 +239,12 @@ function generateRandomColorFromBasicColors() {
 
 function generateRandomMonster()
 {
+    const levelSelectInput = document.getElementById('level-selector');
+
+    if (levelSelectInput.value > 1) {
+        levelBonus = levelSelectInput.value;     
+    }
+
     this.generateRandomName();
     this.generateClassDescriptionBackgroundAndFlaws();
     var abilities = this.generateRandomAbilities();
@@ -265,7 +267,7 @@ function generateRandomName()
 
     const randomNameIndex = Math.floor(Math.random() * names.length);
 
-    characterName = names[randomNameIndex];
+    monsterType = names[randomNameIndex];
 
     const name = names[randomNameIndex];
 
@@ -273,7 +275,7 @@ function generateRandomName()
     nameDiv.innerHTML = '<strong><em>Monster Type:</em></strong> ' + name+'  ';
 
     const titleDiv = document.getElementById("title");
-    titleDiv.textContent = "WODiscordia - " + characterName;
+    titleDiv.textContent = "WODiscordia - " + monsterType;
 }
 
 function generateRandomHP()
@@ -282,7 +284,7 @@ function generateRandomHP()
     hpDiv.innerHTML = "";
 
     // roll the HP dice based on the characer class
-    var randomNumberRolled = this.rollDice(1, monsterHP[characterName]);
+    var randomNumberRolled = this.rollDice(1, monsterHP[monsterType]);
 
     var randomNumberToReturn = randomNumberRolled + characterResilience; // Add resilience to rolled number
     
@@ -298,7 +300,7 @@ function generateEquipment() {
     
     equipmentDiv.appendChild(this.generateColoredTitle('Equipment'));
 
-    const tempEquipment = classEquipment[characterName];
+    const tempEquipment = classEquipment[monsterType];
     const equipmentNumber = Object.keys(tempEquipment).length;
 
     const equipmentList = document.createElement("ul");
@@ -318,8 +320,8 @@ function generateEquipment() {
 }
 
 function generateRandomMoney() {
-    let diceRolls = this.rollDice(classMoney[characterName], 6);
-    if (classMoney[characterName] > 1) {
+    let diceRolls = this.rollDice(classMoney[monsterType], 6);
+    if (classMoney[monsterType] > 1) {
         const diceSum = diceRolls.reduce((acc, val) => acc + val, 0) * 10;
         return diceSum;
     }
@@ -331,20 +333,9 @@ function generateRandomMoney() {
 
 function generateRandomAbilities() {
     const abilityDiv = document.getElementById("abilities");
-    const showElementInput = document.getElementById('option2');
-    const honorChoiceRadios = document.querySelectorAll('input[name="honorChoice"]');
-    var level_bonus = 0;
     abilityDiv.innerHTML = "";
 
     abilityDiv.appendChild(this.generateColoredTitle('Abilities'));
-
-    if (showElementInput.checked) {
-        honorChoiceRadios.forEach(radio => {
-            if (radio.value == 'honorable' && radio.checked) {
-                level_bonus = 1;     
-            }
-        });
-    }
 
     const finalAbilities = [];
     const abilityNames = ['Swiftness', 'Spirit', 'Vigour', 'Resilience'];
@@ -354,7 +345,7 @@ function generateRandomAbilities() {
         var abilityName = abilityNames[i];
 
         const diceSum = diceRolls.reduce((acc, val) => acc + val, 0);
-        const randomNumber = diceSum + classAbilities[abilityName][characterName] + level_bonus;
+        const randomNumber = diceSum + classAbilities[abilityName][monsterType] + level_bonus;
         const finalAbilityValue = abilitiesRollValues[randomNumber];
 
         const abilityParagraph = document.createElement("p");
@@ -373,7 +364,7 @@ function generateClassDescriptionBackgroundAndFlaws()
     infoDiv.innerHTML = "";
     randomColor = this.generateRandomColorFromBasicColors();
 
-    infoDiv.appendChild(this.generateColoredTitle("Monster Type: " + characterName));
+    infoDiv.appendChild(this.generateColoredTitle("Monster Type: " + monsterType));
 
     var diceRoll = this.rollDice(1, 20);
     var disfigurements = characterBrokenBodies[diceRoll];
@@ -394,7 +385,7 @@ function generateClassDescriptionBackgroundAndFlaws()
     infoDiv.appendChild(badHabitsParagraph);
 
     const descriptionParagraph = document.createElement("p");
-    descriptionParagraph.textContent = classDescriptions[characterName];
+    descriptionParagraph.textContent = classDescriptions[monsterType];
     descriptionParagraph.classList.add("col-md-12");
 
     infoDiv.appendChild(descriptionParagraph);
@@ -424,7 +415,7 @@ function generateRandomPower() {
 
     powersDiv.appendChild(this.generateColoredTitle("Powers"));
 
-    const classPowersObj = classPowers[characterName];
+    const classPowersObj = classPowers[monsterType];
     const powerCount = Object.keys(classPowersObj).length;
     const randomIndex = Math.floor(Math.random() * powerCount);
 
