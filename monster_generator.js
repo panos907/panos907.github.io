@@ -155,7 +155,7 @@ function generateRandomMonster()
         monsterType = monsterTypeInput.value;     
     }
 
-    this.generateRandomName();
+    this.generateMonsterType();
     this.generateClassDescriptionBackgroundAndFlaws();
     var abilities = this.generateRandomAbilities();
     monsterStrength = abilities[0];
@@ -170,7 +170,7 @@ function generateRandomMonster()
     this.generateRandomPower();
 }
 
-function generateRandomName()
+function generateMonsterType()
 {
     const name = monsterType;
 
