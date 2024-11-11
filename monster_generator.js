@@ -150,24 +150,24 @@ let monsterArmorBonus = {
 };
 
 let monsterDefense = {
-    "Skeleton": 13,
-    "Ghoul": 13,
-    "Zombie": 13,
-    "Bandit": 13,
+    "Skeleton": 10,
+    "Ghoul": 10,
+    "Zombie": 10,
+    "Bandit": 10,
 };
 
 let monsterDefenseModifier = {
-    "Skeleton": "+3",
-    "Ghoul": "+3",
-    "Zombie": "+3",
-    "Bandit": "+3",
+    "Skeleton": 1,
+    "Ghoul": 1,
+    "Zombie": 1,
+    "Bandit": 1,
 };
 
 let monsterCombatModifier = {
-    "Skeleton": "+2",
-    "Ghoul": "+2",
-    "Zombie": "+2",
-    "Bandit": "+2",
+    "Skeleton": 1,
+    "Ghoul": 1,
+    "Zombie": 1,
+    "Bandit": 1,
 };
 
 let monsterSkills = {
@@ -389,24 +389,34 @@ function generateCombatInfo() {
 
     combatDiv.appendChild(this.generateColoredTitle("Combat/Skills"));
 
-    const monsterDefenseValue = monsterDefense[monsterType];
-
-    const defenseParagraph = document.createElement("p");
-    defenseParagraph.textContent = 'Defense: '+monsterDefenseValue;
-
-    combatDiv.appendChild(defenseParagraph);
-
     const monsterDefenseModifierValue = monsterDefenseModifier[monsterType];
+
+    if (monsterLevel > 1) {
+        monsterDefenseModifierValue = monsterDefenseModifierValue + monsterLevel;
+    }
 
     const defenseModifierParagraph = document.createElement("p");
     defenseModifierParagraph.textContent = 'Defense Modifier: '+monsterDefenseModifierValue;
 
     combatDiv.appendChild(defenseModifierParagraph);
 
-    const combatModifier = monsterCombatModifier[monsterType];
+    const monsterDefenseValue = monsterDefense[monsterType];
+
+    monsterDefenseValue = monsterDefense[monsterType] + monsterDefenseModifierValue + monsterAbilities['Agility'][monsterType];
+
+    const defenseParagraph = document.createElement("p");
+    defenseParagraph.textContent = 'Defense: '+monsterDefenseValue;
+
+    combatDiv.appendChild(defenseParagraph);
+
+    const combatModifierValue = monsterCombatModifier[monsterType];
+
+    if (monsterLevel > 1) {
+        combatModifierValue = combatModifierValue + monsterLevel;
+    }
 
     const combatModifierParagraph = document.createElement("p");
-    combatModifierParagraph.textContent = 'Combat Modifier: '+combatModifier;
+    combatModifierParagraph.textContent = 'Combat Modifier: '+combatModifierValue;
 
     combatDiv.appendChild(combatModifierParagraph);
 
