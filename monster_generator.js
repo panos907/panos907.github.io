@@ -22,6 +22,24 @@ let monsterSpeed = {
     "Zombie":3,
 };
 
+let monsterWeaknesses = {
+    "Skeleton":"Holy, Bashing",
+    "Ghoul":4,
+    "Zombie":3,
+};
+
+let monsterResistances = {
+    "Skeleton":"Holy, Bashing",
+    "Ghoul":4,
+    "Zombie":3,
+};
+
+let monsterImmunities = {
+    "Skeleton":5,
+    "Ghoul":4,
+    "Zombie":3,
+};
+
 let classAbilities = {
     Strength: {
         "Skeleton":3,
@@ -175,6 +193,12 @@ function generateRandomMonster()
     else {
         monsterLevel = 1;   
     }
+
+    if (monsterLevel > 20)
+        monsterLevel = 20;
+
+    if (monsterLevel < 1)
+        monsterLevel = 1;
 
     console.log(monsterLevel)
 
