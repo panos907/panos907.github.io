@@ -165,16 +165,18 @@ function generateRandomMonster()
     const levelSelectInput = document.getElementById('level-selector');
     const monsterTypeInput = document.getElementById('monster-selector');
 
-    if (levelSelectInput.value > 1) {
-        monsterLevel = levelSelectInput.value;     
-    }
-
     if (monsterTypeInput.value != null) {
         monsterType = monsterTypeInput.value;     
     }
 
+    if (levelSelectInput.value > 1) {
+        monsterLevel = levelSelectInput.value;     
+    }
+
+    console.log(monsterLevel)
+
     this.generateMonsterType();
-    this.generateClassDescriptionBackgroundAndFlaws();
+    this.generateMonsterInfo();
     var abilities = this.generateRandomAbilities();
     monsterStrength = abilities[0];
     monsterAgility = abilities[1];
@@ -270,7 +272,7 @@ function generateRandomAbilities() {
     return finalAbilities;
 }
 
-function generateClassDescriptionBackgroundAndFlaws()
+function generateMonsterInfo()
 {
     const infoDiv = document.getElementById("classinfo");
     infoDiv.innerHTML = "";
