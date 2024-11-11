@@ -88,6 +88,30 @@ let monsterBackgrounds = {
     20: "Have been marked by a dark force that will stop at nothing to claim your soul.",
 };
 
+let monsterHPBonus = {
+    "Skeleton": {
+        1:2,
+        2:3,
+        3:4,
+        4:5,
+        5:6,
+    },
+    "Ghoul": {
+        1:2,
+        2:3,
+        3:4,
+        4:5,
+        5:6,
+    },
+    "Zombie": {
+        1:2,
+        2:3,
+        3:4,
+        4:5,
+        5:6,
+    },
+};
+
 function rollDice(numDice, numOfSides) {
     let results = [];
 
@@ -170,15 +194,16 @@ function generateRandomHP()
     const hpDiv = document.getElementById("hp");
     hpDiv.innerHTML = "";
 
-    // roll the HP dice based on the characer class
-    var randomNumberRolled = this.rollDice(1, monsterHP[monsterType]);
+    var hpToReturn = monsterHP[monsterType];
 
-    var randomNumberToReturn = randomNumberRolled + monsterResilience; // Add resilience to rolled number
-    
-    if (randomNumberToReturn <= 0)
-        randomNumberToReturn = 1;
+    if (levelBonus > 0) {
+        for (let i = 1; i < levelBonus; i++) {
+            let diceRoll = this.rollDice(1, monsterHPBonus[monsterType].length);
+            hpToReturn = hpToReturn + monsterHPBonus[monsterType][diceRoll];
+        }
+    }
 
-    hpDiv.innerHTML  = '<strong><em>HP:</em></strong> '+randomNumberToReturn+"/"+randomNumberToReturn;
+    hpDiv.innerHTML  = '<strong><em>Health Points:</em></strong> '+hpToReturn+"/"+hpToReturn;
 }
 
 function generateRandomMoney() {
@@ -210,7 +235,7 @@ function generateRandomAbilities() {
     for (let i = 0; i < 8; i++) {
         var abilityName = abilityNames[i];
 
-        const finalAbilityValue = classAbilities[abilityName][monsterType] + levelBonus;
+        const finalAbilityValue = classAbilities[abilityName][monsterType];
 
         const abilityParagraph = document.createElement("p");
         abilityParagraph.innerHTML = '<strong><em>'+abilityNames[i]+'</em></strong>: '+finalAbilityValue+'  ';
