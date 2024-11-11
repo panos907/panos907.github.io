@@ -234,7 +234,7 @@ function generateArmor()
         armorToReturn = armorToReturn + monsterArmorBonus[monsterType] * monsterLevel;
     }
 
-    hpDiv.innerHTML  = '<strong><em>Armor Points:</em></strong> '+armorToReturn;
+    armorDiv.innerHTML  = '<strong><em>Armor Points:</em></strong> '+armorToReturn;
 }
 
 function generateSpeed()
@@ -244,7 +244,7 @@ function generateSpeed()
 
     var speedToReturn = monsterSpeed[monsterType];
 
-    hpDiv.innerHTML  = '<strong><em>Speed:</em></strong> '+speedToReturn;
+    speedDiv.innerHTML  = '<strong><em>Speed:</em></strong> '+speedToReturn;
 }
 
 
