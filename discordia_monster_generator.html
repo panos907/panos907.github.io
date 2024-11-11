@@ -53,6 +53,7 @@
                         options.forEach(option => {
                             const newOption = document.createElement('option');
                             newOption.value = option.value;
+                            newOption.text = option.value;
                             selectElement.appendChild(newOption);
                         });
                     </script>
