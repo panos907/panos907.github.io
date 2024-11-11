@@ -8,36 +8,42 @@ let monsterHP = {
     "Skeleton":12,
     "Ghoul":21,
     "Zombie":16,
+    "Bandit":10,
 };
 
 let monsterArmor = {
     "Skeleton":6,
     "Ghoul":15,
     "Zombie":6,
+    "Bandit":8,
 };
 
 let monsterSpeed = {
     "Skeleton":5,
     "Ghoul":4,
     "Zombie":3,
+    "Bandit":5,
 };
 
 let monsterWeaknesses = {
     "Skeleton":"Holy, Bashing",
     "Ghoul":4,
     "Zombie":3,
+    "Bandit":"None",
 };
 
 let monsterResistances = {
     "Skeleton":"Holy, Bashing",
-    "Ghoul":4,
-    "Zombie":3,
+    "Ghoul":"None",
+    "Zombie":"None",
+    "Bandit":"None",
 };
 
 let monsterImmunities = {
-    "Skeleton":5,
-    "Ghoul":4,
-    "Zombie":3,
+    "Skeleton":"Poison",
+    "Ghoul":"None",
+    "Zombie":"None",
+    "Bandit":"None",
 };
 
 let classAbilities = {
@@ -45,41 +51,49 @@ let classAbilities = {
         "Skeleton":3,
         "Ghoul":-1,
         "Zombie":2,
+        "Bandit":2,
     },
     Dexterity: {
         "Skeleton":-2,
         "Ghoul":-1,
         "Zombie":2,
+        "Bandit":2,
     },
     Agility: {
         "Skeleton":3,
         "Ghoul":-1,
         "Zombie":-1,
+        "Bandit":2,
     },
     Vitality: {
         "Skeleton":2,
         "Ghoul":-1,
         "Zombie":1,
+        "Bandit":2,
     },
-    Inspection: {
+    Mindpower: {
         "Skeleton":-1,
         "Ghoul":-1,
         "Zombie":1,
+        "Bandit":2,
     },
     Senses: {
         "Skeleton":-1,
         "Ghoul":-1,
         "Zombie":1,
+        "Bandit":2,
     },
     Presence: {
         "Skeleton":0,
         "Ghoul":-1,
         "Zombie":1,
+        "Bandit":2,
     },
     Reason: {
         "Skeleton":-2,
         "Ghoul":-1,
         "Zombie":1,
+        "Bandit":2,
     },
 };
 
@@ -87,12 +101,14 @@ let classDescriptions = {
     "Skeleton":"Skeletons are undead creatures born of accursed sorcery, roaming with an eternal and generally mindless thirst for vengeance. Lacking flesh, this undead monstrosity is a macabre assembly of bones, held together with cursed magic. It's empty eye sockets glow with malevolent energy, eflecting the purpose of it's creator. Skeletons wield spectral weapons with surprising precision and are often cloaked in tattered remnants of armor, evidence of what they wore in life. Animated by dark Magic, the skeleton is an unholy guardian tirelessly patroling the crypts and cursed domains it watches over.",
     "Ghoul":"Ghouls are people who have been cursed to crave the flesh of other people. THe curse typically comes about as a result of cannibalism, though there are otehr possible causes as well. Ghouls can originate from any of the intelligent races, such as humans, elves, dwarves, kagari, and so forth. The appearance of a ghoul changes to include sharp teeth for the tearing of flesh, a gaunt appearance, long claws, and a feral gleam in their eyes. They also lose their hair. The insatiable hunger for the flesh of the living haunts their every moment.",
     "Zombie":"The Zombie, a scoundrel of the highest order, has forsaken all traditional honour. Instead, they use their stealth and guile to weave a web of deceit, assassinating their prey from the shadows. No lord or clan can control this wily fiend, for their only true master is their own greed. Their blades are sharp, their wits sharper, and their hearts as black as the night they stalk. They are the shadow that creeps up behind you, the serpent that slithers beneath your feet. Cross them at your own peril, for they are the Zombie, and their loyalty is to only themselves.",
+    "Bandit":"Bandits are as common as they are varied.",
 };
 
 let classPowers = {
     "Skeleton":'Strength in Numbers. The Skeleton can draw upon their inner strength and resolve in times of great need. Once per day, they may roll d6 and add the result to any one roll they make.',
     "Ghoul":'Paralyzing Bite. If the Ghoul successfully hits a creature with a Bite attack, the target must succeed on a TN 10 fortitude check, or become paralyzed until they succeed.',
-    "Zombie":'Tough. When the zombie would normally die, it can instead attempt a TN 5 Fortitude check. On a success it remains at 1 health point instead. (With each success the TN increases by a factor of 5)'
+    "Zombie":'Tough. When the zombie would normally die, it can instead attempt a TN 5 Fortitude check. On a success it remains at 1 health point instead. (With each success the TN increases by a factor of 5)',
+    "Bandit":'Tactical Prowess. The Bandit gains a Major Advantage when flanking instead of a simple one.'
 }
 
 let monsterBackgrounds = {
@@ -140,12 +156,20 @@ let monsterHPBonus = {
         4:5,
         5:6,
     },
+    "Bandit": {
+        1:2,
+        2:3,
+        3:4,
+        4:5,
+        5:6,
+    },
 };
 
 let monsterArmorBonus = {
     "Skeleton": 3,
     "Ghoul": 3,
     "Zombie": 3,
+    "Bandit": 3,
 };
 
 function rollDice(numDice, numOfSides) {
@@ -280,7 +304,7 @@ function generateRandomAbilities() {
     const abilityNames = [
         'Strength', 'Dexterity', 
         'Agility', 'Vitality',
-        'Inspection', 'Senses',
+        'Mindpower', 'Senses',
         'Presence', 'Reason'
     ];
 
