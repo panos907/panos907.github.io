@@ -172,6 +172,7 @@ function generateRandomMonster()
 
 function generateMonsterType()
 {
+    randomColor = this.generateRandomColorFromBasicColors();
     const name = monsterType;
 
     const nameDiv = document.getElementById("type");
@@ -191,10 +192,10 @@ function generateHP()
     if (levelBonus > 0) {
         console.log(Object.keys(monsterHPBonus[monsterType]))
         console.log(Object.keys(monsterHPBonus[monsterType]).length)
-        for (let i = 1; i < levelBonus; i++) {
-            let diceRoll = this.rollDice(1, Object.keys(monsterHPBonus[monsterType]).length);
-            hpToReturn = hpToReturn + monsterHPBonus[monsterType][diceRoll];
-        }
+        // for (let i = 1; i < levelBonus; i++) {
+        //     let diceRoll = this.rollDice(1, Object.keys(monsterHPBonus[monsterType]).length);
+        //     hpToReturn = hpToReturn + monsterHPBonus[monsterType][diceRoll];
+        // }
     }
 
     hpDiv.innerHTML  = '<strong><em>Health Points:</em></strong> '+hpToReturn;
@@ -245,7 +246,6 @@ function generateClassDescriptionBackgroundAndFlaws()
 {
     const infoDiv = document.getElementById("classinfo");
     infoDiv.innerHTML = "";
-    randomColor = this.generateRandomColorFromBasicColors();
 
     infoDiv.appendChild(this.generateColoredTitle("Monster Type: " + monsterType));
 
