@@ -190,6 +190,8 @@ function generateHP()
 
     if (levelBonus > 0) {
         for (let i = 1; i < levelBonus; i++) {
+            console.log(Object.keys(monsterHPBonus[monsterType]))
+            console.log(Object.keys(monsterHPBonus[monsterType]).length)
             let diceRoll = this.rollDice(1, Object.keys(monsterHPBonus[monsterType]).length);
             hpToReturn = hpToReturn + monsterHPBonus[monsterType][diceRoll];
         }
