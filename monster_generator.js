@@ -56,43 +56,43 @@ let monsterAbilities = {
     Dexterity: {
         "Skeleton":-2,
         "Ghoul":-1,
-        "Zombie":2,
+        "Zombie":-1,
         "Bandit":2,
     },
     Agility: {
         "Skeleton":3,
         "Ghoul":-1,
-        "Zombie":-1,
+        "Zombie":-2,
         "Bandit":2,
     },
     Vitality: {
         "Skeleton":2,
         "Ghoul":-1,
-        "Zombie":1,
+        "Zombie":3,
         "Bandit":2,
     },
     Mindpower: {
         "Skeleton":-1,
         "Ghoul":-1,
-        "Zombie":1,
+        "Zombie":-2,
         "Bandit":2,
     },
     Senses: {
         "Skeleton":-1,
         "Ghoul":-1,
-        "Zombie":1,
+        "Zombie":-2,
         "Bandit":2,
     },
     Presence: {
         "Skeleton":0,
         "Ghoul":-1,
-        "Zombie":1,
+        "Zombie":0,
         "Bandit":2,
     },
     Reason: {
         "Skeleton":-2,
         "Ghoul":-1,
-        "Zombie":1,
+        "Zombie":-4,
         "Bandit":2,
     },
 };
@@ -112,10 +112,10 @@ let monsterPowers = {
 }
 
 let monsterActions = {
-    "Skeleton":'Strength in Numbers. The Skeleton can draw upon their inner strength and resolve in times of great need. Once per day, they may roll d6 and add the result to any one roll they make.',
-    "Ghoul":'Paralyzing Bite. If the Ghoul successfully hits a creature with a Bite attack, the target must succeed on a TN 10 fortitude check, or become paralyzed until they succeed.',
-    "Zombie":'Bite: Melee Attack + Combat Modifier, Reach 1 square, 1 target. Damage: 1D8 + Combat modifier. Slam. Melee Attack: +3, Reach 1 square, 1 target. Damage: 1D4 + Combat Modifier',
-    "Bandit":'Tactical Prowess. The Bandit gains a Major Advantage when flanking instead of a simple one.'
+    "Skeleton":'Scratch: Melee Attack: + Combat modifier, Reach 1 square, 1 target. Damage: 1D6 +(STR) + Combat Modifier',
+    "Ghoul":'Bite: Melee Attack: +Combat Modifier, Reach 1 square, 1 target. Damage: 1D10 + Combat Modifier Claw: Melee Attack: +Combat Modifier, Reach 1 square, 1 target. Damage: 2D4 + Combat Modifier',
+    "Zombie":'Bite: Melee Attack + Combat Modifier, Reach 1 square, 1 target. Damage: 1D8 + Combat Modifier. Slam. Melee Attack: +Combat Modifier, Reach 1 square, 1 target. Damage: 1D4 + Combat Modifier',
+    "Bandit":'BroadSword: Melee Attack + Combat Modifier, Reach 1 square, 1 target. Damage 1D8 + Combat Modifier.'
 }
 
 let monsterHPBonus = {
