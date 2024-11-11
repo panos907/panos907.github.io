@@ -226,6 +226,7 @@ function generateRandomMonster()
 
     this.generateMonsterType();
     this.generateMonsterInfo();
+    this.generateResistancesWeaknessesAndImmunities();
     var abilities = this.generateRandomAbilities();
     monsterStrength = abilities[0];
     monsterAgility = abilities[1];
