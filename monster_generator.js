@@ -357,8 +357,6 @@ function generateRandomAbilities() {
         const randomNumber = diceSum + classAbilities[abilityName][characterName] + level_bonus;
         const finalAbilityValue = abilitiesRollValues[randomNumber];
 
-        console.log(level_bonus);
-
         const abilityParagraph = document.createElement("p");
         abilityParagraph.innerHTML = '<strong><em>'+abilityNames[i]+'</em></strong>: '+finalAbilityValue+'  ';
 
