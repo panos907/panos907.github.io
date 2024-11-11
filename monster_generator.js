@@ -282,7 +282,7 @@ function generateRandomHP()
     hpDiv.innerHTML = "";
 
     // roll the HP dice based on the characer class
-    var randomNumberRolled = this.rollDice(1, monsterHP[characterClass]);
+    var randomNumberRolled = this.rollDice(1, monsterHP[characterName]);
 
     var randomNumberToReturn = randomNumberRolled + characterResilience; // Add resilience to rolled number
     
@@ -298,7 +298,7 @@ function generateEquipment() {
     
     equipmentDiv.appendChild(this.generateColoredTitle('Equipment'));
 
-    const tempEquipment = classEquipment[characterClass];
+    const tempEquipment = classEquipment[characterName];
     const equipmentNumber = Object.keys(tempEquipment).length;
 
     const equipmentList = document.createElement("ul");
@@ -318,8 +318,8 @@ function generateEquipment() {
 }
 
 function generateRandomMoney() {
-    let diceRolls = this.rollDice(classMoney[characterClass], 6);
-    if (classMoney[characterClass] > 1) {
+    let diceRolls = this.rollDice(classMoney[characterName], 6);
+    if (classMoney[characterName] > 1) {
         const diceSum = diceRolls.reduce((acc, val) => acc + val, 0) * 10;
         return diceSum;
     }
@@ -354,7 +354,7 @@ function generateRandomAbilities() {
         var abilityName = abilityNames[i];
 
         const diceSum = diceRolls.reduce((acc, val) => acc + val, 0);
-        const randomNumber = diceSum + classAbilities[abilityName][characterClass] + honor_bonus;
+        const randomNumber = diceSum + classAbilities[abilityName][characterName] + honor_bonus;
         const finalAbilityValue = abilitiesRollValues[randomNumber];
 
         console.log(honor_bonus);
@@ -396,7 +396,7 @@ function generateClassDescriptionBackgroundAndFlaws()
     infoDiv.appendChild(badHabitsParagraph);
 
     const descriptionParagraph = document.createElement("p");
-    descriptionParagraph.textContent = classDescriptions[characterClass];
+    descriptionParagraph.textContent = classDescriptions[characterName];
     descriptionParagraph.classList.add("col-md-12");
 
     infoDiv.appendChild(descriptionParagraph);
@@ -426,7 +426,7 @@ function generateRandomPower() {
 
     powersDiv.appendChild(this.generateColoredTitle("Powers"));
 
-    const classPowersObj = classPowers[characterClass];
+    const classPowersObj = classPowers[characterName];
     const powerCount = Object.keys(classPowersObj).length;
     const randomIndex = Math.floor(Math.random() * powerCount);
 
