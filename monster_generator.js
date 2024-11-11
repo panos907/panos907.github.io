@@ -217,6 +217,7 @@ function generateRandomMonster()
     this.generateArmor();
     this.generateSpeed();
     this.generatePowers();
+    this.generateCombatInfo();
 }
 
 function generateMonsterType()
@@ -352,6 +353,27 @@ function generatePowers() {
     powerParagraph.textContent = classPowersObj;
 
     powersDiv.appendChild(powerParagraph);
+}
+
+function generateCombatInfo() {
+    const combatDiv = document.getElementById("combat");
+    combatDiv.innerHTML = "";
+
+    combatDiv.appendChild(this.generateColoredTitle("Combat/Skills"));
+
+    const monsterCombatValues = monsterCombat[monsterType];
+
+    const combatParagraph = document.createElement("p");
+    combatParagraph.textContent = monsterCombatValues;
+
+    combatDiv.appendChild(combatParagraph);
+
+    const monsterSkillValue = monsterSkills[monsterType];
+
+    const skillsParagraph = document.createElement("p");
+    skillsParagraph.textContent = monsterSkillValue;
+
+    combatDiv.appendChild(skillsParagraph);
 }
 
 function generateColoredTitle(title)
