@@ -33,12 +33,6 @@ let classAbilities = {
     },
 };
 
-let classTraits = {
-    "Skeleton":['drunkard', 'sober'],
-    "Ghoul":['drunkard', 'sober'],
-    "Corrupted Shinobi":['stealthy', 'clumsy'],
-};
-
 let classDescriptions = {
     "Skeleton":"The Skeleton, a man without a master, he roams the land with his sword at his side and his honour as his guide. He's a samurai of the road, a warrior of the wilds, seeking fortune and adventure wherever they may be found. His skills are sharp, his heart is ashes, but he's a man on the outside looking in. He's not bound by the rules of society, nor is he burdened by its obligations. He's a lone wolf, a rebel, a force of nature. And when trouble comes to town, he's the one they call on to set things right.",
     "Ghoul":"The Ghoul is an inquisitive one, with a thirst for knowledge that rivals their love for battle. They're the kind of warrior who can discuss poetry as deftly as they can swing a sword.They know that true Mastery of the Blade requires a deep understanding of the world around them. They use their intellect to gain the upper hand in battles of wit and diplomacy. A master of tactics and culture. In a world where brawn often reigns supreme, the erudite samurai is a rare and valuable gem, a warrior who values knowledge and wisdom as highly as strength and skill.",
@@ -69,26 +63,6 @@ let classPowers = {
         3: 'Flame Fist. Knuckles imbued with mystical fire, dealing 1d4 additional fire damage and potentially setting targets on fire. The Monk may only use this ability a limited number of times per day (Spirit +1).',
         4: 'Sake Style. When the Zombie is under the effects of alcohol, they gain a temporary +2 bonus to their melee attacks and defence.',
         5: 'Drunken Master. Turn any item into a weapon, increasing the damage from a d4 to d6. Additionally, they have a +1 bonus to initiative rolls while drunk.'
-    }
-}
-
-let classEquipment = {
-    "Skeleton": {
-        0: 'A worn but serviceable katana (d8 damage)' ,
-        1: 'A set of traveling clothes',
-        2: 'A letter of introduction (can be used to gain an audience with a local lord or official)',
-        3: 'A straw hat', 
-    },
-    "Ghoul": {
-        0: 'A fine Katana (d10 damage)',
-        1: 'A Wakizashi (d6 damage)',
-        2: 'A set of sturdy armour (tier 2)', 
-        3: 'A collection of books and papers', 
-    },
-    "Zombie": {
-        0: 'A set of monk\'s robes and sandals',
-        1: 'A gourd of sake',
-        2: 'A set of brass knuckles (d4 damage)', 
     }
 }
 
@@ -254,9 +228,6 @@ function generateRandomMonster()
     characterResilience = abilities[3];
     this.generateRandomHP();
     this.generateRandomPower();
-    this.generateEquipment();
-    // this.generateRandomClassInfo();
-    // this.generateRandomAEquipment();
 }
 
 function generateRandomName()
@@ -292,31 +263,6 @@ function generateRandomHP()
         randomNumberToReturn = 1;
 
     hpDiv.innerHTML  = '<strong><em>HP:</em></strong> '+randomNumberToReturn+"/"+randomNumberToReturn;
-}
-
-function generateEquipment() {
-    const equipmentDiv = document.getElementById("equipment");
-    equipmentDiv.innerHTML = "";
-    
-    equipmentDiv.appendChild(this.generateColoredTitle('Equipment'));
-
-    const tempEquipment = classEquipment[monsterType];
-    const equipmentNumber = Object.keys(tempEquipment).length;
-
-    const equipmentList = document.createElement("ul");
-
-    for (let i = 0; i < equipmentNumber; i++) {
-        const equipmentItem = document.createElement("li");
-        equipmentItem.textContent = tempEquipment[i];
-
-        equipmentList.appendChild(equipmentItem);
-    }
-
-    const moneyItem = document.createElement("li");
-    moneyItem.textContent = this.generateRandomMoney() +' Ryo';
-    equipmentList.appendChild(moneyItem);
-
-    equipmentDiv.appendChild(equipmentList);
 }
 
 function generateRandomMoney() {
@@ -366,47 +312,11 @@ function generateClassDescriptionBackgroundAndFlaws()
 
     infoDiv.appendChild(this.generateColoredTitle("Monster Type: " + monsterType));
 
-    var diceRoll = this.rollDice(1, 20);
-    var disfigurements = characterBrokenBodies[diceRoll];
-
-    const mutationsParagraph = document.createElement("p");
-    mutationsParagraph.textContent = "Optional Disfigurement: "+disfigurements;
-    mutationsParagraph.classList.add("col-md-12");
-
-    infoDiv.appendChild(mutationsParagraph);
-
-    diceRoll = this.rollDice(1, 20);
-    var bad_habit = characterBadHabits[diceRoll];
-
-    const badHabitsParagraph = document.createElement("p");
-    badHabitsParagraph.textContent = "Optional Bad Habit: "+bad_habit;
-    badHabitsParagraph.classList.add("col-md-12");
-    
-    infoDiv.appendChild(badHabitsParagraph);
-
     const descriptionParagraph = document.createElement("p");
     descriptionParagraph.textContent = classDescriptions[monsterType];
     descriptionParagraph.classList.add("col-md-12");
 
     infoDiv.appendChild(descriptionParagraph);
-
-    diceRoll = this.rollDice(1, 20);
-    var flaw = characterAfflictions[diceRoll];
-
-    const flawParagraph = document.createElement("p");
-    flawParagraph.textContent = "Optional Flaw: "+flaw;
-    flawParagraph.classList.add("col-md-12");
-
-    infoDiv.appendChild(flawParagraph);
-
-    diceRoll = this.rollDice(1, 20);
-    var backstory = characterBackgrounds[diceRoll];
-
-    const backstoryParagraph = document.createElement("p");
-    backstoryParagraph.textContent = "Optional Backstory: "+backstory;
-    backstoryParagraph.classList.add("col-md-12");
-
-    infoDiv.appendChild(backstoryParagraph);
 }
 
 function generateRandomPower() {
