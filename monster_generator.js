@@ -394,7 +394,7 @@ function generateCombatInfo() {
     const defenseParagraph = document.createElement("p");
     defenseParagraph.textContent = '<strong><em>Defense: </em></strong>: '+monsterDefenseValue;
 
-    combatDiv.appendChild(combatParagraph);
+    combatDiv.appendChild(defenseParagraph);
 
     const monsterDefenseModifierValue = monsterDefenseModifier[monsterType];
 
