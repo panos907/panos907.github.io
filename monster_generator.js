@@ -172,15 +172,7 @@ function generateRandomMonster()
 
 function generateRandomName()
 {
-    const names = [
-        "Skeleton", "Ghoul", "Zombie"
-    ];
-
-    const randomNameIndex = Math.floor(Math.random() * names.length);
-
-    monsterType = names[randomNameIndex];
-
-    const name = names[randomNameIndex];
+    const name = monsterType;
 
     const nameDiv = document.getElementById("type");
     nameDiv.innerHTML = '<strong><em>Monster Type:</em></strong> ' + name+'  ';
