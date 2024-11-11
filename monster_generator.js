@@ -6,13 +6,13 @@ let monsterLevel = 1;
 
 let monsterHP = {
     "Skeleton":12,
-    "Ghoul":8,
+    "Ghoul":21,
     "Zombie":16,
 };
 
 let monsterArmor = {
     "Skeleton":6,
-    "Ghoul":4,
+    "Ghoul":15,
     "Zombie":6,
 };
 
@@ -24,7 +24,7 @@ let monsterSpeed = {
 
 let classAbilities = {
     Strength: {
-        "Skeleton":2,
+        "Skeleton":3,
         "Ghoul":-1,
         "Zombie":2,
     },
@@ -34,7 +34,7 @@ let classAbilities = {
         "Zombie":2,
     },
     Agility: {
-        "Skeleton":2,
+        "Skeleton":3,
         "Ghoul":-1,
         "Zombie":-1,
     },
@@ -44,22 +44,22 @@ let classAbilities = {
         "Zombie":1,
     },
     Inspection: {
-        "Skeleton":2,
+        "Skeleton":-1,
         "Ghoul":-1,
         "Zombie":1,
     },
     Senses: {
-        "Skeleton":2,
+        "Skeleton":-1,
         "Ghoul":-1,
         "Zombie":1,
     },
     Presence: {
-        "Skeleton":2,
+        "Skeleton":0,
         "Ghoul":-1,
         "Zombie":1,
     },
     Reason: {
-        "Skeleton":2,
+        "Skeleton":-2,
         "Ghoul":-1,
         "Zombie":1,
     },
