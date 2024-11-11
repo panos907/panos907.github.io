@@ -389,17 +389,17 @@ function generateCombatInfo() {
 
     combatDiv.appendChild(this.generateColoredTitle("Combat/Skills"));
 
-    const monsterDefense = monsterDefense[monsterType];
+    const monsterDefenseValue = monsterDefense[monsterType];
 
     const defenseParagraph = document.createElement("p");
-    defenseParagraph.textContent = '<strong><em>Defense: </em></strong>: '+monsterDefense;
+    defenseParagraph.textContent = '<strong><em>Defense: </em></strong>: '+monsterDefenseValue;
 
     combatDiv.appendChild(combatParagraph);
 
-    const monsterDefenseModifier = monsterDefenseModifier[monsterType];
+    const monsterDefenseModifierValue = monsterDefenseModifier[monsterType];
 
     const defenseModifierParagraph = document.createElement("p");
-    defenseModifierParagraph.textContent = '<strong><em>Defense Modifier: </em></strong>: '+monsterDefenseModifier;
+    defenseModifierParagraph.textContent = '<strong><em>Defense Modifier: </em></strong>: '+monsterDefenseModifierValue;
 
     combatDiv.appendChild(defenseModifierParagraph);
 
