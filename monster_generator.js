@@ -158,21 +158,21 @@ let monsterArmorBonus = {
 
 let monsterDefense = {
     "Skeleton": 10,
-    "Ghoul": 10,
-    "Zombie": 10,
+    "Ghoul": 13,
+    "Zombie": 7,
     "Bandit": 10,
 };
 
 let monsterDefenseModifier = {
     "Skeleton": 1,
-    "Ghoul": 1,
-    "Zombie": 1,
+    "Ghoul": 3,
+    "Zombie": -2,
     "Bandit": 1,
 };
 
 let monsterCombatModifier = {
     "Skeleton": 1,
-    "Ghoul": 1,
+    "Ghoul": 2,
     "Zombie": 1,
     "Bandit": 1,
 };
