@@ -413,7 +413,7 @@ function generateCombatInfo() {
     const monsterSkillValue = monsterSkills[monsterType];
 
     const skillsParagraph = document.createElement("p");
-    skillsParagraph.textContent = monsterSkillValue;
+    skillsParagraph.textContent = '<strong><em>Skills: </em></strong>: '+monsterSkillValue;
 
     combatDiv.appendChild(skillsParagraph);
 }
