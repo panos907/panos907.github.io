@@ -2,12 +2,18 @@
 let monsterType = '';
 let randomColor;
 
-let levelBonus = 0;
+let monsterLevel = 0;
 
 let monsterHP = {
     "Skeleton":12,
     "Ghoul":8,
-    "Zombie":8,
+    "Zombie":16,
+};
+
+let monsterArmor = {
+    "Skeleton":6,
+    "Ghoul":4,
+    "Zombie":6,
 };
 
 let monsterSpeed = {
@@ -68,7 +74,7 @@ let classDescriptions = {
 let classPowers = {
     "Skeleton":'Strength in Numbers. The Skeleton can draw upon their inner strength and resolve in times of great need. Once per day, they may roll d6 and add the result to any one roll they make.',
     "Ghoul":'Scholarly Training. The Ghoul has received extensive training in the arts of literature, philosophy, and the sciences.',
-    "Zombie":'Drunken Fist. The Zombie fights with an unpredictable, fluid style that confounds opponents. They may add their Spirit modifier when making unarmed attacks.'
+    "Zombie":'Tough. When the zombie would normally die, it can instead attempt a TN 5 Fortitude check. On a success it remains at 1 health point instead. (With each success the TN increases by a factor of 5)'
 }
 
 let monsterBackgrounds = {
@@ -118,6 +124,12 @@ let monsterHPBonus = {
     },
 };
 
+let monsterArmorBonus = {
+    "Skeleton": 3,
+    "Ghoul": 3,
+    "Zombie": 3,
+};
+
 function rollDice(numDice, numOfSides) {
     let results = [];
 
@@ -154,7 +166,7 @@ function generateRandomMonster()
     const monsterTypeInput = document.getElementById('monster-selector');
 
     if (levelSelectInput.value > 1) {
-        levelBonus = levelSelectInput.value;     
+        monsterLevel = levelSelectInput.value;     
     }
 
     if (monsterTypeInput.value != null) {
@@ -194,14 +206,28 @@ function generateHP()
 
     var hpToReturn = monsterHP[monsterType];
 
-    if (levelBonus > 0) {
-        for (let i = 1; i < levelBonus; i++) {
+    if (monsterLevel > 1) {
+        for (let i = 1; i < monsterLevel; i++) {
             let diceRoll = this.rollDice(1, Object.keys(monsterHPBonus[monsterType]).length);
             hpToReturn = hpToReturn + monsterHPBonus[monsterType][diceRoll];
         }
     }
 
     hpDiv.innerHTML  = '<strong><em>Health Points:</em></strong> '+hpToReturn;
+}
+
+function generateArmor()
+{
+    const armorDiv = document.getElementById("armor");
+    armorDiv.innerHTML = "";
+
+    var armorToReturn = monsterArmor[monsterType];
+
+    if (monsterLevel > 1) {
+        armorToReturn = armorToReturn + monsterArmorBonus[monsterType] * monsterLevel;
+    }
+
+    hpDiv.innerHTML  = '<strong><em>Armor Points:</em></strong> '+armorToReturn;
 }
 
 function generateSpeed()
@@ -213,6 +239,7 @@ function generateSpeed()
 
     hpDiv.innerHTML  = '<strong><em>Speed:</em></strong> '+speedToReturn;
 }
+
 
 function generateRandomAbilities() {
     const abilityDiv = document.getElementById("abilities");
