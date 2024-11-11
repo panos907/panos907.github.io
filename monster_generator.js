@@ -14,29 +14,29 @@ let classAbilities = {
     Swiftness: {
         "Skeleton":2,
         "Ghoul":-1,
-        "Corrupted Shinobi":2,
+        "Zombie":2,
     },
     Spirit: {
         "Skeleton":-2,
         "Ghoul":-1,
-        "Corrupted Shinobi":2,
+        "Zombie":2,
     },
     Vigour: {
         "Skeleton":2,
         "Ghoul":-1,
-        "Corrupted Shinobi":-1,
+        "Zombie":-1,
     },
     Resilience: {
         "Skeleton":2,
         "Ghoul":-1,
-        "Corrupted Shinobi":1,
+        "Zombie":1,
     },
 };
 
 let classDescriptions = {
     "Skeleton":"The Skeleton, a man without a master, he roams the land with his sword at his side and his honour as his guide. He's a samurai of the road, a warrior of the wilds, seeking fortune and adventure wherever they may be found. His skills are sharp, his heart is ashes, but he's a man on the outside looking in. He's not bound by the rules of society, nor is he burdened by its obligations. He's a lone wolf, a rebel, a force of nature. And when trouble comes to town, he's the one they call on to set things right.",
     "Ghoul":"The Ghoul is an inquisitive one, with a thirst for knowledge that rivals their love for battle. They're the kind of warrior who can discuss poetry as deftly as they can swing a sword.They know that true Mastery of the Blade requires a deep understanding of the world around them. They use their intellect to gain the upper hand in battles of wit and diplomacy. A master of tactics and culture. In a world where brawn often reigns supreme, the erudite samurai is a rare and valuable gem, a warrior who values knowledge and wisdom as highly as strength and skill.",
-    "Corrupted Shinobi":"The Corrupted Shinobi, a scoundrel of the highest order, has forsaken all traditional honour. Instead, they use their stealth and guile to weave a web of deceit, assassinating their prey from the shadows. No lord or clan can control this wily fiend, for their only true master is their own greed. Their blades are sharp, their wits sharper, and their hearts as black as the night they stalk. They are the shadow that creeps up behind you, the serpent that slithers beneath your feet. Cross them at your own peril, for they are the Corrupted Shinobi, and their loyalty is to only themselves.",
+    "Zombie":"The Zombie, a scoundrel of the highest order, has forsaken all traditional honour. Instead, they use their stealth and guile to weave a web of deceit, assassinating their prey from the shadows. No lord or clan can control this wily fiend, for their only true master is their own greed. Their blades are sharp, their wits sharper, and their hearts as black as the night they stalk. They are the shadow that creeps up behind you, the serpent that slithers beneath your feet. Cross them at your own peril, for they are the Zombie, and their loyalty is to only themselves.",
 };
 
 let classPowers = {
@@ -226,6 +226,10 @@ function generateRandomMonster()
     characterSpirit = abilities[1];
     characterVigour = abilities[2];
     characterResilience = abilities[3];
+    characterResilience = abilities[4];
+    characterResilience = abilities[5];
+    characterResilience = abilities[6];
+    characterResilience = abilities[7];
     this.generateRandomHP();
     this.generateRandomPower();
 }
@@ -281,17 +285,20 @@ function generateRandomAbilities() {
     const abilityDiv = document.getElementById("abilities");
     abilityDiv.innerHTML = "";
 
-    abilityDiv.appendChild(this.generateColoredTitle('Abilities'));
+    abilityDiv.appendChild(this.generateColoredTitle('Abilities/Talents'));
 
     const finalAbilities = [];
-    const abilityNames = ['Swiftness', 'Spirit', 'Vigour', 'Resilience'];
+    const abilityNames = [
+        'Strength', 'Dexterity', 
+        'Agility', 'Vitality',
+        'Inspection', 'Senses',
+        'Presence', 'Reason'
+    ];
 
-    for (let i = 0; i < 4; i++) {
-        let diceRolls = this.rollDice(3, 6);
+    for (let i = 0; i < 8; i++) {
         var abilityName = abilityNames[i];
 
-        const diceSum = diceRolls.reduce((acc, val) => acc + val, 0);
-        const randomNumber = diceSum + classAbilities[abilityName][monsterType] + level_bonus;
+        const randomNumber = classAbilities[abilityName][monsterType] + level_bonus;
         const finalAbilityValue = abilitiesRollValues[randomNumber];
 
         const abilityParagraph = document.createElement("p");
