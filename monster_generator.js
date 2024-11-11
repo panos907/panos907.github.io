@@ -392,28 +392,28 @@ function generateCombatInfo() {
     const monsterDefenseValue = monsterDefense[monsterType];
 
     const defenseParagraph = document.createElement("p");
-    defenseParagraph.textContent = '<strong><em>Defense: </em></strong>: '+monsterDefenseValue;
+    defenseParagraph.textContent = 'Defense: '+monsterDefenseValue;
 
     combatDiv.appendChild(defenseParagraph);
 
     const monsterDefenseModifierValue = monsterDefenseModifier[monsterType];
 
     const defenseModifierParagraph = document.createElement("p");
-    defenseModifierParagraph.textContent = '<strong><em>Defense Modifier: </em></strong>: '+monsterDefenseModifierValue;
+    defenseModifierParagraph.textContent = 'Defense Modifier: '+monsterDefenseModifierValue;
 
     combatDiv.appendChild(defenseModifierParagraph);
 
     const combatModifier = monsterCombatModifier[monsterType];
 
     const combatModifierParagraph = document.createElement("p");
-    combatModifierParagraph.textContent = '<strong><em>Combat Modifier: </em></strong>: '+combatModifier;
+    combatModifierParagraph.textContent = 'Combat Modifier: '+combatModifier;
 
     combatDiv.appendChild(combatModifierParagraph);
 
     const monsterSkillValue = monsterSkills[monsterType];
 
     const skillsParagraph = document.createElement("p");
-    skillsParagraph.textContent = '<strong><em>Skills: </em></strong>: '+monsterSkillValue;
+    skillsParagraph.textContent = 'Skills: '+monsterSkillValue;
 
     combatDiv.appendChild(skillsParagraph);
 }
