@@ -45,15 +45,14 @@
                         const selectElement = document.getElementById('monster-selector');
 
                         const options = [
-                            { value: 'Skeleton', text: 'Skeleton' },
-                            { value: 'Ghoul', text: 'Ghoul' },
-                            { value: 'Zombie', text: 'Zombie' }
+                            { value: 'Skeleton' },
+                            { value: 'Ghoul' },
+                            { value: 'Zombie' }
                         ];
 
                         options.forEach(option => {
                             const newOption = document.createElement('option');
                             newOption.value = option.value;
-                            newOption.text = option.text;
                             selectElement.appendChild(newOption);
                         });
                     </script>
