@@ -3,93 +3,93 @@ let characterName = '';
 let randomColor;
 
 let monsterHP = {
-    "Forgotten Ronin":8,
-    "Erudite Samurai":8,
-    "Drunken Monk":8,
+    "Skeleton":8,
+    "Ghoul":8,
+    "Zombie":8,
 };
 
 let classTenets = {
-    "Forgotten Ronin":"The Ronin's Creed",
-    "Erudite Samurai":"Bushido",
+    "Skeleton":"The Ronin's Creed",
+    "Ghoul":"Bushido",
     "Corrupted Shinobi":"The Unseen Virtues",
 };
 
 let classAbilities = {
     Swiftness: {
-        "Forgotten Ronin":2,
-        "Erudite Samurai":-1,
+        "Skeleton":2,
+        "Ghoul":-1,
         "Corrupted Shinobi":2,
     },
     Spirit: {
-        "Forgotten Ronin":-2,
-        "Erudite Samurai":-1,
+        "Skeleton":-2,
+        "Ghoul":-1,
         "Corrupted Shinobi":2,
     },
     Vigour: {
-        "Forgotten Ronin":2,
-        "Erudite Samurai":-1,
+        "Skeleton":2,
+        "Ghoul":-1,
         "Corrupted Shinobi":-1,
     },
     Resilience: {
-        "Forgotten Ronin":2,
-        "Erudite Samurai":-1,
+        "Skeleton":2,
+        "Ghoul":-1,
         "Corrupted Shinobi":1,
     },
 };
 
 let classTraits = {
-    "Forgotten Ronin":['drunkard', 'sober'],
-    "Erudite Samurai":['drunkard', 'sober'],
+    "Skeleton":['drunkard', 'sober'],
+    "Ghoul":['drunkard', 'sober'],
     "Corrupted Shinobi":['stealthy', 'clumsy'],
 };
 
 let classDescriptions = {
-    "Forgotten Ronin":"The Forgotten Ronin, a man without a master, he roams the land with his sword at his side and his honour as his guide. He's a samurai of the road, a warrior of the wilds, seeking fortune and adventure wherever they may be found. His skills are sharp, his heart is ashes, but he's a man on the outside looking in. He's not bound by the rules of society, nor is he burdened by its obligations. He's a lone wolf, a rebel, a force of nature. And when trouble comes to town, he's the one they call on to set things right.",
-    "Erudite Samurai":"The Erudite Samurai is an inquisitive one, with a thirst for knowledge that rivals their love for battle. They're the kind of warrior who can discuss poetry as deftly as they can swing a sword.They know that true Mastery of the Blade requires a deep understanding of the world around them. They use their intellect to gain the upper hand in battles of wit and diplomacy. A master of tactics and culture. In a world where brawn often reigns supreme, the erudite samurai is a rare and valuable gem, a warrior who values knowledge and wisdom as highly as strength and skill.",
+    "Skeleton":"The Skeleton, a man without a master, he roams the land with his sword at his side and his honour as his guide. He's a samurai of the road, a warrior of the wilds, seeking fortune and adventure wherever they may be found. His skills are sharp, his heart is ashes, but he's a man on the outside looking in. He's not bound by the rules of society, nor is he burdened by its obligations. He's a lone wolf, a rebel, a force of nature. And when trouble comes to town, he's the one they call on to set things right.",
+    "Ghoul":"The Ghoul is an inquisitive one, with a thirst for knowledge that rivals their love for battle. They're the kind of warrior who can discuss poetry as deftly as they can swing a sword.They know that true Mastery of the Blade requires a deep understanding of the world around them. They use their intellect to gain the upper hand in battles of wit and diplomacy. A master of tactics and culture. In a world where brawn often reigns supreme, the erudite samurai is a rare and valuable gem, a warrior who values knowledge and wisdom as highly as strength and skill.",
     "Corrupted Shinobi":"The Corrupted Shinobi, a scoundrel of the highest order, has forsaken all traditional honour. Instead, they use their stealth and guile to weave a web of deceit, assassinating their prey from the shadows. No lord or clan can control this wily fiend, for their only true master is their own greed. Their blades are sharp, their wits sharper, and their hearts as black as the night they stalk. They are the shadow that creeps up behind you, the serpent that slithers beneath your feet. Cross them at your own peril, for they are the Corrupted Shinobi, and their loyalty is to only themselves.",
 };
 
 let classPowers = {
-    "Forgotten Ronin": {
-        0: 'Ronin\'s Resolve. The Forgotten Ronin can draw upon their inner strength and resolve in times of great need. Once per day, they may roll d6 and add the result to any one roll they make.' ,
+    "Skeleton": {
+        0: 'Ronin\'s Resolve. The Skeleton can draw upon their inner strength and resolve in times of great need. Once per day, they may roll d6 and add the result to any one roll they make.' ,
         1: 'Sword Master. A master of the blade, wielding their sword with deadly precision. They may add their Vigor modifier to damage rolls made with melee weapons. ',
         2: 'Masterless. If the Forgotten Rōnin\'s honour score is below 10 they may Parry at DR12.', 
         3: 'Bushi\'s Blade. When both the Rōnin and an enemy are wielding a Katana or Wakizashi the attack and defence DR is lowered by 2.',
-        4: 'Protector. The Forgotten Ronin is fiercely protective of their allies and will go to great lengths to defend them. Once per combat, they may protect an ally, adding +2 to their defence against all attacks until the end of the Ronin\'s next turn. ',
+        4: 'Protector. The Skeleton is fiercely protective of their allies and will go to great lengths to defend them. Once per combat, they may protect an ally, adding +2 to their defence against all attacks until the end of the Ronin\'s next turn. ',
         5: 'Haunted Blade. A cursed blade that whispers to them in moments of stress. Once per combat, the Ronin can choose to make a sacrifice to the blade, granting it power for a single strike. The sacrifice can be anything from losing d4 HP to discarding an important item. The next time the Ronin attacks with the blade, they roll twice and take the higher roll, the strike deals an extra d8 damage. However, after the strike, the blade becomes uncontrollable and attacks a random target, including the Rōnin or their allies, until the end of the Ronin\'s next turn. '
     },
-    "Erudite Samurai": {
-        0: 'Scholarly Training. The Erudite Samurai has received extensive training in the arts of literature, philosophy, and the sciences. If in honourable standing (above 10 Honour) they may add +4 to a damage roll once per day.',
-        1: 'Philosophy of War. A deep understanding of the nature of conflict allows them to predict their enemies\' movements and plan accordingly. Once per combat, the Erudite Samurai can predict the next move of their opponent and gain a +2 bonus to their attack roll against that opponent. This ability can only be used if they have had at least one round to observe their opponent\'s fighting style.',
+    "Ghoul": {
+        0: 'Scholarly Training. The Ghoul has received extensive training in the arts of literature, philosophy, and the sciences. If in honourable standing (above 10 Honour) they may add +4 to a damage roll once per day.',
+        1: 'Philosophy of War. A deep understanding of the nature of conflict allows them to predict their enemies\' movements and plan accordingly. Once per combat, the Ghoul can predict the next move of their opponent and gain a +2 bonus to their attack roll against that opponent. This ability can only be used if they have had at least one round to observe their opponent\'s fighting style.',
         2: 'Tactical Genius. A master of strategy and tactics. They may use their honour score if in honourable standing (Honour 10 or above) to gain an advantage in combat, reducing the DR of a parry to DR12.', 
         3: 'Precise Strike. Trained to strike with precision, finding the weaknesses in their opponents\' defences. Once per combat encounter, they may add a bonus to their attack roll equal to their Vigor modifier',
         4: 'Intimidating Presence. Knowledge and training make them a formidable opponent. Once per day, they can intimidate their enemies, lowering the DR of their next attack by 4',
         5: 'Zen Focus. Once per day, they can enter a state of zen-like focus, granting them a +1 bonus to all ability rolls for a duration of 10 minutes.'
     },
-    "Drunken Monk": {
-        0: 'Drunken Fist. The Drunken Monk fights with an unpredictable, fluid style that confounds opponents. They may add their Spirit modifier when making unarmed attacks.',
+    "Zombie": {
+        0: 'Drunken Fist. The Zombie fights with an unpredictable, fluid style that confounds opponents. They may add their Spirit modifier when making unarmed attacks.',
         1: 'Five Finger Death Punch. Once per session, choose to strike an opponent with a precision unarmed attack that targets pressure points, dealing an additional 6d4 on a success and stunning the target',
         2: 'Roadhouse. Make a brutal attack against an opponent\'s throat potentially killing them outright. Before making an attack, Test Spirit DR14. The attack requires the monk to make a successful attack and may only be used on a surprised opponent.', 
         3: 'Flame Fist. Knuckles imbued with mystical fire, dealing 1d4 additional fire damage and potentially setting targets on fire. The Monk may only use this ability a limited number of times per day (Spirit +1).',
-        4: 'Sake Style. When the Drunken Monk is under the effects of alcohol, they gain a temporary +2 bonus to their melee attacks and defence.',
+        4: 'Sake Style. When the Zombie is under the effects of alcohol, they gain a temporary +2 bonus to their melee attacks and defence.',
         5: 'Drunken Master. Turn any item into a weapon, increasing the damage from a d4 to d6. Additionally, they have a +1 bonus to initiative rolls while drunk.'
     }
 }
 
 let classEquipment = {
-    "Forgotten Ronin": {
+    "Skeleton": {
         0: 'A worn but serviceable katana (d8 damage)' ,
         1: 'A set of traveling clothes',
         2: 'A letter of introduction (can be used to gain an audience with a local lord or official)',
         3: 'A straw hat', 
     },
-    "Erudite Samurai": {
+    "Ghoul": {
         0: 'A fine Katana (d10 damage)',
         1: 'A Wakizashi (d6 damage)',
         2: 'A set of sturdy armour (tier 2)', 
         3: 'A collection of books and papers', 
     },
-    "Drunken Monk": {
+    "Zombie": {
         0: 'A set of monk\'s robes and sandals',
         1: 'A gourd of sake',
         2: 'A set of brass knuckles (d4 damage)', 
@@ -260,52 +260,20 @@ function generateRandomMonster()
 function generateRandomName()
 {
     const names = [
-        "Akihiro", "Aiko", "Akira", "Ayumi", "Emi",
-        "Hana", "Haruki", "Hideki", "Hiroko", "Kaori",
-        "Kazuo", "Kenji", "Makoto", "Mariko", "Masao",
-        "Natsumi", "Satoshi", "Shoko", "Takashi", "Yoko",
-        "Himura", "Daichi", "Eiko","Genji","Hana","Isamu",
-        "Toyo","Ryoma","Michiko","Tomoe","Osamu", "Masamune",
-        "Rei","Sachi","Saito","Ume","Yori","Zen", "Hanzo",
-        "Arata","Jiro","Musashi", "Natsu", "Tojiro"
-    ];
-
-    const surnames = [
-        "Aoki", "Fujimoto", "Hayashi", "Kato", "Suzuki",
-        "Tanaka", "Yamada", "Yamamoto", "Watanabe", "Yoshida",
-        "Battosai","Chiba","Fujiwara","Hattori","Ito","Matsamune",
-        "Sakura","Sakamoto","Okada","Hajime","Takahashi",
-        "Uesugi","Yamagata","Yojimbo","Akiyama","Miyamoto",
-        "Ishikawa","Kitano","Matsushita", "Minamoto",
-        "Taira", "Tokugawa", "Date",
-    ];
-
-    const nicknames = [
-        "Taka no Me/The Hawk's Eye", "Umi no Tatsu/The Dragon of the Sea",
-        "Kaminari no Kiba/Thunder Fang", "Kawa no Kami/River God",
-        "Yama no Kaze/Mountain Wind", "Kaze no Kensei/Sword Saint of the Wind",
-        "Kiri no Oni/Demon of the Fog", "Jigoku no Tora/Tiger of Hell",
-        "Yoru no Kitsune/Fox of the Night", "Kuroi Kiba/Black Fang",
-        "Tora no Oni/Tiger Demon","Neko no Te/Cat's Paw", "Kaze no Tengu/Wind Tengu","Hitokiri/Man Slayer",
-        "Yami no Kishi/Knight of Darkness", "Bakemono no Oyabun/Monster Boss",
-        "Hana no Geisha/Flower Geisha", "Kaminari no Senshi/Warrior of Thunder",
-        "Yurei no Tomurai/Ghostly Wanderer", "Kuroi Kage/Black Shadow"
+        "Skeleton", "Ghoul", "Zombie"
     ];
 
     const randomNameIndex = Math.floor(Math.random() * names.length);
-    const randomSurnameIndex = Math.floor(Math.random() * surnames.length);
-    const randomNickNameIndex = Math.floor(Math.random() * nicknames.length);
 
-    characterNickName = nicknames[randomNickNameIndex];
-    characterName = names[randomNameIndex]+ " " + surnames[randomSurnameIndex];
+    characterName = names[randomNameIndex];
 
-    const name = names[randomNameIndex]+ " " + surnames[randomSurnameIndex] + ', ' + characterNickName+'  ';
+    const name = names[randomNameIndex];
 
-    const nameDiv = document.getElementById("name");
-    nameDiv.innerHTML = '<strong><em>Name:</em></strong> ' + name+'  ';
+    const nameDiv = document.getElementById("type");
+    nameDiv.innerHTML = '<strong><em>Monster Type:</em></strong> ' + name+'  ';
 
     const titleDiv = document.getElementById("title");
-    titleDiv.textContent = "Ronin - " + characterName;
+    titleDiv.textContent = "WODiscordia - " + characterName;
 }
 
 function generateRandomHP()
@@ -407,7 +375,7 @@ function generateClassDescriptionBackgroundAndFlaws()
     infoDiv.innerHTML = "";
     randomColor = this.generateRandomColorFromBasicColors();
 
-    infoDiv.appendChild(this.generateColoredTitle("You are: " + characterName));
+    infoDiv.appendChild(this.generateColoredTitle("Monster Type: " + characterName));
 
     var diceRoll = this.rollDice(1, 20);
     var disfigurements = characterBrokenBodies[diceRoll];
