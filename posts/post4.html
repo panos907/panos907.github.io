@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head id="header">
+  <script>
+    fetch('../partials/header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header').innerHTML = data;
+        });
+  </script>
+</head>
+<body>
+  <header id="menu">
+    <script>
+      fetch('../partials/posts_menu.html')
+          .then(response => response.text())
+          .then(data => {
+              document.getElementById('menu').innerHTML = data;
+          });
+    </script>
+  </header>
+    <main>
+        <div id="content" class="container">
+          <article class="col-md-12">
+            <h2 class="m-2">On Polyamory, lifestyle, relationships & dating</h2>
+            <p class="m-2">
+              I am polyamorous.
+            </p>
+            <p class="m-2">
+              I think i have known for a while now, but only recently i have been able to put a name on it. I have always been attracted to multiple people at the same time.
+              And i don't only mean attraction in the vague sense, the purely sexual/physical one, or a simple crush. I mean, having actual, deep feelings of love, care and affection, for multiple people at once, without one overshadowing the other.
+              And the way I finally put a name on it was by getting myself in a polycule for the first time in my life. I noticed zero guilt, zero shame, or being creeped out at all. I didn't feel neglected or like I came in 2nd place.
+            </p>
+            <p class="m-2">
+              These days, we have been exploring multiple things with the main person I'm seeing, sexual, emotional, showing affection, showing we care, and it's been one revelation after another. Yes, there were some hiccups, arguments, etc, but ultimately, all of it was safely resolved and we grew more resilient for it.
+            </p>
+          </article>
+        </div>
+    </main>
+    <footer id="footer"  class="text-center text-lg-start m-2">
+      <script>
+        fetch('../partials/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+      </script>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+</body>
+</html>
