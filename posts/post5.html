@@ -18,6 +18,13 @@
               document.getElementById('menu').innerHTML = data;
           });
     </script>
+    <script>
+      $(document).keypress(function(){
+          if(event.which == 77){
+              document.getElementById("myP").style.display = "block";
+          }
+      });
+    </script>
   </header>
     <main>
         <div id="content" class="container">
@@ -48,14 +55,18 @@
               Yet this time, unlike when breaking up with my ex, i was not content to just let my armor made of honor take the blows. And after a lot of struggle, it feels, to me, like we all ended up better for it.
             </p>
             <p class="m-2">
-             Don't get me wrong, i'm no stranger to moments of truth revealing themselves in the most innocent of circumstances, like over a cup of tea, a walk in a gloomy morning, a new book i was recommended, cuddles, a TTRPG session, or watching a little flower blossoming.
+             Don't get me wrong, i'm no stranger to moments of truth revealing themselves in the most innocent of circumstances, like over a cup of tea, a walk in a gloomy morning, a new book i was recommended, cuddles, a TTRPG session, or even...
              But i've never had this many, in a single week, so close to each other.
              What a ride it's been.
+            </p>
+            <p class="m-2" style="display:none;" id="myP">
+              Thanks, little flower.
+              I love you.
             </p>
           </article>
         </div>
     </main>
-    <footer id="footer"  class="text-center text-lg-start m-2">
+    <footer id="footer" class="text-center text-lg-start m-2">
       <script>
         fetch('../partials/footer.html')
             .then(response => response.text())
