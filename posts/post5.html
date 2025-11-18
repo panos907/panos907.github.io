@@ -19,11 +19,20 @@
           });
     </script>
     <script>
-      $(document).keypress(function(){
-          if(event.which == 77){
-              document.getElementById("myP").style.display = "block";
-          }
-      });
+      window.addEventListener("keydown", function (event) {
+      if (event.defaultPrevented) {
+        return;
+      }
+
+      switch (event.key) {
+        case "m":
+          document.getElementById("myP").style.display = "block";
+          break;
+        default:
+          return; 
+      }
+      event.preventDefault();
+    }, true);
     </script>
   </header>
     <main>
