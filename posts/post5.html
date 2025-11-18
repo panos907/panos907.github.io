@@ -26,10 +26,15 @@
 
       switch (event.key) {
         case "m":
-          if (document.getElementById("myP").style.display == "hidden")
-            document.getElementById("myP").style.display = "block";
-          else
-            document.getElementById("myP").style.display = "none";
+          const pwd = prompt("Please enter password:");
+          const correctPassword = "chrysanthemumFencer";
+
+          if (pwd === correctPassword) {
+            if (document.getElementById("myP").style.display == "hidden")
+              document.getElementById("myP").style.display = "block";
+            else
+              document.getElementById("myP").style.display = "none";
+          }
           break;
         default:
           return; 
@@ -72,7 +77,8 @@
              What a ride it's been.
             </p>
             <p class="m-2" style="display:none;" id="myP">
-              Thanks, little flower.
+              Thanks, for everything, little flower.
+              And i'm sorry, once again.
               I love you.
             </p>
           </article>
