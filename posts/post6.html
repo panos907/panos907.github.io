@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head id="header">
+  <script>
+    fetch('../partials/header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header').innerHTML = data;
+        });
+  </script>
+</head>
+<body>
+  <header id="menu">
+    <script>
+      fetch('../partials/posts_menu.html')
+          .then(response => response.text())
+          .then(data => {
+              document.getElementById('menu').innerHTML = data;
+          });
+    </script>
+  </header>
+    <main>
+        <div id="content" class="container">
+          <article class="col-md-12">
+            <h2 class="m-2">Guitar-playing, Songwriting & Identity Crisis</h2>
+            <h5 class="m-2">3/12/2025</h5>
+            <p class="m-2">
+              It's slowly starting to settle down. The storm is slowly calming.
+            </p>
+            <p class="m-2">
+              After a whole lot things happened in the last 2 weeks, a couple of therapy sessions, lots of guitar playing, songwriting, and a lot of thinking and sharing with friends, i feel like i'm slowly starting to get a grip on things. 
+              It hasn't been easy. It's a slow process of pondering over things, feeling everything deep, getting it out there (usually through guitar & singing), crying myself to sleep, and then doing it all over again. 
+              The feeling of being shaken still hasn't gone completely away. And i am very grateful to a friend for helping me find my footing, with his characteristic no-nonsense way of spitting facts and shaking my world, like an old jedi master spouting wisdom. 
+              I realized i had misplaced my trust, misplaced my faith, and truly, judged characters wrong. Yet not in the way i was told that i did.
+            </p>
+            <p class="m-2">
+              Now, "how does guitar & songwriting fit into all this?", you may ask. And the answer is pretty simple, really. Aside from zazen (sitting zen meditation) it's one of the very few things that allows me to truly lay my emotions bare, without the mind interfering, so i can feel them, and then they go. 
+              And once they go, i can finally think clearly, with no outside interference. Gosh, i hate when someone tries to plant an idea in your head while seemingly playing it off like "oh i'm just doing it as food for thought, to help you get better". 
+              No, you're not. The hell you aren't. You might genuinely be trying to (which i also doubt) but it's still an awful and unsuccesful way to go about it. So-called "tough love" rarely does help, and this wasn't even tough love, just blatant criticism disguised as such. 
+              Maybe i'll have to write another song about that some day. Sounds like an interesting concept to pair with some cowbody chords.
+            </p>
+            <p class="m-2">
+              It's... peculiar, as a good friend would say. I hadn't written a song in almost 6 years, and now 4 of them popped up in the span of 1 year without me even trying. There was technically a 5th one i wrote for an ex, but that was done under so much emotional baggag & pressure that i feel like i did it more because i had to, not cause i wanted to. So that one doesn't count. 
+              And on the topic... i'm finding myself gravitating more towards acoustic guitar and singing rather than the other instruments i used to play. But i don't regret it in the slightest, it's a very rewarding and immediate creative procedure. 
+              My Gibson J-45 has to make it's money's worth, after all. And drowning in it's lovely, deep, bassy, growling tone is one of the most healing things i can do.
+            </p>
+            <p class="m-2">
+              Oh well, as the legend himself Johnny Cash wrote,
+              <br>
+              <i> Whoever is unjust let him be unjust still </i><br>
+              <i> Whoever is righteous let him be righteous still </i><br>
+              <i> Whoever is filthy let him be filthy still </i><br>
+              <i> Listen to the words long written down </i><br>
+              <i> When the man comes around </i>
+            </p>
+          </article>
+        </div>
+    </main>
+    <footer id="footer" class="text-center text-lg-start m-2">
+      <script>
+        fetch('../partials/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+      </script>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+</body>
+</html>
