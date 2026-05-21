@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head id="header">
+  <script>
+    fetch('../partials/header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header').innerHTML = data;
+        });
+  </script>
+</head>
+<body>
+  <header id="menu">
+    <script>
+      fetch('../partials/posts_menu.html')
+          .then(response => response.text())
+          .then(data => {
+              document.getElementById('menu').innerHTML = data;
+          });
+    </script>
+  </header>
+    <main>
+        <div id="content" class="container">
+          <article class="col-md-12">
+            <h2 class="m-2">Attraction, change, heart colors, painting plastic</h2>
+            <h5 class="m-2">22/05/2025</h5>
+            <p class="m-2">
+              Feels weird to be back NOW of all times, amidst a whole bunch of different stuff. 
+              Then again, when i have ever been 100% calm and not busy, ever since i stopped school at 18 years old?
+            </p>
+            <p class="m-2">
+              But lets take it from the beginning, shall we. I moved house, to a MUCH bigger place, and oh my, i NEVER expected my quality of life would 
+              improve so much just by the humidity not being at a constant 60% and having more space to put all my (admittedly, lots of) stuff. Alongside a better kitchen and a full-size double bed with a lovely mattress. 
+              In any case, my guitar lessons continued, therapy continued, i took up Warhammer 40k, re-ignited my love for arcade and fighting games, and still play lots of music.
+            </p>
+            <p class="m-2">
+              I bought more stuff. Of course i did. Shopping therapy ain't called that for no reason at all. Guitars, arcade sticks, music gear, and an entire 2000 points Warhammer 40k army (about 40 miniatures of varying sizes that i had to assemble, spray-paint, and started painting by hand). 
+              I never imagined painting little plastic soldiers and tanks would be so fun and relaxing... but here we are. For The Emperor, i guess...
+            </p>
+            <p class="m-2">
+              I fell in love with Ovation guitars, surprisingly, after buying one to use for busking. Did i mention that i busk?
+              Of course i do, after selling my Thompson irish flute for a Roland Cube Street EX, i grabbed my vocal mic, some stands, threw all of it on a little trailer and off i was. 
+              I don't think i could sustain it full-time (for phyical fatigue reasons, mostly), but it's a very fun and rewarding way to earn some pocket money while entertaining people.
+              So many changes in my life, in such a short time...
+            </p>
+            <p class="m-2">
+              And the hearts kept dancing in their colors...
+              "What the hell does he mean by heart colors", i hear you ask. 
+              It's an internet thing.
+            </p>
+            <p class="m-2">
+              You know, when you're texting someone, and send a red heart emoji to mean "i love you", most likely in the romantic sense?
+              Turns out, that's only one of many hearts, with different meanings to each color.
+              Blue means "i love you as a friend" (don't ask me how i found out, it was a funny flirting moment cause it's also my favorite color). 
+              Purple means "i care about you", in a true, deep, compassionate way.
+            </p>
+            <p class="m-2">
+              And having all 3 of them for a single person... wow. 
+              Hasn't happened more than 4 times in my 28 years of life so far.
+              It's the people that combine all forms of attraction. And those people, i treasure.
+            </p>
+            <p class="m-2">
+              The most recent one also left a sour taste in my mouth, yet still, what was there cannot be undone. What was felt, cannot be unfelt. 
+              And unlike another (frankly quite toxic) ex of mine, this one was light, fun, deep, new.
+            </p>
+            <p class="m-2">
+              Yeah, it ended. Yeah, i'm still single. You thought it was gonna go any other way?
+              I certainly did... yet therapy helps, all my thoughts and feelings are still being processed, and my friends are always there, bless their souls.
+              It's only one more storm, there'll be more to come. And i'll be stronger still, with more songs to sing for it, more memories to look back on, more reasons to smile despite everything, smile more.
+            </p>
+            <p>
+              And the hearts will keep dancing in their colors...
+            </p>
+          </article>
+        </div>
+    </main>
+    <footer id="footer" class="text-center text-lg-start m-2">
+      <script>
+        fetch('../partials/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+      </script>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+</body>
+</html>
