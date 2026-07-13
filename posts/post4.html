@@ -18,30 +18,75 @@
               document.getElementById('menu').innerHTML = data;
           });
     </script>
+    <script>
+      window.addEventListener("keydown", function (event) {
+      if (event.defaultPrevented) {
+        return;
+      }
+
+      switch (event.key) {
+        case "m":
+          const pwd = prompt("Please enter password:");
+          const correctPassword = "chrysanthemumFencer";
+
+          if (pwd === correctPassword) {
+            if (document.getElementById("myP").style.display == "none")
+              document.getElementById("myP").style.display = "block";
+            else
+              document.getElementById("myP").style.display = "none";
+          }
+          else {
+            console.log(pwd);
+            alert("Incorrect password.");
+          }
+          break;
+        default:
+          return; 
+      }
+      event.preventDefault();
+    }, true);
+    </script>
   </header>
     <main>
         <div id="content" class="container">
           <article class="col-md-12">
-            <h2 class="m-2">On Polyamory, relationships & dating</h2>
-            <h5 class="m-2">22/09/2025</h5>
+            <h2 class="m-2">Love & Honor</h2>
+            <h5 class="m-2">18/11/2025</h5>
             <p class="m-2">
-              I am polyamorous.
+              As i type this, it is 6AM in the morning, on the day i returned from DreieichCon 2025. And i gotta say... what a ride it's been!
             </p>
             <p class="m-2">
-              I think i have known for a while now, but only recently i have been able to put a name on it. I have always been attracted to multiple people at the same time.
-              And i don't only mean attraction in the vague sense, the purely sexual/physical one, or a simple crush. I mean, having actual, deep feelings of love, care and affection, for multiple people at once, without one overshadowing the other.
-              And the way I finally put a name on it was by getting myself in a polycule for the first time in my life. I noticed zero guilt, zero shame, or being creeped out at all. I didn't feel neglected or like I came in 2nd place.
+              A combination of factors has served to make this one my favorite trips abroad as of yet, despite some hiccups along the way.
+              With a slow initial start at a camping site in the woods, where we polished some pen and paper TTRPG stories, aiming to run them at DreieichCon, my 3 days were filled with playtesting, brainstorming, arguments, grinding my brain to the metal, doing dishes, lots of tea, cuddles, laughter and a lot of fun.
             </p>
             <p class="m-2">
-              These days, we have been exploring multiple things with the main person I'm seeing, sexual, emotional, showing affection, showing we care, and it's been one revelation after another. Yes, there were some hiccups, arguments, etc, but ultimately, all of it was safely resolved and we grew more resilient for it.
+              In the meantime, i had the chance to meet some new as well as reconnect with some old friends, people i'd known for years yet not really "known" in the truest sense of them all. And as with every trip, spending time together 24/7 with others allowed us time to really let ourselves bare, lay our souls out there for those we trusted to see. 
+              And we did.
             </p>
             <p class="m-2">
-              "Arguments? but why?" I hear you ask. Like a shooting star, a crush appeared out of nowhere while i was on a trip abroad, and while i tried to communicate my feelings and actions as best i could, it still caused us to argue a bit. At the end of it all, nothing was badly affected, and i ended up wiser for it.
-              Not to mention the fact that i found a new ear-worm in a Hazbin Hotel song.
+              Then, in my case, chaos ensued. As the days of the Con drew closer, i found myself in a strange whirl of emotions, overthinking, self-doubt and anxiety. Of course, like every time, i coped. Like every time, i hummed some songs, paced up and down, walked, meditated, talked, among other things. 
+              Yet, a lot of the times, it was not enough. And while the ordeal itself was not much compared to my physical health struggles a few months prior, i found myself feeling shaken, doubtful, bawling my eyes out (of course, mainly in secret or only in view of my roommate or a good friend), shaken to the core. 
             </p>
             <p class="m-2">
-              Turmoil or not, storms or not, i am certain of a single thing.
-              I love them.
+              Turns out, being used to a certain way of conflict resolution and then being objected to a totally different style of communication, can feel, and be, earth-shattering. My sense of right and wrong, my personal values, my set of priorities, my sense of self & identity, my confidence, it all felt challenged, my foundation feeling brittle. 
+              And the fact that around a lot of that, laid love, made it all the more confusing, chaotic and intense. It sometimes felt like i was back in junior high, when i would overthink about my then-crush's feelings for hours a day, for months/years on end. 
+              Thankfully that has since been reduced to overthinking for minutes or hours on end, but it's still there, and still torture. And i end up hurting not only myself...
+            </p>
+            <p class="m-2">
+              Yet this time, unlike when breaking up with my ex, i was not content to just let my armor made of honor take the blows. And after a lot of struggle, it feels, to me, like we all ended up better for it.
+            </p>
+            <p class="m-2">
+             Don't get me wrong, i'm no stranger to moments of truth revealing themselves in the most innocent of circumstances, like over a cup of tea, a walk in a gloomy morning, a new book i was recommended, cuddles, a TTRPG session, or even...
+             But i've never had this many, in a single week, so close to each other.
+             What a ride it's been.
+            </p>
+            <p class="m-2" style="display:none; color:purple;" id="myP">
+              Thanks, for everything, little flower.
+              I cannot express with words how much you mean to me, how much you have helped me grow. 
+              I only wish i had a similar impact on your life as you did to mine.
+              And, i need to say, once again, i'm sorry... for everything i did wrong.
+              Hopefully i can make it up to you, sooner than later.
+              I love you.
             </p>
           </article>
         </div>

@@ -18,75 +18,43 @@
               document.getElementById('menu').innerHTML = data;
           });
     </script>
-    <script>
-      window.addEventListener("keydown", function (event) {
-      if (event.defaultPrevented) {
-        return;
-      }
-
-      switch (event.key) {
-        case "m":
-          const pwd = prompt("Please enter password:");
-          const correctPassword = "chrysanthemumFencer";
-
-          if (pwd === correctPassword) {
-            if (document.getElementById("myP").style.display == "none")
-              document.getElementById("myP").style.display = "block";
-            else
-              document.getElementById("myP").style.display = "none";
-          }
-          else {
-            console.log(pwd);
-            alert("Incorrect password.");
-          }
-          break;
-        default:
-          return; 
-      }
-      event.preventDefault();
-    }, true);
-    </script>
   </header>
     <main>
         <div id="content" class="container">
           <article class="col-md-12">
-            <h2 class="m-2">Love & Honor</h2>
-            <h5 class="m-2">18/11/2025</h5>
+            <h2 class="m-2">Guitar-playing, Songwriting & Identity Crisis</h2>
+            <h5 class="m-2">3/12/2025</h5>
             <p class="m-2">
-              As i type this, it is 6AM in the morning, on the day i returned from DreieichCon 2025. And i gotta say... what a ride it's been!
+              It's slowly starting to settle down. The storm is slowly calming.
             </p>
             <p class="m-2">
-              A combination of factors has served to make this one my favorite trips abroad as of yet, despite some hiccups along the way.
-              With a slow initial start at a camping site in the woods, where we polished some pen and paper TTRPG stories, aiming to run them at DreieichCon, my 3 days were filled with playtesting, brainstorming, arguments, grinding my brain to the metal, doing dishes, lots of tea, cuddles, laughter and a lot of fun.
+              After a whole lot of things happened in the last 2 weeks, a couple of therapy sessions, lots of guitar playing, songwriting, and a lot of thinking and sharing with friends, i feel like i'm slowly starting to get a grip on things. 
+              It hasn't been easy. It's a slow process of pondering over things, feeling everything deep, getting it out there (usually through guitar & singing), crying myself to sleep, and then doing it all over again. 
+              The feeling of being shaken still hasn't gone completely away. And i am very grateful to a friend for helping me find my footing, with his characteristic no-nonsense way of spitting facts and shaking my world, like an old jedi master spouting wisdom. 
+              I realized i had misplaced my trust, misplaced my faith, and truly, judged characters wrong. Yet not in the way i was told that i did.
             </p>
             <p class="m-2">
-              In the meantime, i had the chance to meet some new as well as reconnect with some old friends, people i'd known for years yet not really "known" in the truest sense of them all. And as with every trip, spending time together 24/7 with others allowed us time to really let ourselves bare, lay our souls out there for those we trusted to see. 
-              And we did.
+              Now, "how does guitar & songwriting fit into all this?", you may ask. And the answer is pretty simple, really. Aside from zazen (sitting zen meditation) it's one of the very few things that allows me to truly lay my emotions bare, without the mind interfering, so i can feel them, and then they go. 
+              And once they go, i can finally think clearly, with no outside interference. Gosh, i hate when someone tries to plant an idea in your head while seemingly playing it off like "oh i'm just doing it as food for thought, to help you get better". 
+              No, you're not. The hell you aren't. You might genuinely be trying to (which i also doubt) but it's still an awful and unsuccesful way to go about it. So-called "tough love" rarely does help, and this wasn't even tough love, just blatant criticism disguised as such. 
+              Maybe i'll have to write another song about that some day. Sounds like an interesting concept to pair with some cowbody chords.
             </p>
             <p class="m-2">
-              Then, in my case, chaos ensued. As the days of the Con drew closer, i found myself in a strange whirl of emotions, overthinking, self-doubt and anxiety. Of course, like every time, i coped. Like every time, i hummed some songs, paced up and down, walked, meditated, talked, among other things. 
-              Yet, a lot of the times, it was not enough. And while the ordeal itself was not much compared to my physical health struggles a few months prior, i found myself feeling shaken, doubtful, bawling my eyes out (of course, mainly in secret or only in view of my roommate or a good friend), shaken to the core. 
+              It's... peculiar, as a good friend would say. I hadn't written a song in almost 6 years, and now 4 of them popped up in the span of 1 year without me even trying. There was technically a 5th one i wrote for an ex, but that was done under so much emotional baggage & pressure that i feel like i did it more because i had to, not cause i wanted to. So that one doesn't count. 
+              And on the topic... i'm finding myself gravitating more towards acoustic guitar and singing rather than the other instruments i used to play. But i don't regret it in the slightest, it's a very rewarding and immediate creative procedure. 
+              My Gibson J-45 has to make it's money's worth, after all. And drowning in it's lovely, deep, bassy, growling tone is one of the most healing things i can do.
             </p>
             <p class="m-2">
-              Turns out, being used to a certain way of conflict resolution and then being objected to a totally different style of communication, can feel, and be, earth-shattering. My sense of right and wrong, my personal values, my set of priorities, my sense of self & identity, my confidence, it all felt challenged, my foundation feeling brittle. 
-              And the fact that around a lot of that, laid love, made it all the more confusing, chaotic and intense. It sometimes felt like i was back in junior high, when i would overthink about my then-crush's feelings for hours a day, for months/years on end. 
-              Thankfully that has since been reduced to overthinking for minutes or hours on end, but it's still there, and still torture. And i end up hurting not only myself...
-            </p>
-            <p class="m-2">
-              Yet this time, unlike when breaking up with my ex, i was not content to just let my armor made of honor take the blows. And after a lot of struggle, it feels, to me, like we all ended up better for it.
-            </p>
-            <p class="m-2">
-             Don't get me wrong, i'm no stranger to moments of truth revealing themselves in the most innocent of circumstances, like over a cup of tea, a walk in a gloomy morning, a new book i was recommended, cuddles, a TTRPG session, or even...
-             But i've never had this many, in a single week, so close to each other.
-             What a ride it's been.
-            </p>
-            <p class="m-2" style="display:none; color:purple;" id="myP">
-              Thanks, for everything, little flower.
-              I cannot express with words how much you mean to me, how much you have helped me grow. 
-              I only wish i had a similar impact on your life as you did to mine.
-              And, i need to say, once again, i'm sorry... for everything i did wrong.
-              Hopefully i can make it up to you, sooner than later.
-              I love you.
+              Oh well, as the legend himself Johnny Cash wrote:
+              <br>
+              <br>
+              <q>
+               <i> Whoever is unjust let him be unjust still </i><br>
+               <i> Whoever is righteous let him be righteous still </i><br>
+               <i> Whoever is filthy let him be filthy still </i><br>
+               <i> Listen to the words long written down </i><br>
+               <i> When the man comes around </i>
+              </q>
             </p>
           </article>
         </div>
